@@ -20,7 +20,8 @@ Liên hệ với chúng tôi
 			<div class="col-inner"  >
 				<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_297814993">
 				<div class="img-inner dark" >
-					<img width="1024" height="320" src="{{$pageContent->image}}" class="attachment-original size-original" alt="Liên hệ với chúng tôi" loading="lazy" srcset="{{$pageContent->image}} 1024w, {{$pageContent->image}} 600w, {{$pageContent->image}} 768w, {{$pageContent->image}} 1536w" sizes="(max-width: 1024px) 100vw, 1024px" />						
+					{{-- <img width="1024" height="320" src="{{$pageContent->image}}" class="attachment-original size-original" alt="Liên hệ với chúng tôi" loading="lazy" srcset="{{$pageContent->image}} 1024w, {{$pageContent->image}} 600w, {{$pageContent->image}} 768w, {{$pageContent->image}} 1536w" sizes="(max-width: 1024px) 100vw, 1024px" />						 --}}
+					{!!$setting->iframe_map!!}
 				</div>
 				<style>
 					#image_297814993 {
