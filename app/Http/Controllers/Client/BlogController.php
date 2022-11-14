@@ -16,7 +16,7 @@ class BlogController extends Controller
 {
     public function list()
     {
-        $data['blog'] = Blog::where(['status'=>1])
+        $data['blogs'] = Blog::where(['status'=>1])
         ->orderBy('id','DESC')
         ->select(['id','title','image','description','created_at','slug'])
         ->paginate(9);
