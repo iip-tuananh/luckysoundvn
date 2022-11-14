@@ -35,7 +35,7 @@
                               @endif
                               <li style="text-align: justify;">Hotline: {{$setting->phone1}} {{isset($setting->phone2) ? '- '. $setting->phone2 : '' }} {{isset($setting->fax) ? '- '.$setting->fax : ''}}</li>
                               <li>Email: <a href="mailto:{{$setting->email}}">{{$setting->email}}</a></li>
-                              <li>Website: <a href="{{$setting->linkpopup}}">{{$setting->linkpopup}}</a></li>
+                              <li>Website: <a href="{{route('home')}}">{{route('home')}}</a></li>
                            </ul>
                      </div>
                   </div>
