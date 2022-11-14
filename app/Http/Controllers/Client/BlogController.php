@@ -26,6 +26,7 @@ class BlogController extends Controller
         ->paginate(5);
         $data['title_page'] = 'Tất cả tin tức';
         $data['news'] = Blog::where(['status'=>1])->orderBy('id', 'desc')->limit(5)->get(['id', 'title', 'slug', 'image']);
+        $data['discountPro'] = Product::where('status', 1)->where('discount', '>', 0)->limit(5)->get(['id', 'name', 'price', 'discount', 'images', 'cate_slug', 'type_slug', 'slug']);
         return view('blog.list',$data);
     }
     public function listCateBlog($slug)
