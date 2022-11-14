@@ -19,12 +19,13 @@ class BlogController extends Controller
         $data['blogs'] = Blog::where(['status'=>1])
         ->orderBy('id','DESC')
         ->select(['id','title','image','description','created_at','slug'])
-        ->paginate(9);
+        ->paginate(12);
         $data['bloghot'] = Blog::where(['status'=>1])
         ->orderBy('id','ASC')
         ->select(['id','title','image','description','created_at','slug'])
         ->paginate(5);
         $data['title_page'] = 'Tất cả tin tức';
+        $data['news'] = Blog::where(['status'=>1])->orderBy('id', 'desc')->limit(5)->get(['id', 'title', 'slug', 'image']);
         return view('blog.list',$data);
     }
     public function listCateBlog($slug)
