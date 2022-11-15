@@ -9,7 +9,7 @@
    @endif
    <header id="header" class="header has-sticky sticky-jump">
       <div class="header-wrapper">
-         <div id="top-bar" class="header-top hide-for-sticky nav-dark hide-for-medium">
+         <div id="top-bar" class="header-top hide-for-sticky nav-dark">
          {{-- <div class="flex-row container">
             <div class="flex-col hide-for-medium flex-left">
                   <ul class="nav nav-left medium-nav-center nav-small  nav-divided">
