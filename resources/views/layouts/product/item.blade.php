@@ -38,18 +38,18 @@
                @php
                   $discountPrice = $product->price - $product->price * ($product->discount / 100);
                @endphp
-                  <span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>{{ number_format($product->price) }}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>{{ number_format($discountPrice) }}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+                  <span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>{{ number_format($product->price, 0, '', '.') }}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount" style="font-size: 16px"><bdi>{{ number_format($discountPrice, 0,'','.') }}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
                @elseif($product->discount == 0 && $product->price > 0)
                   <span class="price"> 
                      <ins>
-                        <span class="woocommerce-Price-amount amount"><bdi>{{ number_format($product->price) }}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                        <span class="woocommerce-Price-amount amount" style="font-size: 16px"><bdi>{{ number_format($product->price, 0, '', '.') }}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                      </ins>
                   </span>
                @else
                   <span class="price"> 
                      <ins>
                         <a href="tel:{{$setting->phone1}}">
-                           <span class="woocommerce-Price-amount amount"><bdi>Liên hệ</bdi></span>
+                           <span class="woocommerce-Price-amount amount" style="font-size: 16px"><bdi>Liên hệ</bdi></span>
                         </a>
                      </ins>
                   </span>
