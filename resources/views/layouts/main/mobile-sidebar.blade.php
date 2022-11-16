@@ -5,6 +5,7 @@
             <div class="header-search-form-wrapper">
                <div class="searchform-wrapper ux-search-box relative is-normal">
                      <form role="search" method="post" class="searchform" action="{{route('search_result')}}">
+                        @csrf
                         <div class="flex-row relative">
                         <div class="flex-col flex-grow">
                            <label class="screen-reader-text" for="woocommerce-product-search-field-2">Tìm kiếm:</label>
@@ -23,7 +24,23 @@
             </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 has-icon-left"><a href="{{ route('home') }}" aria-current="page"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-home_optimized.png') }}" alt="" />Trang chủ</a></li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 has-icon-left"><a href="{{ route('aboutUs') }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-about_optimized.png') }}" alt="" />Giới thiệu</a></li>
-            @foreach ($blogCate as $key=>$category)
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
+               <a href="#"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />Danh mục sản phẩm</a>
+               <ul class="sub-menu nav-sidebar-ul children">
+                  @foreach ($categoryhome as $cate)
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
+                  @endforeach
+               </ul>
+            </li>
+            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
+               <a href="{{ route('allListBlog') }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />Tin tức</a>
+               <ul class="sub-menu nav-sidebar-ul children">
+                  @foreach ($blogCate as $cate)
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
+                  @endforeach
+               </ul>
+            </li>
+            {{-- @foreach ($blogCate as $key=>$category)
             @if ($key==0)
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
                <a href="{{ route('listCateBlog', ['slug'=>$category->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-cat-dat_optimized.png') }}" alt="" />{{languageName($category->name)}}</a>
@@ -42,7 +59,7 @@
                   <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('detailBlog', ['slug'=>$blog->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />{{languageName($blog->title)}}</a></li>
                   @endforeach
                </ul>
-               </li>
+            </li>
             @endif
             @if ($key==2)
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
@@ -54,15 +71,15 @@
                </ul>
             </li>
             @endif
-            @endforeach
-            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12083 has-icon-left">
+            @endforeach --}}
+            {{-- <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12083 has-icon-left">
             <a href="{{route('listService')}}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-chia-se_optimized.png') }}" alt="" />Dịch vụ</a>
             <ul class="sub-menu nav-sidebar-ul children">
                @foreach ($servicehome as $service)
                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12087 has-icon-left"><a href="{{ route('serviceDetail', ['slug'=>$service->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-chia-se_optimized.png') }}" alt="" />{{$service->name}}</a></li>
                @endforeach
             </ul>
-            </li>
+            </li> --}}
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 has-icon-left"><a href="{{ route('lienHe') }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-lienhe_optimized.png') }}" alt="" />Liên hệ</a></li>
             <li class="html header-social-icons ml-0">
             <div class="social-icons follow-icons" >
