@@ -110,7 +110,7 @@
                               "friction": 0.6        }'
                               >
                               @foreach ($prizes as $prize)
-                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 255px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 15px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
+                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 255px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
                               @endforeach
                         </div>
                         <div class="loading-spin dark large centered"></div>

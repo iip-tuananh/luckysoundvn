@@ -10,59 +10,6 @@
    <header id="header" class="header has-sticky sticky-jump">
       <div class="header-wrapper">
          <div id="top-bar" class="header-top hide-for-sticky nav-dark">
-         {{-- <div class="flex-row container">
-            <div class="flex-col hide-for-medium flex-left">
-                  <ul class="nav nav-left medium-nav-center nav-small  nav-divided">
-                     <li class="header-contact-wrapper">
-                     <ul id="header-contact" class="nav nav-divided nav-uppercase header-contact">
-                        <li class="">
-                              <a target="_blank" rel="noopener noreferrer" href="{{ $setting->address1 }}" title="{{ $setting->address1 }}" class="tooltip">
-                              <i class="icon-map-pin-fill" style="font-size:16px;"></i>			     <span>
-                              Địa chỉ			     </span>
-                              </a>
-                        </li>
-                        <li class="">
-                              <a href="mailto:{{ $setting->email }}" class="tooltip" title="{{ $setting->email }}">
-                              <i class="icon-envelop" style="font-size:16px;"></i>			       <span>
-                              Email			       </span>
-                              </a>
-                        </li>
-                        <li class="">
-                              <a href="tel:{{ $setting->phone1 }}" class="tooltip" title="{{ $setting->phone1 }}">
-                              <i class="icon-phone" style="font-size:16px;"></i>			      
-                                 <span>{{ $setting->phone1 }}</span>
-                              </a>
-                        </li>
-                        <li class="">
-                              <a href="tel:{{ $setting->phone2 }}" class="tooltip" title="{{ $setting->phone2 }}">
-                              <i class="icon-phone" style="font-size:16px;"></i>			      
-                                 <span>{{ $setting->phone2 }}</span>
-                              </a>
-                        </li>
-                        <li class="">
-                              <a href="tel:{{ $setting->fax }}" class="tooltip" title="{{ $setting->fax }}">
-                              <i class="icon-phone" style="font-size:16px;"></i>			      
-                                 <span>{{ $setting->fax }}</span>
-                              </a>
-                        </li>
-                     </ul>
-                     </li>
-                  </ul>
-            </div>
-            <div class="flex-col hide-for-medium flex-center">
-                  <ul class="nav nav-center nav-small  nav-divided">
-                  </ul>
-            </div>
-            <div class="flex-col hide-for-medium flex-right">
-                  <ul class="nav top-bar-nav nav-right nav-small  nav-divided">
-                     <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35 menu-item-design-default has-icon-left"><a href="{{ route('aboutUs') }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-about_optimized.png') }}" alt="" />Giới thiệu</a></li>
-                     <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34 menu-item-design-default has-icon-left"><a href="{{ route('lienHe') }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-lienhe_optimized.png') }}" alt="" />Liên hệ</a></li>
-                     <li class="html header-social-icons ml-0">
-                     <div class="social-icons follow-icons" ><a href="{{$setting->facebook}}" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="icon-facebook" ></i></a><a href="{{$setting->google}}" target="_blank" rel="noopener noreferrer nofollow" data-label="YouTube" class="icon plain  YouTube tooltip" title="Follow on YouTube" aria-label="Follow on YouTube"><i class="icon-youtube"></i></a><a href="https://zalo.me/{{$setting->phone2}}" target="_blank" data-label="Zalo" rel="noopener noreferrer nofollow" class="icon plain  Zalo tooltip" title="Follow on Zalo" aria-label="Follow on Zalo"><img src="{{url('frontend/images/zalo-icon1.png')}}" alt=""><a href="mailto:{{$setting->email}}" data-label="E-mail" rel="nofollow" class="icon plain  email tooltip" title="Send us an email" aria-label="Send us an email"><i class="icon-envelop" ></i></a></div>
-                     </li>
-                  </ul>
-            </div>
-         </div> --}}
          <img src="{{$bannerHeaderTop->image}}" alt="banner top" loading="lazy">
          </div>
          <div id="masthead" class="header-main hide-for-sticky">
