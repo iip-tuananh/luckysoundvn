@@ -120,12 +120,6 @@
             </div>
          </div>
       </div>
-      {{-- <style>
-         #section_1207011348 {
-         padding-top: 30px;
-         padding-bottom: 30px;
-         }
-      </style> --}}
       </section>
       <section class="section" id="section_600730800">
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
@@ -244,82 +238,6 @@
          padding-bottom: 30px;
          }
       </style>
-      
-      {{-- <section class="section" id="section_895514145">
-      <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
-      </div>
-      <div class="section-content relative">
-         <div class="row row-collapse align-center collap row-box-shadow-1-hover"  id="row-2102887">
-               <div id="col-1107870041" class="col small-12 large-12"  >
-                  <div class="col-inner"  >
-                  <div class="row row-collapse danh-muc"  id="row-485389381">
-                     <div id="col-1043232992" class="col title-muc medium-3 small-12 large-3"  >
-                           <div class="col-inner"  >
-                              <a rel="noopener noreferrer" href="{{ route('listCateBlog', ['slug'=>'smarthome']) }}"  class="button white is-link expand"  >
-                              <span>Giải pháp Smarthome</span>
-                              </a>
-                           </div>
-                     </div>
-                     <div id="col-1129687883" class="col danh-muc2 hide-for-medium medium-7 small-12 large-7"  >
-                           <div class="col-inner text-right"  >
-                           </div>
-                           <style>
-                              #col-1129687883 > .col-inner {
-                              padding: 0px 10px 0px 0px;
-                              }
-                           </style>
-                     </div>
-                     <div id="col-238825207" class="col danh-muc2 medium-2 small-12 large-2"  >
-                           <div class="col-inner text-left"  >
-                              <a rel="noopener noreferrer" href="{{ route('listCateBlog', ['slug'=>'smarthome']) }}" class="button secondary is-link is-small"  >
-                              <span>Xem tất cả</span>
-                              </a>
-                           </div>
-                           <style>
-                              #col-238825207 > .col-inner {
-                              padding: 0px 10px 0px 0px;
-                              }
-                           </style>
-                     </div>
-                  </div>
-                  </div>
-               </div>
-         </div>
-         <div class="row"  id="row-576833287">
-            @foreach ($smartHome as $item)
-               <div id="col-2118365835" class="col medium-3 small-6 large-3"  >
-                  <div class="col-inner"  >
-                  <div class="box has-hover   has-hover box-overlay dark box-text-bottom" >
-                     <div class="box-image" >
-                           <a href="{{ route('detailBlog', ['slug'=>$item->slug]) }}"  >
-                              <div class="image-zoom image-cover" style="padding-top:250px;">
-                              <img width="1000" height="574" src="{{$item->image}}" class="attachment- size-" alt="" loading="lazy" srcset="{{$item->image}} 1000w, {{$item->image}} 600w, {{$item->image}} 768w" sizes="(max-width: 1000px) 100vw, 1000px" />				
-                              <div class="overlay" style="background-color:rgba(32, 30, 30, 0.564)"></div>
-                              </div>
-                           </a>
-                     </div>
-                     <div class="box-text text-left" >
-                           <div class="box-text-inner">
-                              <h3>{{languageName($item->title)}}</h3>
-                              <p>{{languageName($item->cate->name)}}</p>
-                              <a rel="noopener noreferrer" href="{{ route('detailBlog', ['slug'=>$item->slug]) }}" class="button primary is-small"  style="border-radius:99px;">
-                              <span>Chi tiết</span>
-                              </a>
-                           </div>
-                     </div>
-                  </div>
-                  </div>
-               </div>
-            @endforeach
-         </div>
-      </div>
-      <style>
-         #section_895514145 {
-         padding-top: 30px;
-         padding-bottom: 30px;
-         }
-      </style>
-      </section> --}}
       <section class="section" id="section_1844193705">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
          </div>
