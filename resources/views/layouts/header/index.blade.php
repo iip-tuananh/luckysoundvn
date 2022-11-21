@@ -88,25 +88,29 @@
                   flex-grow">
                   <ul class="header-nav header-nav-main nav nav-left justify-center nav-uppercase" >
                      <li class="header-search-form search-form html relative has-icon">
-                     <div class="header-search-form-wrapper">
-                        <div class="searchform-wrapper ux-search-box relative is-normal">
-                              <form role="search" method="post" class="searchform" action="{{ route('search_result') }}">
-                                 @csrf
-                                 <div class="flex-row relative">
-                                 <div class="flex-col flex-grow">
-                                    <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label>
-                                    <input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="keyword" />
-                                    <input type="hidden" name="post_type" value="product" />
-                                 </div>
-                                 <div class="flex-col">
-                                    <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
-                                    <i class="icon-search" ></i>			</button>
-                                 </div>
-                                 </div>
-                                 <div class="live-search-results text-left z-top"></div>
-                              </form>
+                        <div class="header-search-form-wrapper">
+                           <div class="searchform-wrapper ux-search-box relative is-normal">
+                                 <form role="search" method="post" class="searchform" action="{{ route('search_result') }}">
+                                    @csrf
+                                    <div class="flex-row relative">
+                                    <div class="flex-col flex-grow">
+                                       <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label>
+                                       <input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="keyword" />
+                                       <input type="hidden" name="post_type" value="product" />
+                                    </div>
+                                    <div class="flex-col">
+                                       <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+                                       <i class="icon-search" ></i>			</button>
+                                    </div>
+                                    </div>
+                                    <div class="live-search-results text-left z-top"></div>
+                                 </form>
+                           </div>
                         </div>
-                     </div>
+                     </li>
+                     <li style="text-align: center">
+                        <p><b><i>Hotline: <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></i></b></p>
+                        <p><a href="mailto:{{$setting->email}}">{{$setting->email}}</a></p>
                      </li>
                   </ul>
             </div>
@@ -281,17 +285,17 @@
             </div>
             <div class="flex-col hide-for-medium flex-center">
                   <ul class="nav header-nav header-bottom-nav nav-center  nav-divided nav-uppercase">
-                     <li id="menu-item-12080" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 menu-item-design-default has-icon-left"><a href="{{ route('home') }}" aria-current="page" class="nav-top-link" title="Trang chủ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-home_optimized.png') }}" alt="Trang chủ" />Trang chủ</a></li>
-                     <li id="menu-item-12081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 menu-item-design-default has-icon-left"><a href="{{ route('aboutUs') }}" class="nav-top-link" title="Giới thiệu"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-about_optimized.png') }}" alt="Giới thiệu" />Giới thiệu</a></li>
+                     <li id="menu-item-12080" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 menu-item-design-default has-icon-left"><a href="{{ route('home') }}" aria-current="page" class="nav-top-link" title="Trang chủ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-home.png') }}" alt="Trang chủ" />Trang chủ</a></li>
+                     <li id="menu-item-12081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 menu-item-design-default has-icon-left"><a href="{{ route('aboutUs') }}" class="nav-top-link" title="Giới thiệu"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-aboutus.png') }}" alt="Giới thiệu" />Giới thiệu</a></li>
                      <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
-                        <a href="{{ route('allListBlog') }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />Tin tức<i class="icon-angle-down" ></i></a>
+                        <a href="{{ route('allListBlog') }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />Tin tức<i class="icon-angle-down" ></i></a>
                         <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
                            @foreach ($blogCate as $cate)
-                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
+                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
                            @endforeach
                         </ul>
                      </li>
-                     <li id="menu-item-12082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 menu-item-design-default has-icon-left"><a href="{{ route('lienHe') }}" class="nav-top-link" title="Liên hệ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-lienhe_optimized.png') }}" alt="Liên hệ" />Liên hệ</a></li>
+                     <li id="menu-item-12082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 menu-item-design-default has-icon-left"><a href="{{ route('lienHe') }}" class="nav-top-link" title="Liên hệ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-contactus.png') }}" alt="Liên hệ" />Liên hệ</a></li>
                   </ul>
             </div>
             <div class="flex-col hide-for-medium flex-right flex-grow">

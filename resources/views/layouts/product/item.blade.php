@@ -11,6 +11,11 @@
             </div>
          </div>
       @endif
+      @if ($product->discountStatus == 1)
+         <div class="badge-container absolute right top z-1">
+            <img src="{{url('frontend/images/sale.png')}}" alt="">
+         </div>
+      @endif
          <div class="product-small box ">
             <div class="box-image">
             <div class="image-fade_in_back">
@@ -30,6 +35,11 @@
             </div>
             </div>
             <div class="box-text box-text-products">
+            <div class="title-tag-sale" style="min-height: 26px;">
+               @if ($product->discount != 0 && $product->price > 0)
+                  <img src="{{url('frontend/images/giam-gia-soc.png')}}" alt="">
+               @endif
+            </div>
             <div class="title-wrapper">
                <p class="name product-title woocommerce-loop-product__title" style="font-weight: 600;"><a href="{{ route('detailProduct', ['cate'=>$product->cate_slug, 'slug'=>$product->slug]) }}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">{{ languageName($product->name) }}</a></p>
             </div>

@@ -9,15 +9,31 @@
                   <p style="text-align: justify;
                   background-color: #105caa;
                   padding: 10px 15px;
-                  color: #ffff;"><strong>Về chúng tôi</strong></p>
-                  <p style="text-align: justify;">{{ $setting->webname }}</p>
-                  <p style="text-align: justify;">Hãy liên hệ với chúng tôi để nhận được tư vấn báo giá tốt nhất.</p>
-                  <div class="social-icons follow-icons" >
+                  color: #ffff;"><strong>LUCKY SOUND</strong></p>
+                  <p style="text-align: justify;"><i class="icon-shopping-cart"></i>  {{ $setting->company }}</p>
+                  {{-- <span style="text-align: justify;">{{$setting->webname}}</span> --}}
+                  <p style="text-align: justify;"><i class="icon-checkmark"></i>  Website: <a target="_blank" href="{{route('home')}}">{{route('home')}}</a></p>
+                  <p style="text-align: justify;"><i class="icon-facebook"></i>  Facebook: <a href="{{$setting->facebook}}" target="_blank">{{$setting->facebook}}</a></p>
+                  <p style="text-align: justify;"><i class="icon-youtube"></i>  YouTube: <a href="{{$setting->google}}" target="_blank">{{$setting->google}}</a></p>
+                  <p style="text-align: justify;"><i class="icon-map-pin-fill"></i>  <a href="https://www.google.com/maps/place/{{$setting->address1}}" target="_blank" rel="noopener noreferrer">{{$setting->address1}}</a></p>
+                  <p style="text-align: justify;">Hotline 1: <a href="tel:{{$setting->phone1}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone1}}</a></p>
+                  @if (isset($setting->phone2))
+                  <p style="text-align: justify;">Hotline 2: <a href="tel:{{$setting->phone2}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone2}}</a></p>
+                  @endif
+                  @if (isset($setting->phone3))
+                  <p style="text-align: justify;">Kỹ thuật: <a href="tel:{{$setting->phone3}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone3}}</a></p>
+                  @endif
+                  {{-- <div class="social-icons follow-icons" >
                      <a href="{{ $setting->facebook }}" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon primary button circle facebook tooltip" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="icon-facebook" ></i></a>
                      <a href="mailto:{{$setting->email}}" data-label="E-mail" rel="nofollow" class="icon primary button circle  email tooltip" title="Send us an email" aria-label="Send us an email"><i class="icon-envelop" ></i></a>
                      <a href="tel:{{$setting->phone1}}" target="_blank" data-label="Phone" rel="noopener noreferrer nofollow" class="icon primary button circle  phone tooltip" title="Call us" aria-label="Call us"><i class="icon-phone" ></i></a>
-                  </div>
+                  </div> --}}
                </div>
+            <style>
+               #col-149956225 i {
+                  color:#105caa; 
+               }
+            </style>
          </div>
          <div id="col-1493538928" class="col medium-7 small-12 large-7"  >
                <div class="col-inner"  >
@@ -27,15 +43,11 @@
                            <p style="text-align: justify;
                            background-color: #105caa;
                            padding: 10px 15px;
-                           color: #ffff;"><strong>Trụ sở</strong></p>
+                           color: #ffff;"><strong>THÔNG TIN, CHÍNH SÁCH</strong></p>
                            <ul>
-                              <li style="text-align: justify;">Trụ sở: {{$setting->address1}}</li>
-                              @if ($setting->address2)
-                              <li style="text-align: justify;">Văn phòng: {{$setting->address2}}</li>
-                              @endif
-                              <li style="text-align: justify;">Hotline: {{$setting->phone1}} {{isset($setting->phone2) ? '- '. $setting->phone2 : '' }} {{isset($setting->fax) ? '- '.$setting->fax : ''}}</li>
-                              <li>Email: <a href="mailto:{{$setting->email}}">{{$setting->email}}</a></li>
-                              <li>Website: <a href="{{route('home')}}">{{route('home')}}</a></li>
+                              @foreach ($helpCus as $item)
+                              <li style="text-align: justify;"><a href="{{route('helpCus', ['slug'=>$item->slug])}}">{{$item->title}}</a></li>
+                              @endforeach
                            </ul>
                      </div>
                   </div>

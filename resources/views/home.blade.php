@@ -79,52 +79,11 @@
          }
       </style>
       </section>
-      
-      {{-- <section class="section" id="section_370008608">
-      <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
-      </div>
-      <div class="section-content relative">
-         <div class="row row-small"  id="row-1001228300">
-            @foreach ($servicehome as $service)
-               <div id="col-1653140920" class="col medium-6 small-12 large-6"  >
-                  <div class="col-inner"  >
-                  <div class="banner has-hover" id="banner-445921013">
-                     <div class="banner-inner fill">
-                           <div class="banner-bg fill" >
-                              <div class="bg fill bg-fill bg-loaded">
-                                 <img width="900" height="506" src="{{$service->image}}" class="attachment-original size-original" alt="" loading="lazy" srcset="{{$service->image}} 900w, {{$service->image}} 600w, {{$service->image}} 768w" sizes="(max-width: 900px) 100vw, 900px" />
-                              </div>
-                           </div>
-                           <div class="banner-layers container">
-                              <a class="fill" href="{{ route('serviceDetail', ['slug'=>$service->slug]) }}"  >
-                              <div class="fill banner-link"></div>
-                              </a>
-                           </div>
-                     </div>
-                     <div class="height-fix is-invisible"><img width="900" height="506" src="{{$service->image}}" class="attachment-original size-original" alt="" loading="lazy" srcset="{{$service->image}} 900w, {{$service->image}} 600w, {{$service->image}} 768w" sizes="(max-width: 900px) 100vw, 900px" /></div>
-                     <style>
-                           #banner-445921013 .bg {
-                           background-position: 50% 89%;
-                           }
-                     </style>
-                  </div>
-                  </div>
-               </div>
-            @endforeach
-         </div>
-      </div>
-      <style>
-         #section_370008608 {
-         padding-top: 0px;
-         padding-bottom: 0px;
-         }
-      </style>
-      </section>
       <section class="section" id="section_1207011348">
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
       </div>
       <div class="section-content relative">
-         <div class="row row-collapse row-box-shadow-1-hover"  id="row-1498520366">
+         {{-- <div class="row row-collapse row-box-shadow-1-hover"  id="row-1498520366">
                <div id="col-893829994" class="col small-12 large-12"  >
                   <div class="col-inner"  >
                   <div class="container section-title-container" >
@@ -137,7 +96,7 @@
                   padding: 10px 10px 10px 35px;
                   }
                </style>
-         </div>
+         </div> --}}
          <div class="row"  id="row-998500072">
                <div id="col-187624757" class="col small-12 large-12"  >
                   <div class="col-inner"  >
@@ -164,7 +123,7 @@
                            "friction": 0.6        }'
                            >
                            @foreach ($prizes as $prize)
-                              <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 230px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 15px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px;" /></a></div>
+                              <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 230px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 15px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:120px;" /></a></div>
                            @endforeach
                      </div>
                      <div class="loading-spin dark large centered"></div>
@@ -179,7 +138,7 @@
          padding-bottom: 30px;
          }
       </style>
-      </section> --}}
+      </section>
       <section class="section" id="section_600730800">
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
       </div>

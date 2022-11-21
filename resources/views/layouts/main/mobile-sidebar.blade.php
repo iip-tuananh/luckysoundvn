@@ -28,7 +28,7 @@
                <a href="#"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />Danh mục sản phẩm</a>
                <ul class="sub-menu nav-sidebar-ul children">
                   @foreach ($categoryhome as $cate)
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('allListProCate', ['danhmuc'=>$cate->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
                   @endforeach
                </ul>
             </li>

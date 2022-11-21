@@ -160,4 +160,10 @@ class PageController extends Controller
         $data['detail_service'] = Services::where('slug',$slug)->first();
         return view('service.detail',$data);
     }
+
+    public function helpCus($slug)
+    {
+        $data['pageContent'] = PageContent::where(['type'=>'ho-tro-khanh-hang', 'status'=>1, 'language'=>'vi', 'slug'=>$slug])->first(['id','title','content', 'image', 'description']);
+        return view('helpCus', $data);
+    }
 }

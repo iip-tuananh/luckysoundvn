@@ -39,6 +39,7 @@ Route::group(['namespace'=>'Client','middleware' => ['checkLanguage']], function
     Route::get('dich-vu/{slug}.html','PageController@serviceDetail')->name('serviceDetail');
     Route::get('tat-ca-dich-vu.html','PageController@listService')->name('listService');
     Route::get('gioi-thieu.html','PageController@aboutUs')->name('aboutUs');  
+    Route::get('chinh-sach-ho-tro/{slug}.html','PageController@helpCus')->name('helpCus');  
     Route::get('cong-nghe.html','PageController@technology')->name('technology');   
     Route::get('lien-he.html','PageController@contact')->name('lienHe');
     Route::post('lien-he','PageController@postcontact')->name('postcontact');

@@ -70,6 +70,7 @@ class AppServiceProvider extends ServiceProvider
             ->where('status',1)
             ->orderBy('id','asc')
             ->get(['id','name','slug','avatar']);
+            $helpCus = PageContent::where(['status'=>1, 'language'=>'vi','type'=>'ho-tro-khanh-hang'])->get(['id','title','slug', 'type']);
             $view->with([
                 'promotio' => $promotio,
                 'setting' => $setting,
@@ -83,7 +84,8 @@ class AppServiceProvider extends ServiceProvider
                 'compare'=>$compare,
                 'blogCate'=>$blogCate,
                 'servicehome'=>$servicehome,
-                'bannerHeaderTop'=>$bannerHeaderTop
+                'bannerHeaderTop'=>$bannerHeaderTop,
+                'helpCus'=>$helpCus
                 ]);    
         });  
     }

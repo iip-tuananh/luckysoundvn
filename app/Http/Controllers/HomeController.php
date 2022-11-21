@@ -23,7 +23,7 @@ class HomeController extends Controller
         $data['partner'] = Partner::where(['status'=>1])->get(['id','image','name','link']);
         $data['prizes'] = Prize::where(['status'=>1])->get();
         $data['reviewCus'] = ReviewCus::where(['status'=>1])->get();
-        $data['spnoibat'] = Product::where(['status'=>1,'discountStatus'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug')
+        $data['spnoibat'] = Product::where(['status'=>1,'discountStatus'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug', 'discountStatus')
             ->paginate(12);
         return view('home',$data);
     }
