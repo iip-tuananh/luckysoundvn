@@ -83,20 +83,6 @@
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
       </div>
       <div class="section-content relative">
-         {{-- <div class="row row-collapse row-box-shadow-1-hover"  id="row-1498520366">
-               <div id="col-893829994" class="col small-12 large-12"  >
-                  <div class="col-inner"  >
-                  <div class="container section-title-container" >
-                     <h2 class="section-title section-title-normal"><b></b><span class="section-title-main" style="font-size:80%;color:#105caa;">Ngành hàng bạn quan tâm</span><b></b></h2>
-                  </div>
-                  </div>
-               </div>
-               <style>
-                  #row-1498520366 > .col > .col-inner {
-                  padding: 10px 10px 10px 35px;
-                  }
-               </style>
-         </div> --}}
          <div class="row"  id="row-998500072">
                <div id="col-187624757" class="col small-12 large-12"  >
                   <div class="col-inner"  >
@@ -123,7 +109,7 @@
                            "friction": 0.6        }'
                            >
                            @foreach ($prizes as $prize)
-                              <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 230px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 15px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:120px;" /></a></div>
+                              <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 230px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 15px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:120px; width: 100%;" /></a></div>
                            @endforeach
                      </div>
                      <div class="loading-spin dark large centered"></div>

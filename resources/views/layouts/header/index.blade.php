@@ -108,7 +108,7 @@
                            </div>
                         </div>
                      </li>
-                     <li style="text-align: center">
+                     <li style="text-align: center; border: 2px solid #105caa; border-radius: 5px; padding: 0 10px;">
                         <p><b><i>Hotline: <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></i></b></p>
                         <p><a href="mailto:{{$setting->email}}">{{$setting->email}}</a></p>
                      </li>
