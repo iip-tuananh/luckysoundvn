@@ -83,47 +83,49 @@
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
       </div>
       <div class="section-content relative">
-         <div class="row"  id="row-998500072">
-               <div id="col-187624757" class="col small-12 large-12"  >
-                  <div class="col-inner"  >
-                  <div class="slider-wrapper relative" id="slider-41975906" >
-                     <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal"
-                           data-flickity-options='{
-                           "cellAlign": "center",
-                           "imagesLoaded": true,
-                           "lazyLoad": 1,
-                           "freeScroll": false,
-                           "wrapAround": true,
-                           "autoPlay": 6000,
-                           "pauseAutoPlayOnHover" : true,
-                           "prevNextButtons": true,
-                           "contain" : true,
-                           "adaptiveHeight" : true,
-                           "dragThreshold" : 10,
-                           "percentPosition": true,
-                           "pageDots": false,
-                           "rightToLeft": false,
-                           "draggable": true,
-                           "selectedAttraction": 0.1,
-                           "parallax" : 0,
-                           "friction": 0.6        }'
-                           >
-                           @foreach ($prizes as $prize)
-                              <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 230px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 15px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:120px; width: 100%;" /></a></div>
-                           @endforeach
+         <div class="container">
+            <div class="row"  id="row-998500072">
+                  <div id="col-187624757" class="col small-12 large-12"  >
+                     <div class="col-inner"  >
+                     <div class="slider-wrapper relative" id="slider-41975906" >
+                        <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal"
+                              data-flickity-options='{
+                              "cellAlign": "center",
+                              "imagesLoaded": true,
+                              "lazyLoad": 1,
+                              "freeScroll": false,
+                              "wrapAround": true,
+                              "autoPlay": 6000,
+                              "pauseAutoPlayOnHover" : true,
+                              "prevNextButtons": true,
+                              "contain" : true,
+                              "adaptiveHeight" : true,
+                              "dragThreshold" : 10,
+                              "percentPosition": true,
+                              "pageDots": false,
+                              "rightToLeft": false,
+                              "draggable": true,
+                              "selectedAttraction": 0.1,
+                              "parallax" : 0,
+                              "friction": 0.6        }'
+                              >
+                              @foreach ($prizes as $prize)
+                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 255px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 15px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:120px; width: 100%;" /></a></div>
+                              @endforeach
+                        </div>
+                        <div class="loading-spin dark large centered"></div>
                      </div>
-                     <div class="loading-spin dark large centered"></div>
+                     </div>
                   </div>
-                  </div>
-               </div>
+            </div>
          </div>
       </div>
-      <style>
+      {{-- <style>
          #section_1207011348 {
          padding-top: 30px;
          padding-bottom: 30px;
          }
-      </style>
+      </style> --}}
       </section>
       <section class="section" id="section_600730800">
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
