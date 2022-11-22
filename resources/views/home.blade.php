@@ -77,6 +77,9 @@
          padding-top: 0px;
          padding-bottom: 0px;
          }
+         #col-2074296734 {
+            padding-left: 0;
+         }
       </style>
       </section>
       <section class="section" id="section_1207011348">
