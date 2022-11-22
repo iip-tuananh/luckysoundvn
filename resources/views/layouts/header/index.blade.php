@@ -234,14 +234,28 @@
                   <ul class="nav header-nav header-bottom-nav nav-center  nav-divided nav-uppercase">
                      <li id="menu-item-12080" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 menu-item-design-default has-icon-left"><a href="{{ route('home') }}" aria-current="page" class="nav-top-link" title="Trang chủ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-home.png') }}" alt="Trang chủ" />Trang chủ</a></li>
                      <li id="menu-item-12081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 menu-item-design-default has-icon-left"><a href="{{ route('aboutUs') }}" class="nav-top-link" title="Giới thiệu"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-aboutus.png') }}" alt="Giới thiệu" />Giới thiệu</a></li>
+                     @foreach ($blogCate as $key=>$cate)
+                     @if ($key == 0)
                      <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
-                        <a href="{{ route('allListBlog') }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />Tin tức<i class="icon-angle-down" ></i></a>
+                        <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($cate->name)}}<i class="icon-angle-down" ></i></a>
                         <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
-                           @foreach ($blogCate as $cate)
-                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
+                           @foreach ($cate->typeCate as $type)
+                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($type->name)}}</a></li>
                            @endforeach
                         </ul>
                      </li>
+                     @endif
+                     @if ($key == 1)
+                     <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
+                        <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}" alt="" />{{languageName($cate->name)}}<i class="icon-angle-down" ></i></a>
+                        <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
+                           @foreach ($cate->typeCate as $type)
+                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}" alt="" />{{languageName($type->name)}}</a></li>
+                           @endforeach
+                        </ul>
+                     </li>
+                     @endif
+                     @endforeach
                      <li id="menu-item-12082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 menu-item-design-default has-icon-left"><a href="{{ route('lienHe') }}" class="nav-top-link" title="Liên hệ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-contactus.png') }}" alt="Liên hệ" />Liên hệ</a></li>
                   </ul>
             </div>

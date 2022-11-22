@@ -142,14 +142,14 @@ export default {
               path: "/blog/category",
             },
             {
+              name: "Loại bài viết",
+              path: "/blog/type",
+            },
+            {
               name: "Danh sách bài viết",
               path: "/blogs",
             },
             
-            // {
-            //   name: "Loại bài viết",
-            //   path: "/blog/type",
-            // },
           ],
         },
         // {
