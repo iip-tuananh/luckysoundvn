@@ -238,21 +238,25 @@
                      @if ($key == 0)
                      <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
                         <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($cate->name)}}<i class="icon-angle-down" ></i></a>
+                        @if (count($cate->typeCate) > 0)
                         <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
                            @foreach ($cate->typeCate as $type)
                               <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($type->name)}}</a></li>
                            @endforeach
                         </ul>
+                        @endif
                      </li>
                      @endif
                      @if ($key == 1)
                      <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
                         <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}" alt="" />{{languageName($cate->name)}}<i class="icon-angle-down" ></i></a>
+                        @if (count($cate->typeCate) > 0)
                         <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
                            @foreach ($cate->typeCate as $type)
                               <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}" alt="" />{{languageName($type->name)}}</a></li>
                            @endforeach
                         </ul>
+                        @endif
                      </li>
                      @endif
                      @endforeach
