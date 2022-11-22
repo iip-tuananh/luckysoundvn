@@ -13,7 +13,7 @@
       @endif
       @if ($product->discountStatus == 1)
          <div class="badge-container absolute right top z-1">
-            <img src="{{url('frontend/images/sale.png')}}" alt="">
+            <img src="{{url('frontend/images/sale.png')}}" alt="" style="width: 40px;">
          </div>
       @endif
          <div class="product-small box ">
