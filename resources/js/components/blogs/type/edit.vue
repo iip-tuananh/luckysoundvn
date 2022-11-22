@@ -147,6 +147,7 @@ export default {
         this.saveTypeCateBlog(this.objData)
           .then(response => {
             this.loadings(false);
+            this.$router.push({name:'listTypeBlog'});
             this.$success("Sửa danh mục thành công");
             this.$emit("closePopup", false);
           })
