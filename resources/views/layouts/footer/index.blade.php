@@ -12,22 +12,17 @@
                   color: #ffff;"><strong>LUCKY SOUND</strong></p>
                   <p style="text-align: justify;"><i class="icon-shopping-cart"></i>  {{ $setting->company }}</p>
                   {{-- <span style="text-align: justify;">{{$setting->webname}}</span> --}}
-                  <p style="text-align: justify;"><i class="icon-checkmark"></i>  Website: <a target="_blank" href="{{route('home')}}">{{route('home')}}</a></p>
-                  <p style="text-align: justify;"><i class="icon-facebook"></i>  Facebook: <a href="{{$setting->facebook}}" target="_blank">{{$setting->facebook}}</a></p>
-                  <p style="text-align: justify;"><i class="icon-youtube"></i>  YouTube: <a href="{{$setting->google}}" target="_blank">{{$setting->google}}</a></p>
-                  <p style="text-align: justify;"><i class="icon-map-pin-fill"></i>  <a href="https://www.google.com/maps/place/{{$setting->address1}}" target="_blank" rel="noopener noreferrer">{{$setting->address1}}</a></p>
-                  <p style="text-align: justify;">Hotline 1: <a href="tel:{{$setting->phone1}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone1}}</a></p>
+                  <p><i class="icon-checkmark"></i>  Website: <a target="_blank" href="{{route('home')}}">{{route('home')}}</a></p>
+                  <p><i class="icon-facebook"></i>  Facebook: <a href="{{$setting->facebook}}" target="_blank">{{$setting->facebook}}</a></p>
+                  <p><i class="icon-youtube"></i>  YouTube: <a href="{{$setting->google}}" target="_blank">{{$setting->google}}</a></p>
+                  <p><i class="icon-map-pin-fill"></i>  <a href="https://www.google.com/maps/place/{{$setting->address1}}" target="_blank" rel="noopener noreferrer">{{$setting->address1}}</a></p>
+                  <p>Hotline 1: <a href="tel:{{$setting->phone1}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone1}}</a></p>
                   @if (isset($setting->phone2))
-                  <p style="text-align: justify;">Hotline 2: <a href="tel:{{$setting->phone2}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone2}}</a></p>
+                  <p>Hotline 2: <a href="tel:{{$setting->phone2}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone2}}</a></p>
                   @endif
                   @if (isset($setting->phone3))
-                  <p style="text-align: justify;">Kỹ thuật: <a href="tel:{{$setting->phone3}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone3}}</a></p>
+                  <p>Kỹ thuật: <a href="tel:{{$setting->phone3}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone3}}</a></p>
                   @endif
-                  {{-- <div class="social-icons follow-icons" >
-                     <a href="{{ $setting->facebook }}" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon primary button circle facebook tooltip" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="icon-facebook" ></i></a>
-                     <a href="mailto:{{$setting->email}}" data-label="E-mail" rel="nofollow" class="icon primary button circle  email tooltip" title="Send us an email" aria-label="Send us an email"><i class="icon-envelop" ></i></a>
-                     <a href="tel:{{$setting->phone1}}" target="_blank" data-label="Phone" rel="noopener noreferrer nofollow" class="icon primary button circle  phone tooltip" title="Call us" aria-label="Call us"><i class="icon-phone" ></i></a>
-                  </div> --}}
                </div>
             <style>
                #col-149956225 i {
