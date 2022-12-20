@@ -633,6 +633,38 @@
                }
             })
          })
+         $('.btn-minus').click(function() {
+            var id = $(this).parent().data('id');
+            var url = $(this).parent().data('url');
+            var result = document.getElementById('quantity_'+id); var qty = result.value; if( !isNaN( qty ) && qty > 1 ) result.value--;
+            var quantity= result.value;
+            console.log(quantity);
+            $.ajax({
+               type: 'post',
+               url: url,
+               headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+               data: {id: id, quantity:quantity},
+               success: function(data) {
+                  window.location.reload();
+               }
+            })
+         })
+         $('.btn-plus').click(function() {
+            var id = $(this).parent().data('id');
+            var url = $(this).parent().data('url');
+            var result = document.getElementById('quantity_'+id); var qty = result.value; if( !isNaN( qty )) result.value++;
+            var quantity= result.value;
+            console.log(quantity);
+            $.ajax({
+               type: 'post',
+               url: url,
+               headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+               data: {id: id, quantity:quantity},
+               success: function(data) {
+                  window.location.reload();
+               }
+            })
+         })
       })
    </script>
    </body>

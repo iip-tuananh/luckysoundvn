@@ -1,42 +1,49 @@
 <template>
   <div>
-        <h3 class="page-title">Mã đơn hàng: #{{bill.code_bill}}</h3>
+      <h3 class="page-title">Mã đơn hàng: #{{bill.code_bill}}</h3>
       <div class="row">
         <div class="col-md-8 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <label>Chi tiết đơn hàng</label>
               <vs-table stripe :data="bill.bill_detail">
-              <template slot="thead">
-                <vs-th>Ảnh sản phẩm</vs-th>
-                <vs-th>Tên sản phẩm</vs-th>
-                <vs-th>Giá gốc</vs-th>
-                <vs-th>Giảm giá</vs-th>
-                <vs-th>Số lượng</vs-th>
-              </template>
-              <template slot-scope="{data}">
-                <vs-tr :key="indextr" v-for="(tr, indextr) in bill.bill_detail">
-                  <vs-td ><vs-avatar size="large" :src="tr.images"/></vs-td>
-                  <vs-td>{{tr.name}}</vs-td>
-                  <vs-td >{{tr.price}}</vs-td>
-                  <vs-td >{{tr.discount}}%</vs-td>
-                  <vs-td >{{tr.qty}}</vs-td>
-                </vs-tr>
-              </template>
-            </vs-table>
+                <template slot="thead">
+                  <vs-th>Ảnh sản phẩm</vs-th>
+                  <vs-th>Tên sản phẩm</vs-th>
+                  <vs-th>Màu sắc</vs-th>
+                  <vs-th>Kích thước</vs-th>
+                  <vs-th>Giá gốc</vs-th>
+                  <vs-th>Giá giảm</vs-th>
+                  <vs-th>Số lượng</vs-th>
+                </template>
+                <template slot-scope="{data}">
+                  <vs-tr :key="indextr" v-for="(tr, indextr) in bill.bill_detail">
+                    <vs-td ><vs-avatar size="large" :src="tr.images"/></vs-td>
+                    <vs-td>{{tr.name}}</vs-td>
+                    <vs-td v-if="tr.color != null">{{tr.color}}</vs-td>
+                    <vs-td v-if="tr.color == null">----</vs-td>
+                    <vs-td v-if="tr.size != null">{{tr.size}}</vs-td>
+                    <vs-td v-if="tr.size == null">----</vs-td>
+                    <vs-td >{{formatNumber(tr.price)}}</vs-td>
+                    <vs-td v-if="tr.discount != null">{{formatNumber(tr.price - (tr.price * (tr.discount / 100)))}}</vs-td>
+                    <vs-td v-if="tr.discount == null">{{formatNumber(tr.price)}}</vs-td>
+                    <vs-td >{{tr.qty}}</vs-td>
+                  </vs-tr>
+                </template>
+              </vs-table>
               <div class="row">
-                <div class="col-md-6">
+                <!-- <div class="col-md-4">
                   <div class="form-group">
                     <label>Ghi chú</label>
                     <vs-textarea v-model="bill.note"  />
                   </div>
-                </div>
-                <div class="col-md-6">
+                </div> -->
+                <div class="col-md-12">
                   <table class="table">
                       <tbody>
                         <tr>
-                          <td>Tiền hàng</td>
-                          <td>{{formatNumber(total_product)}}đ</td>
+                          <td>Tiền hàng chưa tính phí ship</td>
+                          <td>{{formatNumber(bill.total_money)}}đ</td>
                         </tr>
                         <tr v-if="bill.transport_price != '' ">
                           <td>Phí vận chuyển</td>
@@ -44,21 +51,23 @@
                         </tr>
                         <tr>
                           <td>Tổng cộng</td>
-                          <td>{{formatNumber(total_bill)}}đ</td>
+                          <td>{{formatNumber(bill.total_money)}}đ</td>
                         </tr>
                       </tbody>
                     </table>
                 </div>
               </div>
               <hr>
-              <div class="row">
+              <div class="row" v-if="bill.statu == 0">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <h4>Xác nhận thanh toán</h4>
+                    <h4 style="margin: 0">Xác nhận thanh toán</h4>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <vs-button color="success" type="border" @click="changePaymented()" v-if="bill.statu == 0">Đã xác nhận</vs-button>
+                  <div class="form-group">
+                    <vs-button color="success" type="border" @click="changePaymented()" >Xác nhận đơn hàng</vs-button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,7 +77,7 @@
         <div class="col-md-4 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label>Tài khoản đặt hàng</label>
                 <vs-select
                   placeholder="Search and select"
@@ -79,7 +88,7 @@
                   <vs-select-item key="0" value="0" text="Khách hàng chưa có tài khoản" />
                   <vs-select-item :key="index" :value="item.id" :text="item.name" v-for="item,index in customer" />
                 </vs-select>
-              </div>
+              </div> -->
               <div class="form-group">
                 <label>Trạng thái đơn hàng</label> <br>
                 <vs-chip color="primary" v-if="bill.statu == 1">
@@ -103,7 +112,7 @@
                         <td>{{bill.cus_name}}</td>
                       </tr>
                       <tr>
-                        <td>Phone </td>
+                        <td>Số điện thoại </td>
                         <td>{{bill.cus_phone}}</td>
                       </tr>
                       <tr>
@@ -227,7 +236,7 @@ export default {
       return `${name}`
     },
     formatNumber(num) {
-       return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
     addBills(){
       this.loadings(true);

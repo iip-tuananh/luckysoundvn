@@ -48,9 +48,7 @@
                </div>
             @endforeach
             </div>
-            <div class="paginate">
-               {{$blogs->links()}}
-            </div>
+            {{$blogs->links()}}
       </div>
       @include('layouts.main.rightnav-page')
    </div>

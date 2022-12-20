@@ -30,26 +30,26 @@ Thanh toán đơn hàng
                                           <label for="billing_last_name" class="">Họ và tên&nbsp;<abbr class="required" title="bắt buộc">*</abbr>
                                           </label>
                                           <span class="woocommerce-input-wrapper">
-                                             <input type="text" class="input-text " name="billingName" id="billing_last_name" placeholder="Nhập đầy đủ họ và tên của bạn"  value=""  />
+                                             <input type="text" class="input-text " name="billingName" id="billing_last_name" placeholder="Nhập đầy đủ họ và tên của bạn"  value=""  required/>
                                           </span>
                                        </p>
                                        <p class="form-row address-field form-row-first validate-required" id="billing_address_1_field" data-priority="50">
                                           <label for="billing_address_1" class="">Địa chỉ&nbsp;<abbr class="required" title="bắt buộc">*</abbr>
                                           </label><span class="woocommerce-input-wrapper">
-                                             <input type="text" class="input-text " name="billingAddress" id="billing_address_1" placeholder="Ví dụ: Số xx Hẻm xx Xã, Huyện, Thành Phố"  value="" autocomplete="address-line1" />
+                                             <input type="text" class="input-text " name="billingAddress" id="billing_address_1" placeholder="Ví dụ: Số xx Hẻm xx Xã, Huyện, Thành Phố"  value="" autocomplete="address-line1" required/>
                                           </span>
                                        </p>
                                        <p class="form-row form-row-wide validate-required validate-phone" id="billing_phone_field" data-priority="100">
                                           <label for="billing_phone" class="">Số điện thoại&nbsp;<abbr class="required" title="bắt buộc">*</abbr>
                                           </label>
-                                          <span class="woocommerce-input-wrapper"><input type="tel" class="input-text " name="billingPhone" id="billing_phone" placeholder=""  value="" autocomplete="tel" />
+                                          <span class="woocommerce-input-wrapper"><input type="tel" class="input-text " name="billingPhone" id="billing_phone" placeholder=""  value="" autocomplete="tel" required/>
                                           </span>
                                        </p>
                                        <p class="form-row form-row-wide validate-required validate-email" id="billing_email_field" data-priority="110">
                                           <label for="billing_email" class="">Địa chỉ email&nbsp;<abbr class="required" title="bắt buộc">*</abbr>
                                           </label>
                                           <span class="woocommerce-input-wrapper">
-                                             <input type="email" class="input-text " name="billingEmail" id="billing_email" placeholder=""  value="" autocomplete="email username" />
+                                             <input type="email" class="input-text " name="billingEmail" id="billing_email" placeholder=""  value="" autocomplete="email username" required/>
                                           </span>
                                        </p>
                                     </div>
@@ -111,6 +111,7 @@ Thanh toán đơn hàng
                                           <tr class="order-total">
                                              <th>Tổng</th>
                                              <td><strong><span class="woocommerce-Price-amount amount"><bdi>{{number_format($totalPrice)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></strong> </td>
+                                             <input type="text" name="total_money" value="{{$totalPrice}}" hidden>
                                           </tr>
                                        </tfoot>
                                     </table>

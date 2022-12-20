@@ -28,8 +28,8 @@
                     <!-- <vs-td :data="tr.id">
                       <vs-avatar size="70px" :src="tr.avatar" />
                     </vs-td> -->
-                    <vs-td :data="tr.id" v-if="cate_blog != null">{{JSON.parse(tr.cate_blog.name)[0].content}}</vs-td>
-                    <vs-td :data="tr.id" v-if="cate_blog == null">-----</vs-td>
+                    <vs-td :data="tr.id" v-if="tr.cate_blog != null">{{JSON.parse(tr.cate_blog.name)[0].content}}</vs-td>
+                    <vs-td :data="tr.id" v-if="tr.cate_blog == null">-----</vs-td>
                     <vs-td :data="tr.id">
                       <router-link :to="{name:'editTypeBlog',params:{id:tr.id}}">
                         <vs-button

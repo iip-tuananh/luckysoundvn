@@ -22,13 +22,23 @@ class BillController extends Controller
         $keyword = $request->keyword;
         $status = $request->status;
         if($keyword == ""){
-            $data = Bill::where('statu',$status)->leftJoin('customer', function($join){
+            $data = Bill::with([
+                'bill_detail'=>function($query) {
+                    $query->select('id','name','price','code_bill');
+                }
+            ])
+            ->where('statu',$status)->leftJoin('customer', function($join){
                 $join->on('customer.id','=','bill.code_customer');
             })
             ->select('bill.*','customer.name as customer_name')
             ->orderBy('id','DESC')->get();
         }else{
-            $data = Bill::where('code_bill', 'LIKE', '%'.$keyword.'%')->where('statu',$status)->orderBy('id','DESC')->get()->toArray();
+            $data = Bill::with([
+                'bill_detail'=>function($query) {
+                    $query->select('id','name','price', 'code_bill');
+                }
+            ])
+            ->where('code_bill', 'LIKE', '%'.$keyword.'%')->where('statu',$status)->orderBy('id','DESC')->get()->toArray();
         }
         return response()->json([
             'data' => $data,
@@ -51,6 +61,16 @@ class BillController extends Controller
         return response()->json([
             'data' => $data,
             'message' => 'success'
+        ]);
+    }
+    public function deleteBill($code)
+    {
+        $dataBill = Bill::where('code_bill', $code);
+        $dataBillDetail = BillDetail::where('code_bill', $code);
+        $dataBill->delete();
+        $dataBillDetail->delete();
+        return response()->json([
+            'message' => 'Delete success'
         ]);
     }
 }

@@ -57,8 +57,9 @@ Giỏ hàng của bạn
                                              <span class="woocommerce-Price-amount amount"><bdi>{{number_format($price)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>						
                                           </td>
                                           <td class="product-quantity" data-title="Số lượng">
-                                             <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus button is-form">				<label class="screen-reader-text" for="quantity_{{$item['id']}}">{{languageName($item['name'])}}</label>
+                                             <div class="quantity buttons_added" data-url="{{route('updateCart')}}" data-id="{{$item['id']}}">
+                                                <input type="button" value="-" class="minus button is-form btn-minus">				
+                                                <label class="screen-reader-text" for="quantity_{{$item['id']}}">{{languageName($item['name'])}}</label>
                                                 <input
                                                    type="number"
                                                    id="quantity_{{$item['id']}}"
@@ -66,13 +67,13 @@ Giỏ hàng của bạn
                                                    step="1"
                                                    min="0"
                                                    max=""
-                                                   name="cart[f7e6c85504ce6e82442c770f7c8606f0][qty]"
+                                                   name="qty"
                                                    value="{{$item['quantity']}}"
                                                    title="SL"
                                                    size="4"
                                                    placeholder=""
                                                    inputmode="numeric" />
-                                                <input type="button" value="+" class="plus button is-form">	
+                                                <input type="button" value="+" class="plus button is-form btn-plus">	
                                              </div>
                                           </td>
                                           <td class="product-subtotal" data-title="Tạm tính">

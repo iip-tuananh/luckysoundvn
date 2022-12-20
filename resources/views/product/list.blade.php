@@ -37,9 +37,7 @@ Danh sách {{$title}}
                @endforeach
             </div>
             <!-- row -->
-            <div class="paginate">
-               {{$list->links()}}
-            </div>
+            {{$list->links()}}
          </div>
          <!-- shop container -->
       </div>

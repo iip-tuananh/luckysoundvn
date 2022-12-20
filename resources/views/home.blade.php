@@ -13,12 +13,12 @@
 @section('js')
 @endsection
 @section('content')
+<script>
+   if (session()->has('success')){
+      $.notify("Đặt hàng thành công!", "success");
+   }
+</script>
 <main id="main" class="">
-   @if (session()->has('success'))
-      <script>
-         $.notify("Đặt hàng thành công!", "success");
-      </script>
-   @endif
    <div id="content" role="main" class="content-area">
       <section class="section" id="section_1578259892">
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
@@ -205,14 +205,21 @@
                               </style>
                         </div>
                         <div id="col-1468115842" class="col danh-muc2 medium-2 small-12 large-2"  >
-                              <div class="col-inner text-left"  >
+                              <div class="col-inner"  >
                                  <a href="{{ route('allListProCate' , ['danhmuc'=>$category->slug])}}" target="_self" class="button secondary is-link is-small"  >
                                  <span>Xem tất cả</span>
                                  </a>
                               </div>
                               <style>
                                  #col-1468115842 > .col-inner {
-                                 padding: 0px 10px 0px 0px;
+                                 padding: 0px;
+                                 text-align: center;
+                                 }
+                                 #col-1468115842 > .col-inner:hover {
+                                    background-color: #105caa;
+                                 }
+                                 #col-1468115842 > .col-inner:hover a{
+                                    color: #ffff;
                                  }
                               </style>
                         </div>

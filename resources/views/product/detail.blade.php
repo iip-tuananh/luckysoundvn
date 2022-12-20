@@ -383,7 +383,7 @@ $imgs = json_decode($product->images);
                      </div>
                   </div>
                   <div class="related related-products-wrapper product-section">
-                     <h3 class="product-section-title container-width product-section-title-related pt-half pb-half uppercase">
+                     <h3 class="product-section-title container-width product-section-title-related pt-half pb-half uppercase" style="margin-left:0;">
                         Sản phẩm tương tự			
                      </h3>
                      <div class="row has-equal-box-heights equalize-box large-columns-4 medium-columns-3 small-columns-2 row-small">

@@ -43,6 +43,7 @@ class CartController extends Controller
                     $billdetail->code_product = $item['id'];
                     $billdetail->name =languageName($item['name']);
                     $billdetail->price = $item['price'];
+                    $billdetail->discount = $item['discount'];
                     $billdetail->qty = $item['quantity'];
                     $billdetail->images = $item['image'];
                     $billdetail->save();

@@ -97,13 +97,13 @@
                 </vs-select>
                 
               </div>
-              <!-- <div class="form-group">
+              <div class="form-group">
                 <label>Loại danh mục</label>
                 <vs-select class="selectExample"
                   v-model="objData.type_cate"
                   placeholder="Danh mục"
                   :disabled="objData.category == '' || type_cate.length == 0">
-                   <vs-select-item
+                  <vs-select-item
                     value="0"
                     text="Không danh mục"
                   />
@@ -114,7 +114,7 @@
                     :key="'f'+index"
                   />
                 </vs-select>
-              </div> -->
+              </div>
               <div class="form-group">
                 <label>Hiện nổi bật trên trang chủ</label>
                 <vs-select v-model="objData.home_status">
