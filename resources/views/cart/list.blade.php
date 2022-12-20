@@ -87,7 +87,6 @@ Giỏ hàng của bạn
                                              <a class="button-continue-shopping button primary is-outline"  href="{{route('allProduct')}}">
                                              &#8592;&nbsp;Tiếp tục xem sản phẩm	</a>
                                           </div>
-                                          <button type="submit" class="button primary mt-0 pull-left small" name="update_cart" value="Cập nhật giỏ hàng">Cập nhật giỏ hàng</button>
                                           <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value="06b6aa30b2" /><input type="hidden" name="_wp_http_referer" value="/gio-hang/" />				
                                        </td>
                                     </tr>
