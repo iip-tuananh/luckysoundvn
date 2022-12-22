@@ -82,10 +82,10 @@ Liên hệ với chúng tôi
 				<form action="{{route('postcontact')}}" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
 					@csrf
 					<p>
-						<span class="wpcf7-form-control-wrap text-653"><input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Tên của bạn..." /></span><br />
-						<span class="wpcf7-form-control-wrap text-653"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Email của bạn..." /></span><br />
-						<span class="wpcf7-form-control-wrap tel-711"><input type="number" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" placeholder="Số điện thoại..." /></span><br />
-						<span class="wpcf7-form-control-wrap textarea-261"><textarea name="mess" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Nội dung liên hệ"></textarea></span><br />
+						<span class="wpcf7-form-control-wrap text-653"><input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Tên của bạn..." required/></span><br />
+						<span class="wpcf7-form-control-wrap text-653"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Email của bạn..." required/></span><br />
+						<span class="wpcf7-form-control-wrap tel-711"><input type="number" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" placeholder="Số điện thoại..." required/></span><br />
+						<span class="wpcf7-form-control-wrap textarea-261"><textarea name="mess" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Nội dung liên hệ" required></textarea></span><br />
 						<input type="submit" value="Gửi liên hệ" class="wpcf7-form-control has-spinner wpcf7-submit" />
 					</p>
 					<div class="wpcf7-response-output" aria-hidden="true"></div>
