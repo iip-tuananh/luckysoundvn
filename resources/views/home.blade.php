@@ -185,11 +185,6 @@
                         </div>
                         <div id="col-2001838655" class="col danh-muc2 hide-for-medium medium-5 small-12 large-5"  >
                               <div class="col-inner text-right"  >
-                                 {{-- @foreach ($category->typeCate as $type)
-                                    <a href="{{ route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug]) }}" class="button secondary is-link is-small"  >
-                                    <span>{{languageName($type->name)}}</span>
-                                    </a>
-                                 @endforeach --}}
                               </div>
                               <style>
                                  #col-2001838655 > .col-inner {
@@ -215,11 +210,12 @@
                                  padding: 0px;
                                  text-align: center;
                                  }
-                                 #col-1468115842 > .col-inner:hover {
+                                 #col-1468115842 > .col-inner {
                                     background-color: #105caa;
                                  }
-                                 #col-1468115842 > .col-inner:hover a{
+                                 #col-1468115842 > .col-inner a{
                                     color: #ffff;
+                                    padding: 3px 0;
                                  }
                               </style>
                         </div>
@@ -318,7 +314,7 @@
       <div class="row row-small row-tieu-chi"  id="row-895057886">
          <div id="col-925053052" class="col medium-3 small-6 large-3"  >
             <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-left"  >
+                  <div class="icon-box featured-box icon-box-left text-center"  >
                      <div class="icon-box-img" style="width: 40px">
                      <div class="icon">
                         <div class="icon-inner" >

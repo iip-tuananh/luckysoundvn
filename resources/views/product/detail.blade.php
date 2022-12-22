@@ -110,7 +110,47 @@ $imgs = json_decode($product->images);
                            </p>
                         @endif
                      </div>
-                     
+                     <div class="gu-flex">
+                        <div class="flw">
+                        <div class="unit">
+                           <span>Đơn vị tính</span>
+                           1 chiếc        </div>
+                        </div>
+                        <div class="flw">
+                        <div class="guarantee">
+                           <span>Bảo hành</span>
+                           12 tháng        </div>
+                        </div>
+                     </div>
+                     <style>
+                        .gu-flex {
+                           display: flex;
+                           flex-wrap: nowrap;
+                        }
+                        .gu-flex .flw:nth-child(1) {
+                           border-right: none;
+                        }
+                        .gu-flex .flw {
+                           background: #ececec;
+                           border: 1px solid #dbdbdb;
+                           border-bottom: none;
+                           padding: 5px;
+                        }
+                        .gu-flex .flw .guarantee, .gu-flex .flw .unit {
+                           display: flex;
+                           flex-wrap: wrap;
+                           justify-content: center;
+                           font-size: 13px;
+                           color: #0089fd;
+                           text-transform: capitalize;
+                        }
+                        .gu-flex .flw .guarantee span, .gu-flex .flw .unit span {
+                           width: 100%;
+                           text-align: center;
+                           color: #000;
+                           text-transform: none;
+                        }
+                     </style>
                      @if (json_decode($product->preserve)[0]->detail != null)
                      <div class="woocommerce-product-details__short-description">
                         <h4 class="pdrr-so-head"><span style="color: #d83131;"><strong>* ƯU ĐÃI ĐẶC BIỆT KÈM THEO *</strong></span></h4>
@@ -212,7 +252,7 @@ $imgs = json_decode($product->images);
                                  </div>
                               </div>
                            </div>
-                           <div class="icon-box-text last-reset">
+                           <div class="icon-box-text last-reset" style="padding-top: 0;">
                               <h3>Trải nghiệm thực tế</h3>
                               <p>Tại phòng âm thanh của Lucky Sound</p>
                            </div>
@@ -225,7 +265,7 @@ $imgs = json_decode($product->images);
                                  </div>
                               </div>
                            </div>
-                           <div class="icon-box-text last-reset">
+                           <div class="icon-box-text last-reset" style="padding-top: 0;">
                               <h3>Giao hàng miễn phí</h3>
                               <p>Khoảng cách 10km</p>
                            </div>
@@ -238,7 +278,7 @@ $imgs = json_decode($product->images);
                                  </div>
                               </div>
                            </div>
-                           <div class="icon-box-text last-reset">
+                           <div class="icon-box-text last-reset" style="padding-top: 0;">
                               <h3>Setup miễn phí</h3>
                               <p>Chuyên gia hàng đầu tại Lucky Sound</p>
                            </div>
@@ -251,7 +291,7 @@ $imgs = json_decode($product->images);
                                  </div>
                               </div>
                            </div>
-                           <div class="icon-box-text last-reset">
+                           <div class="icon-box-text last-reset" style="padding-top: 0;">
                               <h3>Bảo hành tận nơi</h3>
                               <p>Dễ dàng và tiện lợi</p>
                            </div>

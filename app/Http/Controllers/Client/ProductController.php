@@ -30,7 +30,7 @@ class ProductController extends Controller
         ->paginate(20);
         $data['cateno'] = Category::where('slug',$danhmuc)->first(['id','name','avatar','content','slug']);
         $cate_id = $data['cateno']->id;
-        $data['cateid'] = $cate_id;
+        $data['cate_id'] = $cate_id;
         $data['title'] = languageName($data['cateno']->name);
         $data['content'] = $data['cateno']->content;
         return view('product.list',$data);
@@ -43,9 +43,8 @@ class ProductController extends Controller
         $data['pronew'] = Product::where('status',1)->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug')
         ->paginate(5);
         $data['type'] = TypeProduct::where('slug',$loaidanhmuc)->first(['id','name','cate_id','content']);
-        $cate_id = $data['type']->cate_id;
+        $data['type_id'] = $data['type']->id;
         $data['title'] = languageName($data['type']->name);
-        $data['cateid'] = 0;
         $data['content'] = $data['type']->content;
         return view('product.list',$data);
     }
@@ -104,21 +103,19 @@ class ProductController extends Controller
         $product = Product::query()->where('status',1);
         if($request->cate != null){
             if(isset($request->price)){
-                if($request->price == '<1trieu'){
-                    $product = $product->where('category',$request->cate)->where('price', '<', 1000000);
-                }elseif($request->price == '1-2trieu'){
-                    $product = $product->where('category',$request->cate)->whereBetween('price', [1000000, 2000000]);
-                }elseif($request->price == '2-3trieu'){
-                    $product = $product->where('category',$request->cate)->whereBetween('price', [2000000, 3000000]);
-                }elseif($request->price == '3-5trieu'){
-                    $product = $product->where('category',$request->cate)->whereBetween('price', [3000000, 5000000]);
-                }elseif($request->price == '5-8trieu'){
-                    $product = $product->where('category',$request->cate)->whereBetween('price', [5000000, 8000000]);
-                }elseif($request->price == '8-10trieu'){
-                    $product = $product->where('category',$request->cate)->whereBetween('price', [8000000, 10000000]);
+                if($request->price == '10trieu'){
+                    $product = $product->where('category',$request->cate)->where('price', '<', 10000000);
+                }elseif($request->price == '10-15'){
+                    $product = $product->where('category',$request->cate)->whereBetween('price', [10000000, 15000000]);
+                }elseif($request->price == '15-20'){
+                    $product = $product->where('category',$request->cate)->whereBetween('price', [15000000, 20000000]);
+                }elseif($request->price == '20-30'){
+                    $product = $product->where('category',$request->cate)->whereBetween('price', [20000000, 30000000]);
+                }elseif($request->price == '30-40'){
+                    $product = $product->where('category',$request->cate)->whereBetween('price', [30000000, 40000000]);
                 }
                 else{
-                    $product = $product->where('category',$request->cate)->where('price', '>', 10000000);
+                    $product = $product->where('category',$request->cate)->where('price', '>', 40000000);
                 }
             }
             if(isset($request->sortby)){
@@ -136,21 +133,19 @@ class ProductController extends Controller
             }
         }else{
             if(isset($request->price)){
-                if($request->price == '<1trieu'){
-                    $product = $product->where('type_cate',$request->type)->where('price', '<', 1000000);
-                }elseif($request->price == '1-2trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [1000000, 2000000]);
-                }elseif($request->price == '2-3trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [2000000, 3000000]);
-                }elseif($request->price == '3-5trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [3000000, 5000000]);
-                }elseif($request->price == '5-8trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [5000000, 8000000]);
-                }elseif($request->price == '8-10trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [8000000, 10000000]);
+                if($request->price == '10trieu'){
+                    $product = $product->where('type_cate',$request->type)->where('price', '<', 10000000);
+                }elseif($request->price == '10-15'){
+                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [10000000, 15000000]);
+                }elseif($request->price == '15-20'){
+                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [15000000, 20000000]);
+                }elseif($request->price == '20-30'){
+                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [20000000, 30000000]);
+                }elseif($request->price == '30-40'){
+                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [30000000, 40000000]);
                 }
                 else{
-                    $product = $product->where('category',$request->type)->where('price', '>', 10000000);
+                    $product = $product->where('category',$request->type)->where('price', '>', 40000000);
                 }
             }
             if(isset($request->sortby)){
@@ -168,8 +163,8 @@ class ProductController extends Controller
             }
         }
         
-        $product = $product->get();
-        $view = view("layouts.product.filter",compact('product'))->render();
+        $products = $product->get();
+        $view = view("layouts.product.filter",compact('products'))->render();
 
         return response()->json(['html'=>$view]);
     }

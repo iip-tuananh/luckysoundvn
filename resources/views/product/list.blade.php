@@ -27,11 +27,30 @@ Danh sách {{$title}}
    </div>
 </div>
 <main id="main" class="">
+   @if (count($list) > 0)
    <div class="row category-page-row">
+      <div class="col filter-cate small-12 large-12">
+         <div class="col-inner">
+            <ul id="menu-product-filter" class="nav" data-url="{{route('filterProduct')}}">
+               @if (isset($cate_id))
+               <li class="hidden data-cate" data-cate="{{$cate_id}}"></li>
+               @endif
+               @if (isset($type_id))
+               <li class="hidden data-type" data-cate="{{$type_id}}"></li>
+               @endif
+               <li id="menu-item-187" class="title menu-item menu-item-type-custom menu-item-object-custom  menu-item-187"><a class="nav-top-link">Giá bán:</a></li>
+               <li id="menu-item-182" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-182"><a href="javascript:;" class="nav-top-link" data-filter="10trieu">Dưới 10 triệu</a></li>
+               <li id="menu-item-183" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-183"><a href="javascript:;" class="nav-top-link" data-filter="10-15">10- 15 triệu</a></li>
+               <li id="menu-item-184" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-184"><a href="javascript:;" class="nav-top-link" data-filter="15-20">15- 20 triệu</a></li>
+               <li id="menu-item-185" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-185"><a href="javascript:;" class="nav-top-link" data-filter="20-30">20 – 30 triệu</a></li>
+               <li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-198"><a href="javascript:;" class="nav-top-link" data-filter="30-40">30 – 40 triệu</a></li>
+            </ul>
+         </div>
+      </div>
       <div class="col large-12">
          <div class="shop-container">
             <div class="woocommerce-notices-wrapper"></div>
-            <div class="products row row-small large-columns-5 medium-columns-3 small-columns-2 has-shadow row-box-shadow-1 row-box-shadow-1-hover has-equal-box-heights equalize-box">
+            <div id="product-list" class="products row row-small large-columns-5 medium-columns-3 small-columns-2 has-shadow row-box-shadow-1 row-box-shadow-1-hover has-equal-box-heights equalize-box">
                @foreach ($list as $product)
                   @include('layouts.product.item', ['product'=>$product])
                @endforeach
@@ -41,43 +60,57 @@ Danh sách {{$title}}
          </div>
          <!-- shop container -->
       </div>
-      {{-- <div class="large-3 col hide-for-medium ">
-         <div id="shop-sidebar" class="sidebar-inner">
-            <aside id="nav_menu-4" class="widget widget_nav_menu">
-               <span class="widget-title shop-sidebar">Danh mục sản phẩm</span>
-               <div class="is-divider small"></div>
-               <div class="menu-danh-muc-san-pham-container">
-                  <ul id="menu-danh-muc-san-pham" class="menu">
-                     @foreach ($categoryhome as $category)
-                     @if (isset($category->typeCate))
-                        <li id="menu-item-11927" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-ancestor current-menu-parent menu-item-has-children menu-item-11927">
-                           <a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}">{{ languageName($category->name) }}</a>
-                           <ul class="sub-menu">
-                              @foreach ($category->typeCate as $type)
-                              @if (isset($type->typeTwoCate))
-                                 <li id="menu-item-11928" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11928">
-                                    <a href="{{ route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug]) }}">{{ languageName($type->name) }}</a>
-                                    <ul class="sub-menu">
-                                       @foreach ($type->typeTwoCate as $typeTwo)
-                                          <li id="menu-item-11929" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11929"><a href="{{ route('allListTypeTwo', ['danhmuc'=>$typeTwo->cate_slug, 'loaidanhmuc'=>$typeTwo->type_slug, 'thuonghieu'=>$typeTwo->slug]) }}">{{ languageName($typeTwo->name) }}</a></li>
-                                       @endforeach
-                                    </ul>
-                                 </li>
-                              @else
-                                 <li id="menu-item-11926" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-item menu-item-11926"><a href="{{ route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug]) }}" aria-current="page">{{ languageName($type->name) }}</a></li>
-                              @endif
-                              @endforeach
-                           </ul>
-                        </li>
-                     @else
-                        <li id="menu-item-11995" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11995"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}">{{ languageName($category->name) }}</a></li>
-                     @endif
-                     @endforeach
-                  </ul>
-               </div>
-            </aside>
-         </div>
-      </div> --}}
    </div>
+   @else
+   <div class="row" style="padding: 30px 15px;">
+      Nội dung đang được cập nhật...
+   </div>
+   @endif
 </main>
+<style>
+   .filter-cate {
+      margin-bottom: 10px;
+   }
+   .filter-cate>.col-inner {
+      background: #e4e4e4;
+   }
+   .filter-cate .nav {
+      padding: 0 10px;
+   }
+   .filter-cate .nav li.title a {
+      color: #ff6a00!important;
+      font-weight: 600;
+      min-width: 80px;
+   }
+   .filter-cate .nav li a {
+      color: #065291;
+      font-size: 14px;
+      padding: 0;
+      line-height: 33px;
+   }
+   .filter-cate .nav li a:hover {
+      color: #333;
+   }
+</style>
+<script>
+   $('#menu-product-filter .nav-top-link').click(function() {
+      var price = $(this).data('filter');
+      var url = $('#menu-product-filter').data('url');
+      var cate = $('#menu-product-filter .data-cate').data('cate');
+      var type = $('#menu-product-filter .data-type').data('type');
+      $.ajax({
+         type: 'post',
+         url: url,
+         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+         data : {
+            price : price,
+            cate : cate,
+            type : type
+         },
+         success :function(data) {
+            $('#product-list').html(data.html);
+         }
+      })
+   })
+</script>
 @endsection
