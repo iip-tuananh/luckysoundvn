@@ -44,6 +44,7 @@ Danh sách {{$title}}
                <li id="menu-item-184" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-184"><a href="javascript:;" class="nav-top-link" data-filter="15-20">15- 20 triệu</a></li>
                <li id="menu-item-185" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-185"><a href="javascript:;" class="nav-top-link" data-filter="20-30">20 – 30 triệu</a></li>
                <li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-198"><a href="javascript:;" class="nav-top-link" data-filter="30-40">30 – 40 triệu</a></li>
+               <li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-198"><a href="javascript:;" class="nav-top-link" data-filter="40">Trên 40 triệu</a></li>
             </ul>
          </div>
       </div>
