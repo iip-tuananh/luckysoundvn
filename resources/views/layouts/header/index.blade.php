@@ -204,7 +204,10 @@
                      @foreach ($categoryhome as $category)
                      @if (count($category->typeCate)>0)
                         <li id="menu-item-11703" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11703">
-                           <a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}">{{ languageName($category->name) }}</a>
+                           <a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}" class="sf-with-ul">
+                              <img width="20" height="20" src="{{$category->avatar}}" class="menu-image menu-image-title-after lazyloaded" alt="" decoding="async" data-ll-status="loaded">
+                              {{ languageName($category->name) }}
+                           </a>
                            <ul class="sub-menu">
                               @foreach ($category->typeCate as $type)
                               @if (isset($type->typeTwoCate))
@@ -223,7 +226,10 @@
                            </ul>
                         </li>
                      @else
-                        <li id="menu-item-11906" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11906"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}">{{ languageName($category->name) }}</a></li>
+                        <li id="menu-item-11906" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11906"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}" class="sf-with-ul">
+                           <img width="20" height="20" src="{{$category->avatar}}" class="menu-image menu-image-title-after lazyloaded" alt="" decoding="async" data-ll-status="loaded">
+                           {{ languageName($category->name) }}
+                        </a></li>
                      @endif
                      @endforeach
                   </ul>

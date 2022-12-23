@@ -430,7 +430,7 @@
                                  </a>
                               </div>
                         </div>
-                        <div id="col-862704539" class="col danh-muc2 hide-for-medium medium-9 small-12 large-9"  >
+                        {{-- <div id="col-862704539" class="col danh-muc2 hide-for-medium medium-9 small-12 large-9"  >
                               <div class="col-inner text-right"  >
                                  <a href="{{route('allListBlog')}}" class="button secondary is-link is-small"  >
                                  <span>Xem Thêm</span>
@@ -441,7 +441,7 @@
                                  padding: 0px 10px 0px 0px;
                                  }
                               </style>
-                        </div>
+                        </div> --}}
                      </div>
                      </div>
                   </div>
