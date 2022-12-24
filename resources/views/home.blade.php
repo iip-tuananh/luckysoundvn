@@ -384,6 +384,16 @@
                   </div>
             </div>
          </div>
+         <style>
+            @media screen and (min-width: 850px)
+            {
+               #row-895057886 .large-3 {
+                  max-width: 25%;
+                  -ms-flex-preferred-size: 25%;
+                  flex-basis: 25%;
+               }
+            }
+         </style>
       </div>
       <section class="section" id="section_1559591121">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >

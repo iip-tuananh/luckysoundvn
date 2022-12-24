@@ -64,6 +64,13 @@
 						@endforeach
 					</ul>
 				</div>
+				<style>
+					@media only screen and (max-width: 768px) {
+					.bai-viet-lien-quan {
+						display: none;
+					}
+					}
+				</style>
 				</div>
 			</article>
 		</div>

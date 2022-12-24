@@ -22,65 +22,25 @@
                </div>
             </div>
             </li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 has-icon-left"><a href="{{ route('home') }}" aria-current="page"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-home_optimized.png') }}" alt="" />Trang chủ</a></li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 has-icon-left"><a href="{{ route('aboutUs') }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-about_optimized.png') }}" alt="" />Giới thiệu</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 has-icon-left"><a href="{{ route('home') }}" aria-current="page">Trang chủ</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 has-icon-left"><a href="{{ route('aboutUs') }}">Giới thiệu</a></li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
-               <a href="#"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />Danh mục sản phẩm</a>
+               <a href="#">Danh mục sản phẩm</a>
                <ul class="sub-menu nav-sidebar-ul children">
                   @foreach ($categoryhome as $cate)
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('allListProCate', ['danhmuc'=>$cate->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('allListProCate', ['danhmuc'=>$cate->slug]) }}">{{languageName($cate->name)}}</a></li>
                   @endforeach
                </ul>
             </li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
-               <a href="{{ route('allListBlog') }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />Tin tức</a>
+               <a href="{{ route('allListBlog') }}">Tin tức</a>
                <ul class="sub-menu nav-sidebar-ul children">
                   @foreach ($blogCate as $cate)
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />{{languageName($cate->name)}}</a></li>
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}">{{languageName($cate->name)}}</a></li>
                   @endforeach
                </ul>
             </li>
-            {{-- @foreach ($blogCate as $key=>$category)
-            @if ($key==0)
-            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
-               <a href="{{ route('listCateBlog', ['slug'=>$category->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-cat-dat_optimized.png') }}" alt="" />{{languageName($category->name)}}</a>
-               <ul class="sub-menu nav-sidebar-ul children">
-                  @foreach ($category->listBlog as $blog)
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('detailBlog', ['slug'=>$blog->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-cat-dat_optimized.png') }}" alt="" />{{languageName($blog->title)}}</a></li>
-                  @endforeach
-               </ul>
-               </li>
-            @endif
-            @if ($key==1)
-            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
-               <a href="{{ route('listCateBlog', ['slug'=>$category->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />{{languageName($category->name)}}</a>
-               <ul class="sub-menu nav-sidebar-ul children">
-                  @foreach ($category->listBlog as $blog)
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('detailBlog', ['slug'=>$blog->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-smarthome_optimized.png') }}" alt="" />{{languageName($blog->title)}}</a></li>
-                  @endforeach
-               </ul>
-            </li>
-            @endif
-            @if ($key==2)
-            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
-               <a href="{{ route('listCateBlog', ['slug'=>$category->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />{{languageName($category->name)}}</a>
-               <ul class="sub-menu nav-sidebar-ul children">
-                  @foreach ($category->listBlog as $blog)
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('detailBlog', ['slug'=>$blog->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-newspaper_optimized.png') }}" alt="" />{{languageName($blog->title)}}</a></li>
-                  @endforeach
-               </ul>
-            </li>
-            @endif
-            @endforeach --}}
-            {{-- <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12083 has-icon-left">
-            <a href="{{route('listService')}}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-chia-se_optimized.png') }}" alt="" />Dịch vụ</a>
-            <ul class="sub-menu nav-sidebar-ul children">
-               @foreach ($servicehome as $service)
-               <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12087 has-icon-left"><a href="{{ route('serviceDetail', ['slug'=>$service->slug]) }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-chia-se_optimized.png') }}" alt="" />{{$service->name}}</a></li>
-               @endforeach
-            </ul>
-            </li> --}}
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 has-icon-left"><a href="{{ route('lienHe') }}"><img class="ux-sidebar-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-lienhe_optimized.png') }}" alt="" />Liên hệ</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 has-icon-left"><a href="{{ route('lienHe') }}">Liên hệ</a></li>
             <li class="html header-social-icons ml-0">
             <div class="social-icons follow-icons" >
                <a href="{{$setting->facebook}}" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="icon-facebook" ></i></a>

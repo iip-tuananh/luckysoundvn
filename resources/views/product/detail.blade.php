@@ -202,7 +202,7 @@ $imgs = json_decode($product->images);
                                     inputmode="numeric" />
                                  <input type="button" value="+" class="plus button is-form">	
                               </div>
-                              <a class="single_add_to_cart_button button alt add-to-cart" data-url="{{route('addToCart', ['id'=>$product->id])}}">Thêm vào giỏ hàng</a>
+                              <a class="single_add_to_cart_button button alt add-to-cart" data-url="{{route('addToCart', ['id'=>$product->id])}}" data-urlRedirect="{{route('listCart')}}">Thêm vào giỏ hàng</a>
                            </div>
                         </div>
                      </form>
