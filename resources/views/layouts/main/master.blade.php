@@ -605,13 +605,13 @@
          $('.add-to-cart').on('click', function(e) {
             e.preventDefault();
             let urlCart = $(this).data('url');
-            let urlRedirect = $(this).data('urlRedirect');
+            let urlRedirect = $(this).data('redirect');
             $.ajax({
                type: 'get',
                url: urlCart,
                dataType : 'json',
                success: function(data) {
-                  window.location.href(urlRedirect);
+                  window.location.replace(urlRedirect);
                   $.notify("Thêm vào giỏ hàng thành công!", "success");
                },
                error: function(data) {
