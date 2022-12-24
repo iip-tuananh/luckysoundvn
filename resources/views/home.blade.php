@@ -195,7 +195,7 @@
                                  }
                                  #col-1872322101 a {
                                     text-align: start;
-                                    padding-left: 20px !important;
+                                    padding-left: 12px !important;
                                  }
                               </style>
                         </div>
