@@ -177,7 +177,7 @@ class ProductController extends Controller
             'cate' => function ($query) {
                 $query->where('status',1)->limit(5)->select('id','name','avatar','slug'); 
             },
-        ])->where('slug',$slug)->first(['id','name','images','type_cate','category','sku','discount','price','content','size','description','slug','preserve','cate_slug','type_slug']);
+        ])->where('slug',$slug)->first(['id','name','images','type_cate','category','sku','discount','price','content','size','description','slug','preserve','cate_slug','type_slug','species','thickness']);
         $data['news'] = Blog::where('status',1)->limit(8)->get(['id','title','image','description','created_at','slug']);
         $data['productlq'] = Product::where(['cate_slug'=>$cate, 'status'=>1])->take(10)->get(['id','name','images','discount','price','slug','cate_slug','type_slug','description']);
         $viewoldpro = session()->get('viewoldpro', []);

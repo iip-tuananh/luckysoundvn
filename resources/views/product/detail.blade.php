@@ -111,16 +111,20 @@ $imgs = json_decode($product->images);
                         @endif
                      </div>
                      <div class="gu-flex">
-                        <div class="flw">
-                        <div class="unit">
-                           <span>Đơn vị tính</span>
-                           1 chiếc        </div>
-                        </div>
-                        <div class="flw">
-                        <div class="guarantee">
-                           <span>Bảo hành</span>
-                           12 tháng        </div>
-                        </div>
+                        @if (isset($product->species))
+                           <div class="flw">
+                           <div class="unit">
+                              <span>Đơn vị tính</span>
+                              {{$product->species}} </div>
+                           </div>
+                        @endif
+                        @if (isset($product->thickness))
+                           <div class="flw">
+                           <div class="guarantee">
+                              <span>Bảo hành</span>
+                              {{$product->thickness}} </div>
+                           </div>
+                        @endif
                      </div>
                      <style>
                         .gu-flex {

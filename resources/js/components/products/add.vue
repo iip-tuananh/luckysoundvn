@@ -228,7 +228,27 @@
                 >
               </div>
               <div class="form-group">
-                <label>Sản phẩm nội bật</label>
+                <label>Đơn vị tính</label>
+                <vs-input
+                  type="text"
+                  size="default"
+                  placeholder="Đơn vị tính"
+                  class="w-100"
+                  v-model="objData.species"
+                />
+              </div>
+              <div class="form-group">
+                <label>Thời gian bảo hành</label>
+                <vs-input
+                  type="text"
+                  size="default"
+                  placeholder="Thời gian bảo hành"
+                  class="w-100"
+                  v-model="objData.thickness"
+                />
+              </div>
+              <div class="form-group">
+                <label>Sản phẩm nổi bật</label>
                 <vs-select v-model="objData.discountStatus">
                   <vs-select-item value="1" text="Có" />
                   <vs-select-item value="0" text="Không" />
