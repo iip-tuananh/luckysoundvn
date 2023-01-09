@@ -33,6 +33,38 @@ let _routers = [
                 }
             },
             {
+                name: 'listProductBrands',
+                path: '/product-brands',
+                component: _import('product-brand/list'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
+            {
+                name: 'createEditProductBrands',
+                path: '/product-brands/edit/:id',
+                component: _import('product-brand/addEdit'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
+            {
+                name: 'listProductCombo',
+                path: '/product-combo',
+                component: _import('product-combo/list'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
+            {
+                name: 'createEditProductCombo',
+                path: '/product-combo/edit/:id',
+                component: _import('product-combo/addEdit'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
+            {
                 name: 'list_category',
                 path: '/product/category',
                 component: _import('cate/list'),

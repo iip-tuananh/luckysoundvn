@@ -56,7 +56,9 @@
                         @foreach ($banners as $banner)
                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_560025793">
                               <div class="img-inner dark" >
-                              <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" />						
+                                 <a href="{{$banner->link}}">
+                                    <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" />						
+                                 </a>
                               </div>
                               <style>
                               #image_560025793 {
@@ -133,8 +135,9 @@
                   <div class="col-inner"  >
                   <div class="tabbed-content">
                      <ul class="nav nav-line nav-uppercase nav-size-large nav-center">
-                           {{-- <li class="tab has-icon"><a><span>Sản phẩm nổi bật</span></a></li> --}}
-                           <img src="{{url('frontend/images/san-pham-hot.jpg')}}" alt="" loading="lazy">
+                        <a href="{{$bannerCateHot->link}}">
+                           <img src="{{$bannerCateHot->image}}" alt="" loading="lazy">
+                        </a>
                      </ul>
                      <div class="tab-panels">
                            <div class="panel active entry-content">

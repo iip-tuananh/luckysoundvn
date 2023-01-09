@@ -10,6 +10,7 @@ use App\models\website\Partner;
 use App\models\blog\BlogCategory;
 use App\models\BannerAds;
 use  App\models\ReviewCus;
+use App\models\website\Banner;
 use App\models\website\Prize;
 
 class HomeController extends Controller
@@ -17,6 +18,7 @@ class HomeController extends Controller
     public function home()
     {
         $data['bannerAds'] = BannerAds::where('status',1)->get(['name','image','id']);
+        $data['bannerCateHot'] = Banner::where(['status'=>3])->first(['id','image','link','title','description']);
         $data['homeBlog'] = Blog::where([
             'status'=>1, 'home_status'=>1
         ])->orderBy('id','DESC')->limit(12)->get(['id','title','slug','created_at','image','description']);

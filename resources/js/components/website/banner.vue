@@ -57,6 +57,7 @@
                   >
                       <vs-select-item  value="2" text="Banner header top" />
                       <vs-select-item  value="1" text="Banner chính" />
+                      <vs-select-item  value="3" text="Banner sản phẩm nổi bật" />
                       <vs-select-item  value="0" text="Ẩn" />
                     </vs-select>
                   </div>

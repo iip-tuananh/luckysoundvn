@@ -101,6 +101,14 @@ export default {
               path: "/product/type",
             },
             {
+              name: "Thương hiệu sản phẩm",
+              path: "/product-brands",
+            },
+            {
+              name: "Combo sản phẩm",
+              path: "/product-combo",
+            },
+            {
               name: "Danh sách sản phẩm",
               path: "/product",
             },

@@ -145,17 +145,33 @@
                 </vs-select>
               </div>
               <div class="form-group">
-                <label>Thương hiệu</label>
+                <label>Thương hiệu sản phẩm</label>
                 <vs-select
                   class="selectExample"
-                  v-model="objData.type_two"
-                  placeholder="Loại"
-                  :disabled="objData.type_cate == 0 || type_two.length == 0"
+                  v-model="objData.brand_id"
+                  placeholder="Thương hiệu"
+                  :disabled="objData.cate == 0"
                 >
                   <vs-select-item
                     :value="item.id"
-                    :text="JSON.parse(item.name)[0].content"
-                    v-for="(item, index) in type_two"
+                    :text="item.name"
+                    v-for="(item, index) in brands"
+                    :key="'v' + index"
+                  />
+                </vs-select>
+              </div>
+              <div class="form-group">
+                <label>Thuộc combo sản phẩm</label>
+                <vs-select
+                  class="selectExample"
+                  v-model="objData.combo_id"
+                  placeholder="Combo"
+                  :disabled="objData.cate == 0"
+                >
+                  <vs-select-item
+                    :value="item.id"
+                    :text="item.name"
+                    v-for="(item, index) in combo"
                     :key="'v' + index"
                   />
                 </vs-select>
@@ -293,6 +309,8 @@ export default {
         description: false,
       },
       lang: [],
+      brands: [],
+      combo : [],
       errors: [],
       objData: {
         lang: "",
@@ -332,6 +350,9 @@ export default {
         ],
         category: 0,
         status: 1,
+        brand_id: '',
+        combo_id: '',
+        promotion_id: '',
         discountStatus:0,
         type_cate: 0,
         type_two:0,
@@ -359,7 +380,9 @@ export default {
       "loadings",
       "listLanguage",
       "findTypeCate",
-      "findTypeCateTwo"
+      "findTypeCateTwo",
+      "listProductBrand",
+      "listProductCombo"
     ]),
     saveProducts() {
       this.errors = [];
@@ -484,6 +507,14 @@ export default {
     this.listCate().then((response) => {
       this.loadings(false);
       this.cate = response.data;
+    });
+    this.listProductBrand().then((response) => {
+      this.loadings(false);
+      this.brands = response.data;
+    });
+    this.listProductCombo().then((response) => {
+      this.loadings(false);
+      this.combo = response.data;
     });
     this.listLang();
   },

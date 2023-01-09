@@ -89,6 +89,18 @@ Route::group(['namespace'=>'Api','middleware'=>'auth:api'],function(){
 			Route::get('edit/{id}','TypeTwoProductController@edit');
 			Route::get('findCateType/{cate_id}','TypeTwoProductController@findType');
 		});
+		Route::group(['prefix'=>'product_brand'], function(){
+			Route::post('add','ProductBrandController@add');
+			Route::post('list','ProductBrandController@list');
+			Route::get('delete/{id}','ProductBrandController@delete');
+			Route::get('edit/{id}','ProductBrandController@edit');
+		});
+		Route::group(['prefix'=>'product_combo'], function(){
+			Route::post('add','ProductComboController@add');
+			Route::post('list','ProductComboController@list');
+			Route::get('delete/{id}','ProductComboController@delete');
+			Route::get('edit/{id}','ProductComboController@edit');
+		});
 	});
 	Route::group(['prefix'=>'construction','namspace'=>"Construction"], function(){
 		Route::post('list','Construction\ConstructionController@list');

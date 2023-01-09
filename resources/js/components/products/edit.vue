@@ -137,22 +137,38 @@
                 </vs-select>
               </div>
               <div class="form-group">
-                <label>Thương hiệu</label>
+                <label>Thương hiệu sản phẩm</label>
                 <vs-select
                   class="selectExample"
-                  v-model="objData.type_two"
+                  v-model="objData.brand_id"
                   placeholder="Thương hiệu"
-                  :disabled="objData.type_cate == 0 || type_two.length == 0"
+                  :disabled="objData.cate == 0"
                 >
                   <vs-select-item
                     :value="item.id"
-                    :text="JSON.parse(item.name)[0].content"
-                    v-for="(item, index) in type_two"
+                    :text="item.name"
+                    v-for="(item, index) in brands"
                     :key="'v' + index"
                   />
                 </vs-select>
               </div>
-             <div class="form-group">
+              <div class="form-group">
+                <label>Thuộc combo sản phẩm</label>
+                <vs-select
+                  class="selectExample"
+                  v-model="objData.combo_id"
+                  placeholder="Combo"
+                  :disabled="objData.cate == 0"
+                >
+                  <vs-select-item
+                    :value="item.id"
+                    :text="item.name"
+                    v-for="(item, index) in combo"
+                    :key="'v' + index"
+                  />
+                </vs-select>
+              </div>
+              <div class="form-group">
                 <label>Thông số kỹ thuật</label>
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
@@ -279,6 +295,8 @@ export default {
       joke: {
         avatar: "delete-sign--v2.png",
       },
+      brands: [],
+      combo : [],
       errors:[],
       cate: [],
       objData: {
@@ -319,6 +337,9 @@ export default {
         ],
         category: 0,
         status: 1,
+        brand_id: '',
+        combo_id: '',
+        promotion_id: '',
         discountStatus:0,
         type_cate: 0,
         type_two:0,
@@ -341,7 +362,7 @@ export default {
   watch: {
   },
   methods: {
-    ...mapActions(["editId", "saveProduct", "listCate","listLanguage", "loadings","findTypeCate","findTypeCateTwo"]),
+    ...mapActions(["editId", "saveProduct", "listCate","listLanguage", "loadings","findTypeCate","findTypeCateTwo","listProductBrand","listProductCombo"]),
     showSettingLang(value){
       if(value == "title"){
         this.showLang.title = !this.showLang.title
@@ -488,6 +509,14 @@ export default {
     this.editById();
     this.listCate().then(response => {
       this.cate = response.data;
+    });
+    this.listProductBrand().then((response) => {
+      this.loadings(false);
+      this.brands = response.data;
+    });
+    this.listProductCombo().then((response) => {
+      this.loadings(false);
+      this.combo = response.data;
     });
     this.listLang();
   }
