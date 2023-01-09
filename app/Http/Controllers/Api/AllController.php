@@ -72,4 +72,10 @@ class AllController extends Controller
             'message' => 'success'
         ]);
     }
+    public function deleteMesscontact($id)
+    {
+        $data = MessContact::find($id);
+        $data->delete();
+        return response()->json(['message'=>'Delete Success'],200);
+    }
 }

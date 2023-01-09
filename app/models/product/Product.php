@@ -33,6 +33,10 @@ class Product extends Model
     {
         return $this->hasOne(TypeProduct::class,'id','type_cate');
     }
+    public function brand()
+    {
+        return $this->hasOne(ProductBrands::class,'id','brand_id');
+    }
     public function createOrEdit($request)
     {
         $cat = Category::where('id',$request->category)->first('slug');
@@ -56,6 +60,7 @@ class Product extends Model
                 $query->brand_id = $request->brand_id;
                 $query->brand_slug = $brand ? $brand->slug : '';
                 $query->combo_id = $request->combo_id;
+                $query->promotion_id = $request->promotion_id;
                 $query->preserve = json_encode($request->preserve);
                 $query->cate_slug = $cat ? $cat->slug : '';
                 $query->type_slug = $typecat ? $typecat->slug : '';
@@ -63,7 +68,7 @@ class Product extends Model
                 $query->ingredient = $request->ingredient;
                 $query->type_cate = $request->type_cate;
                 $query->species = $request->species;
-                $query->origin = $request->origin;
+                $query->origin = json_encode($request->origin);
                 $query->thickness = $request->thickness;
                 $query->hang_muc = $request->hang_muc;
                 $query->status = $request->status;
@@ -87,6 +92,7 @@ class Product extends Model
             $query->brand_id = $request->brand_id;
             $query->brand_slug = $brand ? $brand->slug : '';
             $query->combo_id = $request->combo_id;
+            $query->promotion_id = $request->promotion_id;
             $query->preserve = json_encode($request->preserve);
             $query->cate_slug = $cat ? $cat->slug : '';
             $query->type_slug = $typecat ? $typecat->slug : '';
@@ -94,7 +100,7 @@ class Product extends Model
             $query->ingredient = $request->ingredient;
             $query->type_cate = $request->type_cate;
             $query->species = $request->species;
-            $query->origin = $request->origin;
+            $query->origin = json_encode($request->origin);
             $query->thickness = $request->thickness;
             $query->hang_muc = $request->hang_muc;
             $query->status = $request->status;

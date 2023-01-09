@@ -13,13 +13,20 @@
                 <div class="col-md-3">
                 </div>
             </div>
-            <!-- <p class="card-description">Basic form elements</p> -->
             <form class="forms-sample">
                 <div class="form-group">
                 <label>Tên combo</label>
                 <vs-input
                     class="w-100"
                     v-model="objData.name"
+                    font-size="40px"
+                />
+                </div>
+                <div class="form-group">
+                <label>Link liên kết</label>
+                <vs-input
+                    class="w-100"
+                    v-model="objData.link"
                     font-size="40px"
                 />
                 </div>
@@ -31,10 +38,6 @@
                     :title="'danh-muc'"
                 ></image-upload>
                 </div>
-                <!-- <div class="form-group">
-                <label>Nội dung</label>
-                <TinyMce v-model="objData.content" />
-                </div> -->
                 <div class="form-group">
                 <label for="exampleInputName1">Trạng thái</label>
                 <vs-select v-model="objData.status">
@@ -51,7 +54,7 @@
         <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4>Các thuộc combo này</h4>
+                <h4>Các sản phẩm thuộc combo</h4>
             <vs-table stripe :data="objData.products" max-items="10" pagination>
             <template slot="thead">
                 <vs-th>Ảnh sản phẩm</vs-th>
@@ -104,6 +107,7 @@ data() {
         content: "",
         image: "",
         status: 1,
+        link: "",
         products : []
     },
     objDel: {
@@ -178,6 +182,7 @@ methods: {
                 path: "",
                 image: "",
                 status: "",
+                link: "",
             }
             }else{
             this.objData = response.data;

@@ -169,10 +169,26 @@
                 </vs-select>
               </div>
               <div class="form-group">
+                <label>Thuộc tiêu đề trang chủ</label>
+                <vs-select
+                  class="selectExample"
+                  v-model="objData.promotion_id"
+                  placeholder="Tiêu đề"
+                  :disabled="objData.cate == 0"
+                >
+                  <vs-select-item
+                    :value="item.id"
+                    :text="item.name"
+                    v-for="(item, index) in promotion"
+                    :key="'v' + index"
+                  />
+                </vs-select>
+              </div>
+              <div class="form-group">
                 <label>Thông số kỹ thuật</label>
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
-                    <div class="col-11">
+                    <div class="col-10">
                       <vs-input
                         type="text"
                         size="default"
@@ -187,9 +203,9 @@
                         class="w-100"
                         v-model="objData.size[index].detail"
                       />
-                      <br />
                     </div>
-                    <div class="col-1">
+                      <br />
+                    <div class="col-2">
                       <a
                         href="javascript:;"
                         v-if="index != 0"
@@ -209,7 +225,7 @@
                 <label>Thông tin khuyến mãi</label>
                 <div v-for="(item, i) in objData.preserve" :key="i">
                   <div class="row">
-                    <div class="col-11">
+                    <div class="col-10">
                       <vs-input
                         type="text"
                         size="default"
@@ -219,7 +235,7 @@
                       />
                       <br />
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
                       <a
                         href="javascript:;"
                         v-if="i != 0"
@@ -254,6 +270,40 @@
                   class="w-100"
                   v-model="objData.thickness"
                 />
+              </div>
+              <div class="form-group">
+                <label>Thêm tag sale</label>
+                <div v-for="(item, i) in objData.origin" :key="i">
+                  <div class="row">
+                    <div class="col-10">
+                      <image-upload
+                          v-model="objData.origin[i].image"
+                          type="avatar"
+                          :title="'tag-sale'"
+                      ></image-upload>
+                      <br />
+                    </div>
+                    <div class="col-2">
+                      <a
+                        href="javascript:;"
+                        v-if="i != 0"
+                        @click="remoteAr(i,'origin')"
+                      >
+                        <img v-bind:src="'/media/' + joke.avatar" width="25" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <el-button size="small" @click="addInput('origin')"
+                  >Thêm tag</el-button>
+              </div>
+              <div class="form-group">
+                <label>Tag nguồn gốc sản phẩm</label>
+                <image-upload
+                  v-model="objData.hang_muc"
+                  type="avatar"
+                  :title="'tag-sale'">
+                </image-upload>
               </div>
               <div class="form-group">
                 <label>Sản phẩm nổi bật</label>
@@ -295,6 +345,7 @@ export default {
       joke: {
         avatar: "delete-sign--v2.png",
       },
+      promotion: [],
       brands: [],
       combo : [],
       errors:[],
@@ -344,7 +395,11 @@ export default {
         type_cate: 0,
         type_two:0,
         species: "",
-        origin: "",
+        origin: [
+          {
+            image: ''
+          }
+        ],
         thickness: "",
         hang_muc: "",
         sku: ""
@@ -362,7 +417,7 @@ export default {
   watch: {
   },
   methods: {
-    ...mapActions(["editId", "saveProduct", "listCate","listLanguage", "loadings","findTypeCate","findTypeCateTwo","listProductBrand","listProductCombo"]),
+    ...mapActions(["editId", "saveProduct", "listCate","listLanguage", "loadings","findTypeCate","findTypeCateTwo","listProductBrand","listProductCombo","listPromotion"]),
     showSettingLang(value){
       if(value == "title"){
         this.showLang.title = !this.showLang.title
@@ -448,6 +503,11 @@ export default {
           }else{
             this.objData.size = JSON.parse(response.data.size);
           }
+          if(response.data.origin == ""){
+            this.objData.origin = [{image: ""}]
+          }else{
+            this.objData.origin = JSON.parse(response.data.origin);
+          }
           if(response.data.preserve == null){
             this.objData.preserve = [{detail: ""}]
           }else{
@@ -481,6 +541,9 @@ export default {
       if(key == 'preserve'){
         this.objData.preserve.splice(index, 1);
       }
+      if(key == 'origin'){
+        this.objData.origin.splice(index, 1);
+      }
         
     },
     addInput(key) {
@@ -493,6 +556,10 @@ export default {
         if(key =='preserve'){
           oj.detail = "";
           this.objData.preserve.push(oj);
+        }
+        if(key =='origin'){
+          oj.image = "";
+          this.objData.origin.push(oj);
         }
         
     },
@@ -517,6 +584,10 @@ export default {
     this.listProductCombo().then((response) => {
       this.loadings(false);
       this.combo = response.data;
+    });
+    this.listPromotion().then((response) => {
+      this.loadings(false);
+      this.promotion = response.data;
     });
     this.listLang();
   }

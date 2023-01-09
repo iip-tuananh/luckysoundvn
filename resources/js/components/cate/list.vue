@@ -21,7 +21,7 @@
                   <vs-th>ID</vs-th>
                   <vs-th>Tên</vs-th>
                   <vs-th>Avatar</vs-th>
-                  <vs-th>Title</vs-th>
+                  <!-- <vs-th>Title</vs-th> -->
                   <vs-th>Hành động</vs-th>
                 </template>
                 <template slot-scope="{data}">
@@ -31,7 +31,7 @@
                     <vs-td :data="tr.id">
                       <vs-avatar size="70px" :src="tr.avatar" />
                     </vs-td>
-                    <vs-td :data="tr.id">{{tr.path}}</vs-td>
+                    <!-- <vs-td :data="tr.id">{{tr.path}}</vs-td> -->
                     <vs-td :data="tr.id">
                       <router-link :to="{name:'edit_category',params:{id:tr.id}}">
                         <vs-button

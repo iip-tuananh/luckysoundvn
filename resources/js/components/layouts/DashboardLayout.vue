@@ -109,6 +109,10 @@ export default {
               path: "/product-combo",
             },
             {
+              name: "Tiêu đề trang chủ",
+              path: "/promotion",
+            },
+            {
               name: "Danh sách sản phẩm",
               path: "/product",
             },
@@ -185,13 +189,13 @@ export default {
               path: "/bannerads",
             },
             {
-              name: "Quản lý thương hiệu",
+              name: "Tiêu chí động",
               path: "/partner",
             },
-            {
-              name: "Thư viện ảnh",
-              path: "/prize",
-            },
+            // {
+            //   name: "Thư viện ảnh",
+            //   path: "/prize",
+            // },
             // {
             //   name: "Quản lý video",
             //   path: "/video",

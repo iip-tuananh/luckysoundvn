@@ -22,6 +22,7 @@ class ProductCombo extends Model
                 $query->name = $request->name;
                 $query->slug = to_slug($request->name);
                 $query->image = $request->image;
+                $query->link = $request->link;
                 $query->status = $request->status;
                 $query->save();
             }
@@ -31,6 +32,7 @@ class ProductCombo extends Model
             $query->name = $request->name;
             $query->slug = to_slug($request->name);
             $query->image = $request->image;
+            $query->link = $request->link;
             $query->status = $request->status;
             $query->save();
             return $query;

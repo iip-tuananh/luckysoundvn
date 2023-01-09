@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h3 class="page-title">Quản lý đối tác</h3>
+      <h3 class="page-title">Quản lý tiêu chí động</h3>
       <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
           <div class="card">
@@ -13,15 +13,15 @@
                 </div>
                 <div class="col-md-9">
                   <div class="form-group">
-                    <label>Tên đối tác</label>
-                    <label style="float: right;cursor: pointer" title="Xóa đối tác" v-if="key != 0" @click="removeObjPartner(key)">
+                    <label>Tiêu đề tiêu chí động</label>
+                    <label style="float: right;cursor: pointer" title="Xóa tiêu chí động" v-if="key != 0" @click="removeObjPartner(key)">
                       <vs-icon icon="clear"></vs-icon>
                     </label>
                     <vs-input
                       type="text"
                       v-model="item.name"
                       size="default"
-                      placeholder="Tên đối tác"
+                      placeholder="Tiêu đề tiêu chí động"
                       class="w-100"
                     />
                   </div>
@@ -31,7 +31,7 @@
                       type="text"
                       v-model="item.link"
                       size="default"
-                      placeholder="Link liên kết với đối tác (bỏ trống nếu không có)"
+                      placeholder="Link liên kết với tiêu chí động (bỏ trống nếu không có)"
                       class="w-100"
                     />
                   </div>
@@ -47,7 +47,7 @@
                 <hr style="border: 0.5px solid #04040426; width: 100%;">
               </div>
               <vs-button color="primary" @click="savePartners">Lưu</vs-button>
-              <vs-button color="success" @click="addObjPartner">Thêm đối tác</vs-button>
+              <vs-button color="success" @click="addObjPartner">Thêm tiêu chí động</vs-button>
             </div>
           </div>
         </div>
@@ -83,10 +83,10 @@ export default {
       this.loadings(true);
       this.savePartner({data:this.objData}).then(response => {
         this.loadings(false);
-        this.$success('Thêm đối tác thành công');
+        this.$success('Thêm tiêu chí động thành công');
       }).catch(error => {
         this.loadings(false);
-        this.$error('Thêm đối tác thất bại');
+        this.$error('Thêm tiêu chí động thất bại');
       })
     },
     addObjPartner(){

@@ -4,7 +4,7 @@
         <div class="col-md-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title" >Danh sách khuyến mãi</h4>
+              <h4 class="card-title" >Danh sách tiêu đề trang chủ</h4>
               <router-link class="nav-link" :to="{name:'addPromotion'}">
                 <vs-button type="gradient" style="float:right;">Thêm mới</vs-button>
               </router-link>
@@ -12,15 +12,13 @@
               <vs-table stripe :data="list" max-items="10" pagination>
                 <template slot="thead">
                   <vs-th>Tiêu đề</vs-th>
-                  <vs-th>Mô tả</vs-th>
-                  <vs-th>Ngày đăng</vs-th>
+                  <vs-th>Link liên kết</vs-th>
                   <vs-th>Hành động</vs-th>
                 </template>
                 <template slot-scope="{data}">
                   <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                     <vs-td >{{tr.name}}</vs-td>
-                    <vs-td>{{tr.description}}</vs-td>
-                    <vs-td >{{tr.created_at}}</vs-td>
+                    <vs-td>{{tr.link}}</vs-td>
                     <vs-td >
                       <router-link :to="{name:'editPromotion',params:{id:tr.id}}">
                         <vs-button

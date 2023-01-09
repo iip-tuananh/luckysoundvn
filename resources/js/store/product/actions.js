@@ -114,3 +114,12 @@ export const deleteProductCombo = ({commit},opt) => {
         })
     });
 };
+export const changeComboId = ({commit},opt) => {
+    return new Promise((resolve, reject) => {
+        HTTP.get('/api/product/change-combo/' +opt.id).then(response => {
+            return resolve(response.data);
+        }).catch(error => {
+            return reject(error);
+        })
+    });
+};

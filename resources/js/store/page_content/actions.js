@@ -47,3 +47,12 @@ export const listMessContact = ({commit},opt) => {
         })
     });
 };
+export const deleteMessContact = ({commit},opt) => {
+    return new Promise((resolve, reject) => {
+        HTTP.get('/api/messcontact/delete/' + opt.id).then(response => {
+            return resolve(response.data);
+        }).catch(error => {
+            return reject(error);
+        })
+    });
+};

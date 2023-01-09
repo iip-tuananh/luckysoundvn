@@ -66,9 +66,19 @@ class ProductController extends Controller
             }
         }
         $query->delete();
-       
         return response()->json([
             'message' => 'Delete success'
         ]); 
+    }
+
+    public function changeCombo($id)
+    {
+        $data = Product::findOrFail($id);
+        $data->combo_id = 0;
+        $data->save();
+        return response()->json([
+            'data' => $data,
+            'message' => 'success'
+        ]);
     }
 }

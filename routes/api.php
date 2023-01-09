@@ -56,12 +56,14 @@ Route::group(['namespace'=>'Api','middleware'=>'auth:api'],function(){
 		Route::post('draft','BillController@draft');
 		Route::get('detail/{code}','BillController@detail');
 		Route::post('change-status','BillController@changeStatus');
+		Route::get('delete/{code}','BillController@deleteBill');
 	});
 	Route::group(['prefix'=>'pagecontent'], function(){
 		Route::post('add','PageContentController@add');
 	});
 	Route::group(['prefix'=>'messcontact'], function(){
 		Route::post('list','AllController@listMesscontact');
+		Route::get('delete/{id}','AllController@deleteMesscontact');
 	});
 	Route::post('addLibrary','AllController@addLibrary');
 	Route::group(['prefix'=>'product', 'namespace'=>'Product'], function(){
@@ -69,6 +71,8 @@ Route::group(['namespace'=>'Api','middleware'=>'auth:api'],function(){
 		Route::post('list','ProductController@list');
 		Route::get('edit/{id}','ProductController@edit');
 		Route::get('delete/{id}','ProductController@delete');
+		Route::get('change-combo/{id}','ProductController@changeCombo');
+
 		Route::group(['prefix'=>'category'], function(){
 			Route::post('add','CategoryController@add');
 			Route::post('list','CategoryController@list');

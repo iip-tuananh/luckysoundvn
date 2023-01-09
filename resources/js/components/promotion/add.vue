@@ -5,7 +5,7 @@
           <div class="card">
             <div class="card-body">
               <div class="form-group">
-                <label>Tiêu đề khuyến mãi</label>
+                <label>Tiêu đề trang chủ</label>
                 <vs-input
                   type="text"
                   size="default"
@@ -15,6 +15,16 @@
                 />
               </div>
               <div class="form-group">
+                <label>Đường dẫn cho tiêu đề</label>
+                <vs-input
+                  type="text"
+                  size="default"
+                  placeholder="Tên bài viết"
+                  class="w-100"
+                  v-model="objData.link"
+                />
+              </div>
+              <!-- <div class="form-group">
                 <label>Mô tả ngắn</label>
                 <vs-input
                   type="text"
@@ -23,11 +33,11 @@
                   class="w-100"
                   v-model="objData.description"
                 />
-              </div>
-              <div class="form-group">
+              </div> -->
+              <!-- <div class="form-group">
                 <label>Ảnh đại diện</label>
                 <image-upload v-model="objData.image" type="avatar"></image-upload>
-              </div>
+              </div> -->
             </div>
             
           </div>
@@ -43,16 +53,6 @@
                       <vs-select-item  value="1" text="Hiện" />
                       <vs-select-item  value="0" text="Ẩn" />
                     </vs-select>
-              </div>
-              <div class="form-group">
-                <label>Đường dẫn cho khuyến mãi</label>
-                <vs-input
-                  type="text"
-                  size="default"
-                  placeholder="Tên bài viết"
-                  class="w-100"
-                  v-model="objData.link"
-                />
               </div>
             </div>
           </div>
@@ -117,10 +117,10 @@ export default {
         this.addPromotion(this.objData).then(response => {
           this.loadings(false);
           this.$router.push({name:'listPromotion'});
-          this.$success('Thêm khuyến mãi thành công');
+          this.$success('Thêm trang chủ thành công');
         }).catch(error => {
           this.loadings(false);
-          this.$error('Thêm khuyến mãi thất bại');
+          this.$error('Thêm trang chủ thất bại');
         })
       }
     },
