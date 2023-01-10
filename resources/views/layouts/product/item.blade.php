@@ -6,7 +6,7 @@
 <div class="product-small col has-hover product type-product post-{{$product->id}} status-publish instock product_cat-camera-hanh-trinh has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
       <div class="col-inner">
          @if ($product->discount != 0)
-            <div class="badge-container absolute left top z-1">
+            <div class="badge-container absolute left-10 top z-1">
                <div class="callout badge badge-circle">
                <div class="badge-inner secondary on-sale"><span class="onsale">-{{$product->discount}}%</span></div>
                </div>

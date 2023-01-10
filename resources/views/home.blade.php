@@ -10,6 +10,7 @@
 @endsection
 @section('css')
 <link rel="stylesheet" href="{{asset('frontend/css/tuan.css')}}">
+
 @endsection
 @section('js')
 @endsection
@@ -310,6 +311,7 @@
          padding-bottom: 30px;
          }
       </style>
+     
       {{-- //tuansua --}}
       {{-- <section class="section" id="section_1844193705">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
@@ -378,90 +380,48 @@
             }
          </style>
       </section> --}}
-      <div class="row row-small row-tieu-chi"  id="row-895057886">
-         <div id="col-925053052" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-center"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-02.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Sản phẩm chất lượng<br />
-                        thương hiệu uy tín
-                     </p>
-                     </div>
-                  </div>
-            </div>
+      <div class="row row-small row-tieu-chi owl-theme">
+        <div class="item-tc">
+         <div class="img-tc ">
+            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
          </div>
-         <div id="col-625984921" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-left"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-03.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Tư vấn chính xác<br />
-                        tác phong chuyên nghiệp
-                     </p>
-                     </div>
-                  </div>
-            </div>
+        </div>
+        <div class="item-tc">
+         <div class="img-tc ">
+            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
          </div>
-         <div id="col-896492950" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-left"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-04.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Giá thành tốt nhất<br />
-                        Bảo hành uy tín
-                     </p>
-                     </div>
-                  </div>
-            </div>
+        </div>
+        <div class="item-tc">
+         <div class="img-tc ">
+            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
          </div>
-         <div id="col-1317098754" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-left"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-5.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Thanh toán tại nhà<br />
-                        an toàn 100%
-                     </p>
-                     </div>
-                  </div>
-            </div>
+        </div>
+        <div class="item-tc">
+         <div class="img-tc ">
+            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
          </div>
-         <style>
-            @media screen and (min-width: 850px)
-            {
-               #row-895057886 .large-3 {
-                  max-width: 25%;
-                  -ms-flex-preferred-size: 25%;
-                  flex-basis: 25%;
-               }
-            }
-         </style>
+        </div>
+        <div class="item-tc">
+         <div class="img-tc ">
+            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
+         </div>
+        </div>
       </div>
+      <style>
+         .row-tieu-chi{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+         }
+         .row-tieu-chi div{
+           
+         background-color: #d4cbc1;
+    margin: 10px;
+    border-radius: 10px;
+         }
+      </style>
       <section class="section" id="section_1559591121">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
          </div>
