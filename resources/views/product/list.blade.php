@@ -29,23 +29,54 @@ Danh sách {{$title}}
 <main id="main" class="">
    @if (count($list) > 0)
    <div class="row category-page-row">
-      <div class="col filter-cate small-12 large-12">
-         <div class="col-inner">
-            <ul id="menu-product-filter" class="nav" data-url="{{route('filterProduct')}}">
-               @if (isset($cate_id))
-               <li class="hidden data-cate" data-cate="{{$cate_id}}"></li>
-               @endif
-               @if (isset($type_id))
-               <li class="hidden data-type" data-cate="{{$type_id}}"></li>
-               @endif
-               <li id="menu-item-187" class="title menu-item menu-item-type-custom menu-item-object-custom  menu-item-187"><a class="nav-top-link">Giá bán:</a></li>
-               <li id="menu-item-182" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-182"><a href="javascript:;" class="nav-top-link" data-filter="10trieu">Dưới 10 triệu</a></li>
-               <li id="menu-item-183" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-183"><a href="javascript:;" class="nav-top-link" data-filter="10-15">10- 15 triệu</a></li>
-               <li id="menu-item-184" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-184"><a href="javascript:;" class="nav-top-link" data-filter="15-20">15- 20 triệu</a></li>
-               <li id="menu-item-185" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-185"><a href="javascript:;" class="nav-top-link" data-filter="20-30">20 – 30 triệu</a></li>
-               <li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-198"><a href="javascript:;" class="nav-top-link" data-filter="30-40">30 – 40 triệu</a></li>
-               <li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-198"><a href="javascript:;" class="nav-top-link" data-filter="40">Trên 40 triệu</a></li>
-            </ul>
+      <div id="menu-product-filter" data-url="{{route('filterProduct')}}">
+         @if (isset($cate_id))
+         <li class="hidden data-cate" data-cate="{{$cate_id}}"></li>
+         @endif
+         @if (isset($type_id))
+         <li class="hidden data-type" data-cate="{{$type_id}}"></li>
+         @endif
+         <div class="col filter-cate pd0 filter-trademark small-12 large-12">
+            <div class="col-inner">
+               <style>
+                  .filter-trademark .col-inner {
+                     display: flex;
+                     flex-wrap: wrap;
+                  }
+                  .filter-trademark .col-inner .img {
+                     width: 100%;
+                     max-width: 12.5%;
+                     border: 1px solid #eee;
+                     margin-bottom: 0;
+                  }
+                  .filter-trademark .col-inner .img-inner{
+                     background: #fff;
+                  }
+               </style>
+               @foreach ($brands as $brand)
+                  <div class="img has-hover x md-x lg-x y md-y lg-y">
+                     <a class="nav-top-link" href="javascript:;" data-brand="{{$brand->id}}">
+                        <div class="img-inner">
+                           <img width="271" height="76" src="{{$brand->image}}" class="attachment-large size-large lazyloaded" alt="{{$brand->name}}" decoding="async" data-ll-status="loaded">
+                           <noscript><img width="271" height="76" src="{{$brand->image}}" class="attachment-large size-large" alt="{{$brand->name}}" decoding="async" /></noscript>
+                        </div>
+                     </a>
+                  </div>
+               @endforeach
+            </div>
+         </div>
+         <div class="col filter-cate small-12 large-12">
+            <div class="col-inner">
+               <ul class="nav">
+                  <li id="menu-item-187" class="title menu-item menu-item-type-custom menu-item-object-custom  menu-item-187"><a class="nav-top-link">Giá bán:</a></li>
+                  <li id="menu-item-182" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-182"><a href="javascript:;" class="nav-top-link" data-filter="10trieu">Dưới 10 triệu</a></li>
+                  <li id="menu-item-183" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-183"><a href="javascript:;" class="nav-top-link" data-filter="10-15">10- 15 triệu</a></li>
+                  <li id="menu-item-184" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-184"><a href="javascript:;" class="nav-top-link" data-filter="15-20">15- 20 triệu</a></li>
+                  <li id="menu-item-185" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-185"><a href="javascript:;" class="nav-top-link" data-filter="20-30">20 – 30 triệu</a></li>
+                  <li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-198"><a href="javascript:;" class="nav-top-link" data-filter="30-40">30 – 40 triệu</a></li>
+                  <li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-198"><a href="javascript:;" class="nav-top-link" data-filter="40">Trên 40 triệu</a></li>
+               </ul>
+            </div>
          </div>
       </div>
       <div class="col large-12">
@@ -96,9 +127,11 @@ Danh sách {{$title}}
 <script>
    $('#menu-product-filter .nav-top-link').click(function() {
       var price = $(this).data('filter');
+      var brand = $(this).data('brand');
       var url = $('#menu-product-filter').data('url');
       var cate = $('#menu-product-filter .data-cate').data('cate');
       var type = $('#menu-product-filter .data-type').data('type');
+      console.log(brand);
       $.ajax({
          type: 'post',
          url: url,
@@ -106,7 +139,8 @@ Danh sách {{$title}}
          data : {
             price : price,
             cate : cate,
-            type : type
+            type : type,
+            brand : brand
          },
          success :function(data) {
             $('#product-list').html(data.html);

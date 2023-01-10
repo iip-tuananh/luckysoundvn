@@ -9,6 +9,7 @@ use App\models\product\Category;
 use App\models\blog\Blog;
 use App\models\product\TypeProduct;
 use App\models\construction\Construction;
+use App\models\product\ProductBrands;
 use  App\models\product\TypeProductTwo;
 use Session;
 
@@ -20,6 +21,7 @@ class ProductController extends Controller
         ->paginate(20);
         $data['title'] = "Tất cả sản phẩm";
         $data['content'] = 'none';
+        $data['brands'] = ProductBrands::where('status', 1)->get();
         return view('product.list',$data);
     }
     public function allListCate($danhmuc)
@@ -31,6 +33,16 @@ class ProductController extends Controller
         $data['cateno'] = Category::where('slug',$danhmuc)->first(['id','name','avatar','content','slug']);
         $cate_id = $data['cateno']->id;
         $data['cate_id'] = $cate_id;
+        $allBrands = ProductBrands::where('status', 1)->get();
+        $listBrand = [];
+        foreach ($allBrands as $key => $brand) {
+            foreach (json_decode($brand->cate_id) as $key => $cate) {
+                if ($cate == $cate_id) {
+                    $listBrand[] = $brand;
+                }
+            }
+        }
+        $data['brands'] = $listBrand;
         $data['title'] = languageName($data['cateno']->name);
         $data['content'] = $data['cateno']->content;
         return view('product.list',$data);
@@ -44,6 +56,17 @@ class ProductController extends Controller
         ->paginate(5);
         $data['type'] = TypeProduct::where('slug',$loaidanhmuc)->first(['id','name','cate_id','content']);
         $data['type_id'] = $data['type']->id;
+        $cate_id = $data['type']->cate_id;
+        $allBrands = ProductBrands::where('status', 1)->get();
+        $listBrand = [];
+        foreach ($allBrands as $key => $brand) {
+            foreach (json_decode($brand->cate_id) as $key => $cate) {
+                if ($cate == $cate_id) {
+                    $listBrand[] = $brand;
+                }
+            }
+        }
+        $data['brands'] = $listBrand;
         $data['title'] = languageName($data['type']->name);
         $data['content'] = $data['type']->content;
         return view('product.list',$data);
@@ -131,6 +154,9 @@ class ProductController extends Controller
                     $product = $product->where('category',$request->cate)->orderBy('price','ASC');
                 }
             }
+            if(isset($request->brand)){
+                $product = $product->where('category',$request->cate)->where('brand_id',$request->brand);
+            }
         }else{
             if(isset($request->price)){
                 if($request->price == '10trieu'){
@@ -160,6 +186,9 @@ class ProductController extends Controller
                 }elseif($request->sortby == 'PRICE_ASC'){
                     $product = $product->where('type_cate',$request->type)->orderBy('price','ASC');
                 }
+            }
+            if(isset($request->brand)){
+                $product = $product->where('type_cate',$request->type)->where('brand_id',$request->brand);
             }
         }
         

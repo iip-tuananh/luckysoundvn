@@ -59,22 +59,36 @@
                </div>
          </div>
       </div>
-      </div>
-      <style>
-      #section_948757949 {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      }
-      </style>
-   </section>
-   <div class="absolute-footer dark medium-text-center small-text-center">
-      <div class="container clearfix">
-      <div class="footer-primary pull-left">
-         <div class="copyright-footer">
-               Copyright 2022 &copy; <strong>{{$setting->company}}</strong> <strong>Design By SBT</strong>     
+      <div class="row row-large" id="footer-of-footer">
+         <div class="medium-4 large-4 small-4"></div>
+         <div class="medium-4 large-4 small-4">
+            <p>DỊCH VỤ GIAO HÀNG</p>
+            <div style="display:flex;">
+               <img src="{{url('frontend/images/unnamed.png')}}" alt="">
+               <img src="{{url('frontend/images/grab.jpg')}}" alt="">
+               <img src="{{url('frontend/images/vietnam-post.png')}}" alt="">
+            </div>
+         </div>
+         <div class="medium-4 large-4 small-4">
+            <p>KÊNH THƯƠNG MẠI ĐIỆN TỬ</p>
          </div>
       </div>
       </div>
-   </div>
+      <style>
+         @media only screen and (max-width: 768px) {
+            #footer-of-footer{
+               display: none;
+            }
+         }
+         #footer-of-footer img{
+            width: 90px;
+            height: 56px;
+         }
+         #section_948757949 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+         }
+      </style>
+   </section>
    <a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline hide-for-medium circle" id="top-link"><i class="icon-angle-up" ></i></a>
 </footer>

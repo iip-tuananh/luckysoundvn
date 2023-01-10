@@ -76,6 +76,7 @@ Route::group(['namespace'=>'Client','middleware' => ['checkLanguage']], function
         Route::get('chi-tiet/{slug}.html','BlogController@detailBlog')->name('detailBlog');
     });
 
+    Route::get('thuong-hieu/{slug}.html','ProductController@allProduct')->name('allProduct');
     Route::get('tat-ca-san-pham.html','ProductController@allProduct')->name('allProduct');
     Route::get('chi-tiet/{cate}/{slug}.html','ProductController@detail_product')->name('detailProduct');
     Route::get('{danhmuc}.html','ProductController@allListCate')->name('allListProCate');
