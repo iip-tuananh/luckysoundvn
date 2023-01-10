@@ -43,8 +43,8 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="exampleSelectGender">Avatar</label>
-                  <image-upload v-model="objData.avatar" type="avatar"></image-upload>
+                  <label for="exampleSelectGender">Hình ảnh hoặc banner</label>
+                  <image-upload v-model="objData.avatar" type="avatar" :title="'danh-muc-bai-viet'"></image-upload>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName1">Trạng thái</label>

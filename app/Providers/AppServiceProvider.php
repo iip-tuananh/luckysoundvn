@@ -65,6 +65,9 @@ class AppServiceProvider extends ServiceProvider
             $blogCate = BlogCategory::with([
                 'typeCate' => function ($query){
                     $query->select('id','slug','name','avatar','category_slug');
+                },
+                'listBlog' => function ($query) {
+                    $query->where(['status'=>1, 'home_status'=>1])->select();
                 }
             ])
             ->where('status',1)

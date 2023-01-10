@@ -165,3 +165,218 @@ form.submitting .wpcf7-spinner {
 	-webkit-line-clamp: 3; 
 	-webkit-box-orient: vertical;
 }
+
+/* fix Doan */
+.header .c-box-price{
+    background-color: #105caa;
+    color: white;
+    border-radius: 5px;
+   
+}
+.header .c-box-price .c-item-text{
+    display: flex;
+    justify-content: space-around;
+}
+.header .c-box-price .c-item-text .c-item{
+    padding-right: 7px;
+}
+.header .c-box-price a{
+    padding: 10px 0;
+    color: white;
+    display: grid;
+}
+.header .c-box-price a:hover{
+    color: white;
+}
+.header .c-box-cart{
+    background-color: #105caa;
+    border-radius: 7px;
+    width: max-content;
+}
+.header .c-box-cart span{
+    color: #fff;
+}
+.header .header-cart-itemIcon{
+    padding: 0px 5px;
+}
+.header .c-box-amount{
+    width: 20px;
+    height: 20px;
+    color: red !important;
+    background-color: #fff;
+    text-align: center;
+    margin: 0px 5px;
+    border-radius: 50%;
+}
+@media (min-width:991px) {
+    .c-header-mobile{
+        display: none;
+    }
+}
+@media (max-width:991px) {
+    #masthead{
+        height: auto !important;
+    }
+    #logo{
+        width: unset !important;
+        margin: unset !important;
+    }
+    .medium-logo-center .flex-right{
+        flex: unset !important;
+        margin-left: 10px;
+    }
+    .c-header-mobile{
+        display: flex;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        background: #f1f1f1;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .searchform-wrapper{
+        padding-right: 15px;
+    }
+    .yith-ajaxsearchform-container{
+        display: flex;
+        flex-wrap: nowrap
+    }
+    #yith-ajaxsearchform{
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0px;
+    /* width: 300px; */
+    }
+    #yith-ajaxsearchform .search-navigation{
+        width: 100%;
+    }
+    .screen-reader-text{
+        clip: rect(1px,1px,1px,1px);
+        position: absolute!important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden; 
+    }
+     #yith-searchsubmit{
+    margin: 0;
+    position: relative;
+    font-size: 0;
+    width: 35px;
+    height: 32px;
+    font-size: 0;
+    /* background-image: url({asset('frontend/images/icon-search.png')}); */
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-color: #fff;
+    /* border-radius: 99px; */
+    box-shadow: none;
+     }
+     #yith-ajaxsearchform .yith-s{
+        font-size: 13px;
+     }
+     .c-header-mobile .header-divider{
+        display: none;
+     }
+     .header .c-box-cart{
+        background-color: #f1f1f1;
+     }
+     .header .c-box-cart a{
+        padding: 0px;
+        position: relative;
+     }
+     .header .c-box-amount{
+        width: 0px;
+        position: absolute;
+        top: -8px;
+        right: 0;
+     }
+     .lazyloaded{
+        width: 25px;
+     }
+     .c-box-news{
+        display: none;
+     }
+}
+.item-read{
+    display: flex;
+    margin-top: 15px;
+}
+.item-read .avarta{
+    width: 100px;
+}
+.c-box-news{
+    background: #f1f1f1;
+}
+.c-box-title{
+    background: linear-gradient(to bottom,#c80505,#880e22);
+    position: relative;
+    margin-top: 6px;
+}
+.c-box-title::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    border-top: 16px solid transparent;
+    border-right: 20px solid #f1f1f1;
+    border-bottom: 16px solid transparent;
+    right: 0;
+    width: 0;
+}
+.c-box-title h3{
+    color: white;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.c-box-news .col-inner{
+    margin-bottom: 15px;
+}
+.c-box-untiline{
+    display: grid;
+}
+.c-box-untiline .c-box-icon{
+    display: flex;
+    justify-content: center;
+}
+.c-box-untiline .c-box-icon img{
+    width: 40%;
+}
+.c-box-untiline span{
+    text-align: center;
+}
+.c-box-news .avarta img {
+	max-width: 100px;
+    max-height: 60px;
+}
+
+.c-box-news .info {
+	padding-left: 10px;
+	font-size: 13px;
+}
+
+@media only screen and (max-width: 768px) {
+	.hidden-sm {
+		display: none;
+	}
+	.header .flex-row {
+		border-bottom: 5px solid #ff6a00;
+		padding-top: 10px;
+    	padding-bottom: 10px;
+	}
+	.header .c-box-cart span {
+		color: #880e22;
+		font-size: 20px;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.hidden-xs {
+		display: none;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.hidden-lg {
+		display: none;
+	}
+}

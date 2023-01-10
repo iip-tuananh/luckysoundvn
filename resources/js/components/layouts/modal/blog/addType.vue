@@ -35,10 +35,10 @@
           </vs-select>
         <div v-if="submitted && !$v.objData.path.required" class="noti-err">Loại không để trống</div>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="exampleSelectGender">Avatar</label>
         <image-upload v-model="objData.avatar" type="avatar"></image-upload>
-      </div>
+      </div> -->
       <div class="form-group">
         <label for="exampleInputName1">Trạng thái</label>
         <vs-switch v-model="objData.status">

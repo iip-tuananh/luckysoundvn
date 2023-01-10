@@ -25,51 +25,110 @@
       </div>
       <div class="section-content relative">
          <div class="row"  id="row-1794980482">
-            <div id="col-1921135696" class="col cot-danh-muc medium-3 small-12 large-3">
+            <div id="col-1921135696" class="col cot-danh-muc medium-3 small-12 large-3 hidden-sm hidden-xs">
                <div class="col-inner">
                </div>
             </div>
-            <div id="col-2074296734" class="col medium-9 small-12 large-9"  >
-               <div class="col-inner"  >
-               <div class="slider-wrapper relative" id="slider-421771181" >
-                  <div class="slider slider-nav-circle slider-nav-large slider-nav-dark slider-style-normal"
-                        data-flickity-options='{
-                        "cellAlign": "center",
-                        "imagesLoaded": true,
-                        "lazyLoad": 1,
-                        "freeScroll": false,
-                        "wrapAround": true,
-                        "autoPlay": 6000,
-                        "pauseAutoPlayOnHover" : true,
-                        "prevNextButtons": true,
-                        "contain" : true,
-                        "adaptiveHeight" : true,
-                        "dragThreshold" : 10,
-                        "percentPosition": true,
-                        "pageDots": true,
-                        "rightToLeft": false,
-                        "draggable": true,
-                        "selectedAttraction": 0.1,
-                        "parallax" : 0,
-                        "friction": 0.6        }'
-                        >
-                        @foreach ($banners as $banner)
-                           <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_560025793">
-                              <div class="img-inner dark" >
-                                 <a href="{{$banner->link}}">
-                                    <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" />						
-                                 </a>
-                              </div>
-                              <style>
-                              #image_560025793 {
-                              width: 100%;
-                              }
-                              </style>
+            <div class="col-5 medium-9 small-12 large-9">
+               <div class="row" style="margin: 0;">
+                  <div id="col-2074296734" class="col-5 medium-8 small-12 large-8"  >
+                     <div class="col-inner">
+                        <div class="slider-wrapper relative" id="slider-421771181" >
+                           <div class="slider slider-nav-circle slider-nav-large slider-nav-dark slider-style-normal"
+                                 data-flickity-options='{
+                                 "cellAlign": "center",
+                                 "imagesLoaded": true,
+                                 "lazyLoad": 1,
+                                 "freeScroll": false,
+                                 "wrapAround": true,
+                                 "autoPlay": 6000,
+                                 "pauseAutoPlayOnHover" : true,
+                                 "prevNextButtons": true,
+                                 "contain" : true,
+                                 "adaptiveHeight" : true,
+                                 "dragThreshold" : 10,
+                                 "percentPosition": true,
+                                 "pageDots": true,
+                                 "rightToLeft": false,
+                                 "draggable": true,
+                                 "selectedAttraction": 0.1,
+                                 "parallax" : 0,
+                                 "friction": 0.6        }'
+                                 >
+                                 @foreach ($banners as $banner)
+                                    <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_560025793">
+                                       <div class="img-inner dark" >
+                                          <a href="{{$banner->link}}">
+                                             <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" />						
+                                          </a>
+                                       </div>
+                                       <style>
+                                       #image_560025793 {
+                                       width: 100%;
+                                       }
+                                       </style>
+                                    </div>
+                                 @endforeach
                            </div>
-                        @endforeach
+                           <div class="loading-spin dark large centered"></div>
+                        </div>
+                     </div>
                   </div>
-                  <div class="loading-spin dark large centered"></div>
+                  <div class="c-box-news col right medium-4 small-12 large-4">
+                     @foreach ($blogCate as $key=>$cate)
+                        @if ($key == 1)
+                           <div class="c-box-title">
+                              <h3>
+                                 {{languageName($cate->name)}}
+                              </h3>
+                           </div>
+                           @foreach ($cate->listBlog as $blog)
+                              <div class="col-inner">
+                                 <div class="item-read">
+                                    <div class="avarta">
+                                          <a href="{{route('detailBlog', ['slug'=>$blog->slug])}}">
+                                             <img src="{{$blog->image}}" loading="lazy"/>
+                                          </a>
+                                    </div>
+                                    <div class="info">
+                                       <a href="{{route('detailBlog', ['slug'=>$blog->slug])}}">
+                                          {{languageName($blog->title)}} 
+                                       </a>
+                                    </div>
+                                 </div>  
+                              </div>
+                           @endforeach
+                           <div class="col-inner">
+                              <img src="{{$cate->avatar}}" alt="{{languageName($cate->name)}}" loading="lazy">
+                           </div>
+                        @endif
+                     @endforeach
+                  </div>
                </div>
+               <div class="row">
+                  <div class="medium-3 large-3 small-3">
+                     <div class="c-box-untiline">
+                        <div class="c-box-icon">
+                           <img src="https://png.pngtree.com/png-vector/20190331/ourlarge/pngtree-delivery-truck-icon--line-style-icon-vector-illustration-png-image_876651.jpg" alt="" srcset="">
+                        </div>
+                           <span>
+                              <h5>Mien phi van chuyen</h5>
+                           </span>
+                           <span>
+                              <p>Trong basn kinh 50 km</p>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="medium-3 large-3">
+                     
+                  </div>
+                  <div class="medium-3 large-3">
+                     
+                  </div>
+                  <div class="medium-3 large-3">
+
+                  </div>
                </div>
             </div>
          </div>
@@ -202,7 +261,7 @@
                                  }
                               </style>
                         </div>
-                        <div id="col-1468115842" class="col danh-muc2 medium-2 small-12 large-2"  >
+                        {{-- <div id="col-1468115842" class="col danh-muc2 medium-2 small-12 large-2"  >
                               <div class="col-inner"  >
                                  <a href="{{ route('allListProCate' , ['danhmuc'=>$category->slug])}}" target="_self" class="button secondary is-link is-small"  >
                                  <span>Xem tất cả</span>
@@ -221,7 +280,7 @@
                                     padding: 3px 0;
                                  }
                               </style>
-                        </div>
+                        </div> --}}
                      </div>
                      </div>
                   </div>
@@ -229,11 +288,11 @@
             <div class="row"  id="row-1515724829">
                   <div id="col-1515461008" class="col small-12 large-12"  >
                      <div class="col-inner"  >
-                     <div class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small row-full-width has-shadow row-box-shadow-1 row-box-shadow-2-hover">
-                        @foreach ($category->product as $pro)
-                           @include('layouts.product.item', ['product'=>$pro])
-                        @endforeach
-                     </div>
+                        <div class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small row-full-width has-shadow row-box-shadow-1 row-box-shadow-2-hover">
+                           @foreach ($category->product as $pro)
+                              @include('layouts.product.item', ['product'=>$pro])
+                           @endforeach
+                        </div>
                      </div>
                   </div>
             </div>

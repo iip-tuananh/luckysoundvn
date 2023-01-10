@@ -13,22 +13,87 @@
          <img src="{{$bannerHeaderTop->image}}" alt="banner top" loading="lazy">
          </div>
          <div id="masthead" class="header-main hide-for-sticky">
+         <!-- Mobile Right Elements -->
+         <div class="container c-header-mobile hidden-lg">
+            <div class="pb-0">
+            <span>
+               <i class="fa-solid fa-phone"></i>
+            </span>
+            <span>
+               {{$setting->phone1}}
+            </span>
+            </div>
+            <div class="pb-0">
+               <div class="flex-col show-for-medium flex-right">
+                     <ul class="mobile-nav nav nav-right ">
+                        <li class="header-divider"></li>
+                        <li class="c-box-cart cart-item has-icon">
+                        <a href="{{ route('listCart') }}" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
+                           @if (count($cartcontent) > 0)
+                           <span class="header-cart-itemIcon">
+                              <i class="fa-solid fa-cart-shopping"></i>
+                           </span>
+                              <span class="c-box-amount">
+                                 <strong>{{count($cart)}}</strong>
+                              </span>
+                           </span>
+                           @else
+                           <span class="header-cart-itemIcon">
+                              <i class="fa-solid fa-cart-shopping"></i>
+                           </span>
+                              <span class="c-box-amount">
+                                 <strong>0</strong>
+                              </span>
+                           </span>
+                           @endif
+                        </a>
+                        <!-- Cart Sidebar Popup -->
+                        <div id="cart-popup" class="mfp-hide widget_shopping_cart">
+                           <div class="cart-popup-inner inner-padding">
+                                 <div class="cart-popup-title text-center">
+                                    <h4 class="uppercase">Giỏ hàng</h4>
+                                    <div class="is-divider"></div>
+                                 </div>
+                                 @if (count($cartcontent) > 0)
+                                 <div class="widget_shopping_cart_content">
+                                    <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                                       @foreach ($cart as $item)
+                                       @php
+                                          $price = $item['price'] - $item['price'] * ($item['discount'] / 100);
+                                       @endphp
+                                          <li class="woocommerce-mini-cart-item mini_cart_item">
+                                             <a href="#" class="remove remove_from_cart_button removeCart" aria-label="Xóa sản phẩm này" data-url="{{route('removeCart', ['id'=>$item['id']])}}">&times;</a>											
+                                             <a href="{{route('detailProduct', ['cate'=>$item['cate_slug'], 'type'=>$item['type_slug'], 'slug'=>$item['slug']])}}">
+                                             <img width="300" height="300" src="{{$item['image']}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="{{languageName($item['name'])}}" loading="lazy" srcset="{{$item['image']}} 300w, {{$item['image']}} 150w, {{$item['image']}} 600w, {{$item['image']}} 100w" sizes="(max-width: 300px) 100vw, 300px" />{{languageName($item['name'])}}</a>
+                                             <span class="quantity">{{$item['quantity']}} &times; <span class="woocommerce-Price-amount amount"><bdi>{{number_format($price)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>				
+                                          </li>
+                                       @endforeach
+                                    </ul>
+                                    <p class="woocommerce-mini-cart__total total">
+                                       <strong>Tổng số phụ:</strong> <span class="woocommerce-Price-amount amount"><bdi>{{number_format($totalPrice)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>	
+                                    </p>
+                                    <p class="woocommerce-mini-cart__buttons buttons"><a href="{{route('listCart')}}" class="button wc-forward">Xem giỏ hàng</a><a href="{{route('checkout')}}" class="button checkout wc-forward">Thanh toán</a></p>
+                                 </div>
+                              @else
+                                 <div class="widget_shopping_cart_content">
+                                    <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
+                                 </div>
+                              @endif
+                                 <div class="cart-sidebar-content relative"></div>
+                           </div>
+                        </div>
+                        </li>
+                     </ul>
+               </div>
+            </div>
+         </div>
          <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+
             <!-- Logo -->
             <div id="logo" class="flex-col logo">
                   <!-- Header logo -->
                   <a href="{{ route('home') }}" title="{{ $setting->company }}" rel="home">
                   <img width="200" height="90" src="{{ $setting->logo }}" class="header_logo header-logo" alt="{{ $setting->company }}"/><img  width="200" height="90" src="{{ $setting->logo }}" class="header-logo-dark" alt="{{ $setting->company }}"/></a>
-            </div>
-            <!-- Mobile Left Elements -->
-            <div class="flex-col show-for-medium flex-left">
-                  <ul class="mobile-nav nav nav-left ">
-                     <li class="nav-icon has-icon">
-                     <a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="" class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
-                     <i class="icon-menu" ></i>
-                     </a>
-                     </li>
-                  </ul>
             </div>
             <!-- Left Elements -->
             <div class="flex-col hide-for-medium flex-left
@@ -55,17 +120,25 @@
                            </div>
                         </div>
                      </li>
-                     <li style="text-align: center; border: 2px solid #105caa; border-radius: 5px; padding: 0 10px;">
-                        <p><b><i>Hotline: <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></i></b></p>
-                        <p><a href="mailto:{{$setting->email}}">{{$setting->email}}</a></p>
+                     <li class="c-box-price " style="text-align: center; padding: 0 35px;">
+                        <a href="tel:{{$setting->phone1}}">
+                           <span class="c-item-text">
+                              <span class="c-item">
+                                 <i class="fa-solid fa-newspaper"></i>
+                              </span>
+                              <span>
+                                 <p>Báo giá</p>
+                              </span> 
+                           </span>
+                        </a>
                      </li>
                   </ul>
             </div>
             <!-- Right Elements -->
             <div class="flex-col hide-for-medium flex-right">
                   <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
-                     <li class="header-divider"></li>
-                     <li class="cart-item has-icon has-dropdown">
+                     {{-- <li class="header-divider"></li> --}}
+                     <li class="c-box-cart cart-item has-icon has-dropdown">
                         @php
                            $cart = session()->get('cart');
                            $totalPrice = 0;
@@ -77,23 +150,31 @@
                               $totalPrice += $pricePro;
                            }
                         @endphp
-                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small">
-                           <span class="header-cart-title">
-                           Giỏ hàng   /   
-                           <span class="cart-price"><span class="woocommerce-Price-amount amount"><bdi>{{number_format($totalPrice)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
+                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small" style="padding: 10px 20px;">
+                           <span class="header-cart-itemIcon">
+                              <i class="fa-solid fa-cart-shopping"></i>
                            </span>
-                           <span class="cart-icon image-icon">
-                           <strong>{{count($cart)}}</strong>
+                           <span class="header-cart-title">
+                              Giỏ hàng   
+                           </span>
+                           </span>
+                           </span>
+                           <span class="c-box-amount">
+                              <strong>{{count($cart)}}</strong>
+                           </span>
                            </span>
                         </a>
                         @else
-                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small">
-                           <span class="header-cart-title">
-                           Giỏ hàng   /   
-                           <span class="cart-price"><span class="woocommerce-Price-amount amount"><bdi>0<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
+                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small" style="padding: 10px 20px;">
+                           <span class="header-cart-itemIcon">
+                              <i class="fa-solid fa-cart-shopping"></i>
                            </span>
-                           <span class="cart-icon image-icon">
-                           <strong>0</strong>
+                           <span class="header-cart-title">
+                           Giỏ hàng  
+                           </span>
+                           <span class="c-box-amount">
+                              <strong>0</strong>
+                           </span>
                            </span>
                            </a>
                         @endif   
@@ -130,59 +211,50 @@
                      </li>
                   </ul>
             </div>
-            <!-- Mobile Right Elements -->
+            
+            <!-- Mobile Search Elements -->
+            <div class="flex-col show-for-medium flex-right">
+               <div class="yith-ajaxsearchform-container ">
+                  <form role="search" method="post" id="yith-ajaxsearchform" action="{{ route('search_result') }}">
+                     @csrf
+                     <div class="yith-ajaxsearchform-container">
+                        <div class="yith-ajaxsearchform-select">
+                           <input type="hidden" id="_wpnonce" name="_wpnonce" value="bdb6715b53"><input type="hidden" name="_wp_http_referer" value="/">
+                           <input type="hidden" name="post_type" class="yit_wcas_post_type" id="yit_wcas_post_type" value="product">
+                        </div>
+                        <div class="search-navigation">
+                           <label class="screen-reader-text" for="yith-s">Search for:</label>
+                           <input type="search" value="" name="s" id="yith-s" class="yith-s" placeholder="Bạn tìm gì..." data-append-to=".search-navigation" data-loader-icon="">
+                        <div class="autocomplete-suggestions" style="position: absolute; display: none; z-index: 9999;"></div></div>
+                              <input style="background-image: url({{asset('frontend/images/icon-search.png')}})" type="submit" id="yith-searchsubmit" value="Search">
+                        </div>
+                  </form>
+               </div>
+               {{-- <div class="searchform-wrapper ux-search-box relative is-normal">
+                     <form role="search" method="post" class="searchform" action="{{ route('search_result') }}">
+                        @csrf
+                        <div class="flex-row relative">
+                        <div class="flex-col flex-grow">
+                           <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label>
+                           <input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="keyword" />
+                           <input type="hidden" name="post_type" value="product" />
+                        </div>
+                        <div class="flex-col">
+                           <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+                           <i class="icon-search" ></i>			</button>
+                        </div>
+                        </div>
+                        <div class="live-search-results text-left z-top"></div>
+                     </form>
+               </div> --}}
+            </div>
+            <!-- Mobile Left Elements -->
             <div class="flex-col show-for-medium flex-right">
                   <ul class="mobile-nav nav nav-right ">
-                     <li class="header-divider"></li>
-                     <li class="cart-item has-icon">
-                     <a href="{{ route('listCart') }}" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
-                        @if ($cart)
-                           <span class="cart-icon image-icon">
-                           <strong>
-                           {{count($cart)}}
-                           </strong>
-                           </span>
-                        @else
-                        <span class="cart-icon image-icon">
-                           <strong>0</strong>
-                           </span>
-                        @endif
-                     </a>
-                     <!-- Cart Sidebar Popup -->
-                     <div id="cart-popup" class="mfp-hide widget_shopping_cart">
-                        <div class="cart-popup-inner inner-padding">
-                              <div class="cart-popup-title text-center">
-                                 <h4 class="uppercase">Giỏ hàng</h4>
-                                 <div class="is-divider"></div>
-                              </div>
-                              @if ($cart)
-                              <div class="widget_shopping_cart_content">
-                                 <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-                                    @foreach ($cart as $item)
-                                    @php
-                                       $price = $item['price'] - $item['price'] * ($item['discount'] / 100);
-                                    @endphp
-                                       <li class="woocommerce-mini-cart-item mini_cart_item">
-                                          <a href="#" class="remove remove_from_cart_button removeCart" aria-label="Xóa sản phẩm này" data-url="{{route('removeCart', ['id'=>$item['id']])}}">&times;</a>											
-                                          <a href="{{route('detailProduct', ['cate'=>$item['cate_slug'], 'type'=>$item['type_slug'], 'slug'=>$item['slug']])}}">
-                                          <img width="300" height="300" src="{{$item['image']}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="{{languageName($item['name'])}}" loading="lazy" srcset="{{$item['image']}} 300w, {{$item['image']}} 150w, {{$item['image']}} 600w, {{$item['image']}} 100w" sizes="(max-width: 300px) 100vw, 300px" />{{languageName($item['name'])}}</a>
-                                          <span class="quantity">{{$item['quantity']}} &times; <span class="woocommerce-Price-amount amount"><bdi>{{number_format($price)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>				
-                                       </li>
-                                    @endforeach
-                                 </ul>
-                                 <p class="woocommerce-mini-cart__total total">
-                                    <strong>Tổng số phụ:</strong> <span class="woocommerce-Price-amount amount"><bdi>{{number_format($totalPrice)}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>	
-                                 </p>
-                                 <p class="woocommerce-mini-cart__buttons buttons"><a href="{{route('listCart')}}" class="button wc-forward">Xem giỏ hàng</a><a href="{{route('checkout')}}" class="button checkout wc-forward">Thanh toán</a></p>
-                              </div>
-                           @else
-                              <div class="widget_shopping_cart_content">
-                                 <p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
-                              </div>
-                           @endif
-                              <div class="cart-sidebar-content relative"></div>
-                        </div>
-                     </div>
+                     <li class="nav-icon has-icon">
+                        <a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="" class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+                     <i class="icon-menu" ></i>
+                        </a>
                      </li>
                   </ul>
             </div>
@@ -226,7 +298,7 @@
                            </ul>
                         </li>
                      @else
-                        <li id="menu-item-11906" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11906"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}" class="sf-with-ul">
+                        <li id="menu-item-11906" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11906"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}">
                            <img width="20" height="20" src="{{$category->avatar}}" class="menu-image menu-image-title-after lazyloaded" alt="" decoding="async" data-ll-status="loaded">
                            {{ languageName($category->name) }}
                         </a></li>
@@ -240,22 +312,15 @@
                   <ul class="nav header-nav header-bottom-nav nav-center  nav-divided nav-uppercase">
                      <li id="menu-item-12080" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 menu-item-design-default has-icon-left has-dropdown"><a href="{{ route('home') }}" aria-current="page" class="nav-top-link" title="Trang chủ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-home.png') }}" alt="Trang chủ" />Trang chủ</a></li>
                      <li id="menu-item-12081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 menu-item-design-default has-icon-left has-dropdown"><a href="{{ route('aboutUs') }}" class="nav-top-link" title="Giới thiệu"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-aboutus.png') }}" alt="Giới thiệu" />Giới thiệu</a></li>
+                     <li id="menu-item-12082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 menu-item-design-default has-icon-left has-dropdown"><a href="{{ route('lienHe') }}" class="nav-top-link" title="Liên hệ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="Liên hệ" />Liên hệ</a></li>
                      @foreach ($blogCate as $key=>$cate)
                      @if ($key == 0)
                      <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
-                        <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($cate->name)}}<i class="icon-angle-down" ></i></a>
-                        @if (count($cate->typeCate) > 0)
-                        <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
-                           @foreach ($cate->typeCate as $type)
-                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-blogs.png') }}" alt="" />{{languageName($type->name)}}</a></li>
-                           @endforeach
-                        </ul>
-                        @endif
-                     </li>
-                     @endif
-                     @if ($key == 1)
-                     <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
-                        <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}" alt="" />{{languageName($cate->name)}}<i class="icon-angle-down" ></i></a>
+                        <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}" alt="" />{{languageName($cate->name)}}
+                           @if (count($cate->typeCate) > 0)
+                           <i class="icon-angle-down" ></i>
+                           @endif
+                        </a>
                         @if (count($cate->typeCate) > 0)
                         <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
                            @foreach ($cate->typeCate as $type)
@@ -265,8 +330,23 @@
                         @endif
                      </li>
                      @endif
+                     @if ($key == 1)
+                     <li id="menu-item-12085" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 menu-item-design-default has-dropdown has-icon-left">
+                        <a href="{{ route('listCateBlog', ['slug'=>$cate->slug]) }}" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-contactus.png') }}" alt="" />{{languageName($cate->name)}}
+                           @if (count($cate->typeCate) > 0)
+                           <i class="icon-angle-down" ></i>
+                           @endif
+                        </a>
+                        @if (count($cate->typeCate) > 0)
+                        <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
+                           @foreach ($cate->typeCate as $type)
+                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}{{ asset('frontend/images/icon-contactus.png') }}" alt="" />{{languageName($type->name)}}</a></li>
+                           @endforeach
+                        </ul>
+                        @endif
+                     </li>
+                     @endif
                      @endforeach
-                     <li id="menu-item-12082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12082 menu-item-design-default has-icon-left has-dropdown"><a href="{{ route('lienHe') }}" class="nav-top-link" title="Liên hệ"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-contactus.png') }}" alt="Liên hệ" />Liên hệ</a></li>
                   </ul>
             </div>
             <div class="flex-col hide-for-medium flex-right flex-grow">

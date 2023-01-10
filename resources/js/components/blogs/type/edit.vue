@@ -9,7 +9,7 @@
                   <h4 class="card-title">Sửa loại tin tức</h4>
                 </div>
                 <div class="col-md-6"></div>
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                   <vs-select
                     class="selectExample"
                     v-model="objData.language"
@@ -23,7 +23,7 @@
                       v-for="item,index in lang"
                     />
                   </vs-select>
-                </div>
+                </div> -->
               </div>
 
               <!-- <p class="card-description">Basic form elements</p> -->
@@ -60,10 +60,10 @@
                     class="noti-err"
                   >Danh mục cha không để trống</div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="exampleInputName1">Ảnh đại diện</label>
                   <image-upload v-model="objData.avatar" type="avatar"></image-upload>
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label for="exampleInputName1">Trạng thái</label>
                   <vs-select v-model="objData.status"

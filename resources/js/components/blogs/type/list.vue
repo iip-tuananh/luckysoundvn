@@ -16,14 +16,12 @@
               />
               <vs-table max-items="5" pagination :data="list">
                 <template slot="thead">
-                  <vs-th>ID</vs-th>
                   <vs-th>Tên</vs-th>
                   <vs-th>Danh mục</vs-th>
                   <vs-th>Hành động</vs-th>
                 </template>
                 <template slot-scope="{data}">
                   <vs-tr :key="indextr" v-for="(tr, indextr) in data">
-                    <vs-td :data="tr.id">{{tr.id}}</vs-td>
                     <vs-td :data="tr.name">{{JSON.parse(tr.name)[0].content}}</vs-td>
                     <!-- <vs-td :data="tr.id">
                       <vs-avatar size="70px" :src="tr.avatar" />
