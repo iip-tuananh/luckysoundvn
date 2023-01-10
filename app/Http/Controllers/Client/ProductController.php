@@ -168,7 +168,7 @@ class ProductController extends Controller
             if(isset($request->brand)){
                 $product = $product->where('category',$request->cate)->where('brand_id',$request->brand);
             }
-        }else{
+        }elseif($request->type != null){
             if(isset($request->price)){
                 if($request->price == '10trieu'){
                     $product = $product->where('type_cate',$request->type)->where('price', '<', 10000000);
@@ -182,7 +182,7 @@ class ProductController extends Controller
                     $product = $product->where('type_cate',$request->type)->whereBetween('price', [30000000, 40000000]);
                 }
                 else{
-                    $product = $product->where('category',$request->type)->where('price', '>', 40000000);
+                    $product = $product->where('type_cate',$request->type)->where('price', '>', 40000000);
                 }
             }
             if(isset($request->sortby)){
@@ -200,6 +200,26 @@ class ProductController extends Controller
             }
             if(isset($request->brand)){
                 $product = $product->where('type_cate',$request->type)->where('brand_id',$request->brand);
+            }
+        }else {
+            if(isset($request->price)){
+                if($request->price == '10trieu'){
+                    $product = $product->where('combo_id',$request->combo)->where('price', '<', 10000000);
+                }elseif($request->price == '10-15'){
+                    $product = $product->where('combo_id',$request->combo)->whereBetween('price', [10000000, 15000000]);
+                }elseif($request->price == '15-20'){
+                    $product = $product->where('combo_id',$request->combo)->whereBetween('price', [15000000, 20000000]);
+                }elseif($request->price == '20-30'){
+                    $product = $product->where('combo_id',$request->combo)->whereBetween('price', [20000000, 30000000]);
+                }elseif($request->price == '30-40'){
+                    $product = $product->where('combo_id',$request->combo)->whereBetween('price', [30000000, 40000000]);
+                }
+                else{
+                    $product = $product->where('combo_id',$request->combo)->where('price', '>', 40000000);
+                }
+            }
+            if(isset($request->brand)){
+                $product = $product->where('combo_id',$request->combo)->where('brand_id',$request->brand);
             }
         }
         

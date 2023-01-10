@@ -1,20 +1,23 @@
 
 @php
       $img = json_decode($product->images);
+      $origin = json_decode($product->origin);
 @endphp
 
 <div class="product-small col has-hover product type-product post-{{$product->id}} status-publish instock product_cat-camera-hanh-trinh has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
       <div class="col-inner">
          @if ($product->discount != 0)
-            <div class="badge-container absolute left top z-1">
+            <div class="badge-container absolute left-10 top z-1">
                <div class="callout badge badge-circle">
                <div class="badge-inner secondary on-sale"><span class="onsale">-{{$product->discount}}%</span></div>
                </div>
             </div>
          @endif
-         @if ($product->discountStatus == 1)
+         @if ($origin[0]->image != null)
             <div class="badge-container absolute right top z-1">
-               <img src="{{url('frontend/images/sale.png')}}" alt="" style="width: 40px;">
+               @foreach ($origin as $item)
+               <img src="{{$item->image}}" alt="tag-sale" class="tag-sale" loading="lazy">
+               @endforeach
             </div>
          @endif
             <div class="product-small box ">
@@ -37,8 +40,8 @@
                </div>
                <div class="box-text box-text-products">
                <div class="title-tag-sale" style="min-height: 26px;">
-                  @if ($product->discount != 0 && $product->price > 0)
-                     <img src="{{url('frontend/images/giam-gia-soc.png')}}" alt="">
+                  @if (isset($product->hang_muc))
+                     <img src="{{$product->hang_muc}}" alt="">
                   @endif
                </div>
                <div class="title-wrapper">

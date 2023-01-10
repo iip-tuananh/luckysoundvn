@@ -36,6 +36,9 @@ Danh sách {{$title}}
          @if (isset($type_id))
          <li class="hidden data-type" data-cate="{{$type_id}}"></li>
          @endif
+         @if (isset($combo_id))
+         <li class="hidden data-combo" data-combo="{{$combo_id}}"></li>
+         @endif
          <div class="col filter-cate pd0 filter-trademark small-12 large-12">
             <div class="col-inner">
                <style>
@@ -131,6 +134,7 @@ Danh sách {{$title}}
       var url = $('#menu-product-filter').data('url');
       var cate = $('#menu-product-filter .data-cate').data('cate');
       var type = $('#menu-product-filter .data-type').data('type');
+      var combo = $('#menu-product-filter .data-combo').data('combo');
       console.log(brand);
       $.ajax({
          type: 'post',
@@ -140,7 +144,8 @@ Danh sách {{$title}}
             price : price,
             cate : cate,
             type : type,
-            brand : brand
+            brand : brand,
+            combo : combo
          },
          success :function(data) {
             $('#product-list').html(data.html);

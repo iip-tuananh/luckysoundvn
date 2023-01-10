@@ -16,6 +16,8 @@ use App\models\Province;
 use App\models\Services;
 use App\models\Promotion;
 use App\models\blog\BlogCategory;
+use App\models\website\Partner;
+use App\models\website\Prize;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -48,7 +50,6 @@ class AppServiceProvider extends ServiceProvider
             $servicehome = Services::where('status',1)->orderBy('id','DESC')->get();
             $setting = Setting::first();
             $lang = Language::get();
-            // $pageContent = PageContent::where(['language'=>$language_current,'status'=> 1])->get();
             $categoryhome = Category::with([
                 'typeCate' => function ($query) {
                     $query->with(['typetwo'])->where('status',1)->orderBy('id','DESC')->select('cate_id','id', 'name','avatar','slug','cate_slug'); 
@@ -74,10 +75,10 @@ class AppServiceProvider extends ServiceProvider
             ->orderBy('id','asc')
             ->get(['id','name','slug','avatar']);
             $helpCus = PageContent::where(['status'=>1, 'language'=>'vi','type'=>'ho-tro-khanh-hang'])->get(['id','title','slug', 'type']);
+            $partner = Partner::where(['status'=>1])->get(['id','image','name','link']);
             $view->with([
                 'promotio' => $promotio,
                 'setting' => $setting,
-                // 'pageContent' => $pageContent,
                 'lang' => $lang,
                 'banners'=>$banners,
                 'profile' =>$profile,
@@ -88,7 +89,8 @@ class AppServiceProvider extends ServiceProvider
                 'blogCate'=>$blogCate,
                 'servicehome'=>$servicehome,
                 'bannerHeaderTop'=>$bannerHeaderTop,
-                'helpCus'=>$helpCus
+                'helpCus'=>$helpCus,
+                'partner'=>$partner
                 ]);    
         });  
     }

@@ -13,11 +13,11 @@
 @section('js')
 @endsection
 @section('content')
-<script>
-   if (session()->has('success')){
+@if (session()->has("success"))
+   <script>
       $.notify("Đặt hàng thành công!", "success");
-   }
-</script>
+   </script>
+@endif
 <main id="main" class="">
    <div id="content" role="main" class="content-area">
       <section class="section" id="section_1578259892">
@@ -149,7 +149,7 @@
                   <div id="col-187624757" class="col small-12 large-12"  >
                      <div class="col-inner"  >
                      <div class="slider-wrapper relative" id="slider-41975906" >
-                        <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal"
+                        <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal large-columns-5 medium-columns-3 small-columns-2 row-small row"
                               data-flickity-options='{
                               "cellAlign": "center",
                               "imagesLoaded": true,
@@ -171,7 +171,7 @@
                               "friction": 0.6        }'
                               >
                               @foreach ($comboPro as $prize)
-                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 255px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}" target="{{isset($prize->link) ? '_blank' : ''}}"  href="{{isset($prize->link) ? $prize->link : route('allProductCombo', ['slug'=>$prize->slug])}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
+                                 <div class="col"><a class="ux-logo-link block" title="{{$prize->name}}" target="{{isset($prize->link) ? '_blank' : ''}}"  href="{{isset($prize->link) ? $prize->link : route('allProductCombo', ['slug'=>$prize->slug])}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
                               @endforeach
                         </div>
                         <div class="loading-spin dark large centered"></div>
@@ -225,7 +225,6 @@
          }
       </style>
       </section>
-      {{-- tuansua --}}
       @foreach ($homeProductCategory as $category)
       @if (count($category->products) > 0)
       <section class="section" id="section_1270000722">
@@ -267,7 +266,7 @@
             <div class="row"  id="row-1515724829">
                   <div id="col-1515461008" class="col small-12 large-12"  >
                      <div class="col-inner"  >
-                        <div id="button-custom" class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+                        <div id="button-custom" class="row equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
                            @foreach ($category->products as $pro)
                               @include('layouts.product.item', ['product'=>$pro])
                            @endforeach
@@ -286,90 +285,6 @@
          padding-bottom: 30px;
          }
       </style>
-      <div class="row row-small row-tieu-chi"  id="row-895057886">
-         <div id="col-925053052" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-center"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-02.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Sản phẩm chất lượng<br />
-                        thương hiệu uy tín
-                     </p>
-                     </div>
-                  </div>
-            </div>
-         </div>
-         <div id="col-625984921" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-left"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-03.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Tư vấn chính xác<br />
-                        tác phong chuyên nghiệp
-                     </p>
-                     </div>
-                  </div>
-            </div>
-         </div>
-         <div id="col-896492950" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-left"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-04.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Giá thành tốt nhất<br />
-                        Bảo hành uy tín
-                     </p>
-                     </div>
-                  </div>
-            </div>
-         </div>
-         <div id="col-1317098754" class="col medium-3 small-6 large-3"  >
-            <div class="col-inner"  >
-                  <div class="icon-box featured-box icon-box-left text-left"  >
-                     <div class="icon-box-img" style="width: 40px">
-                     <div class="icon">
-                        <div class="icon-inner" >
-                              <img width="41" height="41" src="{{ asset('frontend/images/icon-5.jpg') }}" class="attachment-medium size-medium" alt="camera quan sát" loading="lazy" />					
-                        </div>
-                     </div>
-                     </div>
-                     <div class="icon-box-text last-reset">
-                     <p>Thanh toán tại nhà<br />
-                        an toàn 100%
-                     </p>
-                     </div>
-                  </div>
-            </div>
-         </div>
-         <style>
-            @media screen and (min-width: 850px)
-            {
-               #row-895057886 .large-3 {
-                  max-width: 25%;
-                  -ms-flex-preferred-size: 25%;
-                  flex-basis: 25%;
-               }
-            }
-         </style>
-      </div>
       <section class="section" id="section_1559591121">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
          </div>
@@ -415,18 +330,6 @@
                                  </a>
                               </div>
                         </div>
-                        {{-- <div id="col-862704539" class="col danh-muc2 hide-for-medium medium-9 small-12 large-9"  >
-                              <div class="col-inner text-right"  >
-                                 <a href="{{route('allListBlog')}}" class="button secondary is-link is-small"  >
-                                 <span>Xem Thêm</span>
-                                 </a>
-                              </div>
-                              <style>
-                                 #col-862704539 > .col-inner {
-                                 padding: 0px 10px 0px 0px;
-                                 }
-                              </style>
-                        </div> --}}
                      </div>
                      </div>
                   </div>

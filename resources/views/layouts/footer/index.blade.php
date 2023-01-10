@@ -1,4 +1,14 @@
+
 <footer id="footer" class="footer-wrapper">
+   <div class="row row-small large-columns-5 medium-columns-4 small-columns-3 row-small" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+      @foreach ($partner as $item)
+         <div class="col">
+            <a href="{{$item->link}}" class="img-tc ">
+               <img src="{{$item->image}}" alt="{{$item->name}}" loading="lazy">
+            </a>
+         </div>
+      @endforeach
+   </div>
    <section class="section footer-section" id="section_948757949">
       <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
       </div>
@@ -66,11 +76,11 @@
                <div class="medium-6 large-6 small-12">
                   <p>DỊCH VỤ GIAO HÀNG</p>
                   <div style="display:flex;">
-                     <img src="{{url('frontend/images/dichvu_img_1.png')}}" alt="">
+                     <img src="{{url('frontend/images/dichvu_img_1.png')}}" alt="dichvu_img_1" loading="lazy">
                      &nbsp;
-                     <img src="{{url('frontend/images/dichvu_img_2.png')}}" alt="">
+                     <img src="{{url('frontend/images/dichvu_img_2.png')}}" alt="dichvu_img_2" loading="lazy">
                      &nbsp;
-                     <img src="{{url('frontend/images/dichvu_img_3.png')}}" alt="">
+                     <img src="{{url('frontend/images/dichvu_img_3.png')}}" alt="dichvu_img_3" loading="lazy">
                      &nbsp;
                   </div>
                </div>
@@ -78,15 +88,15 @@
                   <p>KÊNH THƯƠNG MẠI ĐIỆN TỬ</p>
                   <div style="display:flex;"  class="img-ct">
                      <a href="" >
-                        <img class=""src="{{url('frontend/images/ft_facebook_icon1.png')}}" alt="">
+                        <img class=""src="{{url('frontend/images/ft_facebook_icon1.png')}}" alt="ft_facebook_icon1" loading="lazy">
                      </a>
                      &nbsp;&nbsp;&nbsp;
                      <a href="">
-                        <img src="{{url('frontend/images/ft_instagram_icon1.png')}}" alt="">
+                        <img src="{{url('frontend/images/ft_instagram_icon1.png')}}" alt="ft_instagram_icon1" loading="lazy">
                      </a>
                      &nbsp;&nbsp;&nbsp;
                      <a href="">
-                        <img src="{{url('frontend/images/ft_twitter_icon1.png')}}" alt="">
+                        <img src="{{url('frontend/images/ft_twitter_icon1.png')}}" alt="ft_twitter_icon1" loading="lazy">
                      </a>
                   </div>
                </div>
@@ -112,7 +122,6 @@
             height: 56px;
          }
          #section_948757949 {
-            padding-top: 30px;
             padding-bottom: 30px;
          }
       </style>
