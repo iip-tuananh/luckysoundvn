@@ -29,47 +29,122 @@
                <div class="col-inner">
                </div>
             </div>
-            <div id="col-2074296734" class="col medium-9 small-12 large-9"  >
-               <div class="col-inner"  >
-               <div class="slider-wrapper relative" id="slider-421771181" >
-                  <div class="slider slider-nav-circle slider-nav-large slider-nav-dark slider-style-normal"
-                        data-flickity-options='{
-                        "cellAlign": "center",
-                        "imagesLoaded": true,
-                        "lazyLoad": 1,
-                        "freeScroll": false,
-                        "wrapAround": true,
-                        "autoPlay": 6000,
-                        "pauseAutoPlayOnHover" : true,
-                        "prevNextButtons": true,
-                        "contain" : true,
-                        "adaptiveHeight" : true,
-                        "dragThreshold" : 10,
-                        "percentPosition": true,
-                        "pageDots": true,
-                        "rightToLeft": false,
-                        "draggable": true,
-                        "selectedAttraction": 0.1,
-                        "parallax" : 0,
-                        "friction": 0.6        }'
-                        >
-                        @foreach ($banners as $banner)
-                           <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_560025793">
-                              <div class="img-inner dark" >
-                                 <a href="{{$banner->link}}">
-                                    <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" />						
-                                 </a>
-                              </div>
-                              <style>
-                              #image_560025793 {
-                              width: 100%;
-                              }
-                              </style>
+            <div class="col-5 medium-9 small-12 large-9">
+               <div class="row">
+                  <div id="col-2074296734" class="col-5 medium-8 small-12 large-8"  >
+                     <div class="col-inner">
+                        <div class="slider-wrapper relative" id="slider-421771181" >
+                           <div class="slider slider-nav-circle slider-nav-large slider-nav-dark slider-style-normal"
+                                 data-flickity-options='{
+                                 "cellAlign": "center",
+                                 "imagesLoaded": true,
+                                 "lazyLoad": 1,
+                                 "freeScroll": false,
+                                 "wrapAround": true,
+                                 "autoPlay": 6000,
+                                 "pauseAutoPlayOnHover" : true,
+                                 "prevNextButtons": true,
+                                 "contain" : true,
+                                 "adaptiveHeight" : true,
+                                 "dragThreshold" : 10,
+                                 "percentPosition": true,
+                                 "pageDots": true,
+                                 "rightToLeft": false,
+                                 "draggable": true,
+                                 "selectedAttraction": 0.1,
+                                 "parallax" : 0,
+                                 "friction": 0.6        }'
+                                 >
+                                 @foreach ($banners as $banner)
+                                    <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_560025793">
+                                       <div class="img-inner dark" >
+                                          <a href="{{$banner->link}}">
+                                             <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" />						
+                                          </a>
+                                       </div>
+                                       <style>
+                                       #image_560025793 {
+                                       width: 100%;
+                                       }
+                                       </style>
+                                    </div>
+                                 @endforeach
                            </div>
-                        @endforeach
+                           <div class="loading-spin dark large centered"></div>
+                        </div>
+                     </div>
                   </div>
-                  <div class="loading-spin dark large centered"></div>
+                  <div class="c-box-news col right medium-4 small-12 large-4">
+                     <div class="c-box-title">
+                        <h3>
+                           Coon trinh lap dat
+                        </h3>
+                     </div>
+                     <div class="col-inner">
+                        <div class="item-read">
+                           <div class="avarta">
+                                 <a href="">
+                                    <img
+                                       src="https://nadudesign.com/uploads/images/Thi%E1%BA%BFt%20k%E1%BA%BF%20n%E1%BB%99i%20th%E1%BA%A5t/D%E1%BB%B1%20%C3%A1n%20nh%C3%A0%20ph%E1%BB%91/Nh%C3%A0%20ch%E1%BB%8B%20Hi%E1%BB%81n%20qu%E1%BA%ADn%2012/mau-sac-noi-that-Dia-Trung-Hai_03.jpg"
+                                    />
+                                 </a>
+                           </div>
+                           <div class="info">
+                                 <p>
+                                    <a href="">
+                                       bảo hành 
+                                    </a>
+                                 </p>
+                           </div>
+                        </div>
+                        <div class="item-read">
+                           <div class="avarta">
+                                 <a href="">
+                                    <img
+                                       src="https://nadudesign.com/uploads/images/Thi%E1%BA%BFt%20k%E1%BA%BF%20n%E1%BB%99i%20th%E1%BA%A5t/D%E1%BB%B1%20%C3%A1n%20nh%C3%A0%20ph%E1%BB%91/Nh%C3%A0%20ch%E1%BB%8B%20Hi%E1%BB%81n%20qu%E1%BA%ADn%2012/mau-sac-noi-that-Dia-Trung-Hai_03.jpg"
+                                    />
+                                 </a>
+                           </div>
+                           <div class="info">
+                                 <p>
+                                    <a href="">
+                                    bảo hành
+                                    </a>
+                                 </p>
+                           </div>
+                        </div>   
+                     </div>
+                     <div class="col-inner">
+                        <img src="https://nadudesign.com/uploads/images/Thi%E1%BA%BFt%20k%E1%BA%BF%20n%E1%BB%99i%20th%E1%BA%A5t/D%E1%BB%B1%20%C3%A1n%20nh%C3%A0%20ph%E1%BB%91/Nh%C3%A0%20ch%E1%BB%8B%20Hi%E1%BB%81n%20qu%E1%BA%ADn%2012/mau-sac-noi-that-Dia-Trung-Hai_03.jpg" alt="">
+                     </div>
+                  </div>
                </div>
+
+               <div class="row">
+                  <div class="medium-3 large-3">
+                     
+                     <div class="c-box-untiline">
+                        <div class="c-box-icon">
+                           <img src="https://png.pngtree.com/png-vector/20190331/ourlarge/pngtree-delivery-truck-icon--line-style-icon-vector-illustration-png-image_876651.jpg" alt="" srcset="">
+                        </div>
+                           <span>
+                              <h5>Mien phi van chuyen</h5>
+                           </span>
+                           <span>
+                              <p>Trong basn kinh 50 km</p>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="medium-3 large-3">
+                     
+                  </div>
+                  <div class="medium-3 large-3">
+                     
+                  </div>
+                  <div class="medium-3 large-3">
+
+                  </div>
                </div>
             </div>
          </div>
@@ -202,7 +277,7 @@
                                  }
                               </style>
                         </div>
-                        <div id="col-1468115842" class="col danh-muc2 medium-2 small-12 large-2"  >
+                        {{-- <div id="col-1468115842" class="col danh-muc2 medium-2 small-12 large-2"  >
                               <div class="col-inner"  >
                                  <a href="{{ route('allListProCate' , ['danhmuc'=>$category->slug])}}" target="_self" class="button secondary is-link is-small"  >
                                  <span>Xem tất cả</span>
@@ -221,7 +296,7 @@
                                     padding: 3px 0;
                                  }
                               </style>
-                        </div>
+                        </div> --}}
                      </div>
                      </div>
                   </div>
@@ -229,11 +304,11 @@
             <div class="row"  id="row-1515724829">
                   <div id="col-1515461008" class="col small-12 large-12"  >
                      <div class="col-inner"  >
-                     <div class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small row-full-width has-shadow row-box-shadow-1 row-box-shadow-2-hover">
-                        @foreach ($category->product as $pro)
-                           @include('layouts.product.item', ['product'=>$pro])
-                        @endforeach
-                     </div>
+                        <div class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small row-full-width has-shadow row-box-shadow-1 row-box-shadow-2-hover">
+                           @foreach ($category->product as $pro)
+                              @include('layouts.product.item', ['product'=>$pro])
+                           @endforeach
+                        </div>
                      </div>
                   </div>
             </div>

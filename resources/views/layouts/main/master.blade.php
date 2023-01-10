@@ -61,6 +61,7 @@
    <script type='text/javascript' src='{{ asset('frontend/js/jquery-migrate.min.js') }}' id='jquery-migrate-js'></script>
    <script type='text/javascript' src='{{ asset('frontend/js/notify.min.js') }}'></script>
    <script async src="{{ asset('frontend/js/js.js') }}"></script>
+   <script src="https://kit.fontawesome.com/d3f77edfc2.js" crossorigin="anonymous"></script>
    <style type="text/css">div.nsl-container[data-align="left"] {
       text-align: left;
       }
