@@ -9,6 +9,7 @@
 {{url(''.$banners[0]->image)}}
 @endsection
 @section('css')
+<link rel="stylesheet" href="{{asset('frontend/css/tuan.css')}}">
 @endsection
 @section('js')
 @endsection
@@ -197,7 +198,8 @@
                      </ul>
                      <div class="tab-panels">
                            <div class="panel active entry-content">
-                              <div class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+                              <div class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}' style="    padding-left: 10px;
+                              padding-right: 10px;">
                                  @foreach ($spnoibat as $product)
                                     @include('layouts.product.item', ['product'=>$product])
                                  @endforeach
@@ -224,6 +226,7 @@
          }
       </style>
       </section>
+      {{-- tuansua --}}
       @foreach ($categoryhome as $category)
       @if (count($category->product) > 0)
       <section class="section" id="section_1270000722">
@@ -285,7 +288,7 @@
             <div class="row"  id="row-1515724829">
                   <div id="col-1515461008" class="col small-12 large-12"  >
                      <div class="col-inner"  >
-                        <div class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small row-full-width has-shadow row-box-shadow-1 row-box-shadow-2-hover">
+                        <div id="button-custom" class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
                            @foreach ($category->product as $pro)
                               @include('layouts.product.item', ['product'=>$pro])
                            @endforeach
@@ -297,13 +300,15 @@
       </section>
       @endif
       @endforeach
+      {{-- end --}}
       <style>
          #section_1270000722 {
          padding-top: 30px;
          padding-bottom: 30px;
          }
       </style>
-      <section class="section" id="section_1844193705">
+      {{-- //tuansua --}}
+      {{-- <section class="section" id="section_1844193705">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
          </div>
          <div class="section-content relative">
@@ -369,7 +374,7 @@
             padding-bottom: 0px;
             }
          </style>
-      </section>
+      </section> --}}
       <div class="row row-small row-tieu-chi"  id="row-895057886">
          <div id="col-925053052" class="col medium-3 small-6 large-3"  >
             <div class="col-inner"  >

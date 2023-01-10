@@ -60,20 +60,47 @@
          </div>
       </div>
       <div class="row row-large" id="footer-of-footer">
-         <div class="medium-4 large-4 small-4"></div>
-         <div class="medium-4 large-4 small-4">
-            <p>DỊCH VỤ GIAO HÀNG</p>
-            <div style="display:flex;">
-               <img src="{{url('frontend/images/unnamed.png')}}" alt="">
-               <img src="{{url('frontend/images/grab.jpg')}}" alt="">
-               <img src="{{url('frontend/images/vietnam-post.png')}}" alt="">
+         <div class="medium-5 large-5 small-12"></div>
+         <div class="medium-7 large-7 small-12">
+            <div class="row row-large">
+               <div class="medium-6 large-6 small-12">
+                  <p>DỊCH VỤ GIAO HÀNG</p>
+                  <div style="display:flex;">
+                     <img src="{{url('frontend/images/dichvu_img_1.png')}}" alt="">
+                     &nbsp;
+                     <img src="{{url('frontend/images/dichvu_img_2.png')}}" alt="">
+                     &nbsp;
+                     <img src="{{url('frontend/images/dichvu_img_3.png')}}" alt="">
+                     &nbsp;
+                  </div>
+               </div>
+               <div class="medium-6 large-6 small-12">
+                  <p>KÊNH THƯƠNG MẠI ĐIỆN TỬ</p>
+                  <div style="display:flex;"  class="img-ct">
+                     <a href="" >
+                        <img class=""src="{{url('frontend/images/ft_facebook_icon1.png')}}" alt="">
+                     </a>
+                     &nbsp;&nbsp;&nbsp;
+                     <a href="">
+                        <img src="{{url('frontend/images/ft_instagram_icon1.png')}}" alt="">
+                     </a>
+                     &nbsp;&nbsp;&nbsp;
+                     <a href="">
+                        <img src="{{url('frontend/images/ft_twitter_icon1.png')}}" alt="">
+                     </a>
+                  </div>
+               </div>
             </div>
          </div>
-         <div class="medium-4 large-4 small-4">
-            <p>KÊNH THƯƠNG MẠI ĐIỆN TỬ</p>
-         </div>
       </div>
       </div>
+      <style>
+         .img-ct img{
+            height: 40px !important;
+            width: 40px !important;
+            background-size: cover;
+         }
+      </style>
       <style>
          @media only screen and (max-width: 768px) {
             #footer-of-footer{

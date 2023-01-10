@@ -53,6 +53,7 @@
       url(https://cameraquansat.net.vn/wp-content/themes/flatsome/assets/css/icons/fl-icons.svg?v=3.14.1#fl-icons) format("svg");
       }
    </style>
+   @yield('css')
    <link rel='stylesheet' id='flatsome-shop-css'  href='{{ asset('frontend/css/flatsome-shop.css') }}' type='text/css' media='all' />
    <link rel='stylesheet' id='flatsome-style-css'  href='{{ asset('frontend/css/lap-style.css') }}' type='text/css' media='all' />
    <link rel='stylesheet' id='flatsome-googlefonts-css'  href='{{ asset('frontend/css/css.css') }}' type='text/css' media='all' />
@@ -60,6 +61,8 @@
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    <script type='text/javascript' src='{{ asset('frontend/js/jquery-migrate.min.js') }}' id='jquery-migrate-js'></script>
    <script type='text/javascript' src='{{ asset('frontend/js/notify.min.js') }}'></script>
+   <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
+   @yield('js')
    <script async src="{{ asset('frontend/js/js.js') }}"></script>
    <script src="https://kit.fontawesome.com/d3f77edfc2.js" crossorigin="anonymous"></script>
    <style type="text/css">div.nsl-container[data-align="left"] {
@@ -596,6 +599,26 @@
    </script>
    <script type='text/javascript' src='{{ asset('frontend/js/flatsome.js') }}' id='flatsome-js-js'></script>
    <script type='text/javascript' src='{{ asset('frontend/js/woocommerce.js') }}' id='flatsome-theme-woocommerce-js-js'></script>
+   {{-- tuan --}}
+   <script>
+               $('.owl-carousel-top').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+               0:{
+                     items:1
+               },
+               600:{
+                     items:3
+               },
+               1000:{
+                     items:5
+               }
+            }
+         })
+   </script>
+   {{-- endtuan --}}
    <script>
       $(function() {
          $('.add-to-cart').on('click', function(e) {
