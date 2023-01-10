@@ -10,6 +10,7 @@ use App\models\website\Partner;
 use App\models\blog\BlogCategory;
 use App\models\BannerAds;
 use App\models\product\ProductCombo;
+use App\models\Promotion;
 use  App\models\ReviewCus;
 use App\models\website\Banner;
 use App\models\website\Prize;
@@ -28,6 +29,11 @@ class HomeController extends Controller
         $data['reviewCus'] = ReviewCus::where(['status'=>1])->get();
         $data['spnoibat'] = Product::where(['status'=>1,'discountStatus'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug', 'discountStatus')
             ->paginate(12);
+        $data['homeProductCategory'] = Promotion::with([
+            'products' => function ($query) {
+                $query->where(['status'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','promotion_id','origin','hang_muc'); 
+            }
+        ])->where('status',1)->orderBy('id','ASC')->get(['id','name','link']);
         return view('home',$data);
     }
 }

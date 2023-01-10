@@ -9,7 +9,6 @@
 {{url(''.$banners[0]->image)}}
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{asset('frontend/css/tuan.css')}}">
 @endsection
 @section('js')
 @endsection
@@ -227,8 +226,8 @@
       </style>
       </section>
       {{-- tuansua --}}
-      @foreach ($categoryhome as $category)
-      @if (count($category->product) > 0)
+      @foreach ($homeProductCategory as $category)
+      @if (count($category->products) > 0)
       <section class="section" id="section_1270000722">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
          </div>
@@ -239,9 +238,9 @@
                      <div class="row row-collapse danh-muc"  id="row-1590164106">
                         <div id="col-1872322101" class="col title-muc medium-5 small-12 large-5"  >
                               <div class="col-inner"  >
-                                 <a class="button white is-link expand"  >
+                                 <a class="button white is-link expand" href="{{$category->link}}">
                                     <i class="icon-star"></i>
-                                    <span>Top 10 {{ languageName($category->name) }} chất lượng nhất</span>
+                                    <span>{{ $category->name }}</span>
                                  </a>
                               </div>
                         </div>
@@ -261,26 +260,6 @@
                                  }
                               </style>
                         </div>
-                        {{-- <div id="col-1468115842" class="col danh-muc2 medium-2 small-12 large-2"  >
-                              <div class="col-inner"  >
-                                 <a href="{{ route('allListProCate' , ['danhmuc'=>$category->slug])}}" target="_self" class="button secondary is-link is-small"  >
-                                 <span>Xem tất cả</span>
-                                 </a>
-                              </div>
-                              <style>
-                                 #col-1468115842 > .col-inner {
-                                 padding: 0px;
-                                 text-align: center;
-                                 }
-                                 #col-1468115842 > .col-inner {
-                                    background-color: #105caa;
-                                 }
-                                 #col-1468115842 > .col-inner a{
-                                    color: #ffff;
-                                    padding: 3px 0;
-                                 }
-                              </style>
-                        </div> --}}
                      </div>
                      </div>
                   </div>
@@ -289,7 +268,7 @@
                   <div id="col-1515461008" class="col small-12 large-12"  >
                      <div class="col-inner"  >
                         <div id="button-custom" class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
-                           @foreach ($category->product as $pro)
+                           @foreach ($category->products as $pro)
                               @include('layouts.product.item', ['product'=>$pro])
                            @endforeach
                         </div>
@@ -307,74 +286,6 @@
          padding-bottom: 30px;
          }
       </style>
-      {{-- //tuansua --}}
-      {{-- <section class="section" id="section_1844193705">
-         <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
-         </div>
-         <div class="section-content relative">
-            <div class="row row-collapse align-center collap row-box-shadow-1-hover"  id="row-1661227582">
-                  <div id="col-79221586" class="col small-12 large-12"  >
-                     <div class="col-inner"  >
-                     <div class="row row-collapse danh-muc"  id="row-1866843838">
-                        <div id="col-139644686" class="col title-muc medium-4 small-12 large-4"  >
-                        </div>
-                        <div id="col-139644686" class="col title-muc medium-4 small-12 large-4"  >
-                              <div class="col-inner"  >
-                                 <a href="#" target="_self" class="button white is-link expand"  >
-                                 <span>Thương hiệu nổi bật</span>
-                                 </a>
-                              </div>
-                        </div>
-                        <div id="col-139644686" class="col title-muc medium-4 small-12 large-4"  >
-                        </div>
-                     </div>
-                     </div>
-                  </div>
-            </div>
-            <div class="row"  id="row-1833886763">
-                  <div id="col-1398563553" class="col small-12 large-12"  >
-                     <div class="col-inner"  >
-                     <div class="slider-wrapper relative" id="slider-1283013339" >
-                        <div class="slider slider-nav-simple slider-nav-large slider-nav-light slider-nav-outside slider-style-normal slider-show-nav"
-                              data-flickity-options='{
-                              "cellAlign": "center",
-                              "imagesLoaded": true,
-                              "lazyLoad": 1,
-                              "freeScroll": true,
-                              "wrapAround": true,
-                              "autoPlay": 6000,
-                              "pauseAutoPlayOnHover" : true,
-                              "prevNextButtons": true,
-                              "contain" : true,
-                              "adaptiveHeight" : true,
-                              "dragThreshold" : 10,
-                              "percentPosition": true,
-                              "pageDots": false,
-                              "rightToLeft": false,
-                              "draggable": true,
-                              "selectedAttraction": 0.1,
-                              "parallax" : 0,
-                              "friction": 0.6        }'
-                              >
-                              @foreach ($partner as $item)
-                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 230px!important">
-                                    <div class="ux-logo-link block image-grayscale" title=""  href="" style="padding: 15px;"><img src="{{$item->image}}" title="" alt="" class="ux-logo-image block" style="height:53px;" /></div>
-                                 </div>
-                              @endforeach
-                        </div>
-                        <div class="loading-spin dark large centered"></div>
-                     </div>
-                     </div>
-                  </div>
-            </div>
-         </div>
-         <style>
-            #section_1844193705 {
-            padding-top: 0px;
-            padding-bottom: 0px;
-            }
-         </style>
-      </section> --}}
       <div class="row row-small row-tieu-chi"  id="row-895057886">
          <div id="col-925053052" class="col medium-3 small-6 large-3"  >
             <div class="col-inner"  >

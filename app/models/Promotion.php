@@ -2,11 +2,17 @@
 
 namespace App\models;
 
+use App\models\product\Product;
 use Illuminate\Database\Eloquent\Model;
 
 class Promotion extends Model
 {
     protected $table = "promotion";
+    public function products()
+    {
+        return $this->hasMany(Product::class,'promotion_id','id');
+    }
+
     public function savePromotion($request)
     {
     	$id = $request->id;
