@@ -369,6 +369,11 @@ form.submitting .wpcf7-spinner {
 		color: #880e22;
 		font-size: 20px;
 	}
+	.box-criteria .col {
+		display: flex;
+		font-size: 11px;
+		align-items: center;
+	}
 }
 @media only screen and (max-width: 576px) {
 	.hidden-xs {
@@ -379,4 +384,12 @@ form.submitting .wpcf7-spinner {
 	.hidden-lg {
 		display: none;
 	}
+}
+
+.box-criteria .col {
+	text-align: center;
+}
+.box-criteria .col img{
+	width: 60px;
+	margin-right: 6px;
 }

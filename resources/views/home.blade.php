@@ -74,7 +74,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="c-box-news col right medium-4 small-12 large-4">
+                  <div class="c-box-news col right medium-4 small-12 large-4 hidden-xs hidden-sm">
                      @foreach ($blogCate as $key=>$cate)
                         @if ($key == 1)
                            <div class="c-box-title">
@@ -105,29 +105,26 @@
                      @endforeach
                   </div>
                </div>
-               <div class="row">
-                  <div class="medium-3 large-3 small-3">
-                     <div class="c-box-untiline">
-                        <div class="c-box-icon">
-                           <img src="https://png.pngtree.com/png-vector/20190331/ourlarge/pngtree-delivery-truck-icon--line-style-icon-vector-illustration-png-image_876651.jpg" alt="" srcset="">
-                        </div>
-                           <span>
-                              <h5>Mien phi van chuyen</h5>
-                           </span>
-                           <span>
-                              <p>Trong basn kinh 50 km</p>
-                           </span>
-                        </div>
-                     </div>
+               <div class="row box-criteria large-columns-4 medium-columns-3 small-columns-2 row-small" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 10, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+                  <div class="col">
+                     <img src="{{url('frontend/images/vanchuyen.png')}}" alt="" loading="lazy">
+                     <span><strong>Miễn phí vận chuyển</strong><br>bán kính 20km</span> 
                   </div>
-                  <div class="medium-3 large-3">
-                     
+                  <div class="col">
+                     <img src="{{url('frontend/images/thanhtoan.png')}}" alt="" loading="lazy">
+                     <span><strong>Thanh toán đa dạng</strong><br>tiền mặt thẻ tín dụng....</span>
                   </div>
-                  <div class="medium-3 large-3">
-                     
+                  <div class="col">
+                     <img src="{{url('frontend/images/doitra.png')}}" alt="" loading="lazy">
+                     <span><strong>Đổi trả hàng nếu</strong><br>lỗi sản xuất hoặc vận chuyển</span>
                   </div>
-                  <div class="medium-3 large-3">
-
+                  <div class="col">
+                     <img src="{{url('frontend/images/baohanh.png')}}" alt="" loading="lazy">
+                     <span><strong>Bảo hành chính hãng</strong><br>nguồn góc sản phẩm rõ ràng</span>
+                  </div>
+                  <div class="col">
+                     <img src="{{url('frontend/images/tuvan.png')}}" alt="" loading="lazy">
+                     <span><strong>Tư vấn miễn phí</strong><br>mọi lúc mọi nơi</span>
                   </div>
                </div>
             </div>
@@ -173,8 +170,8 @@
                               "parallax" : 0,
                               "friction": 0.6        }'
                               >
-                              @foreach ($prizes as $prize)
-                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 255px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
+                              @foreach ($comboPro as $prize)
+                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 255px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}" target="{{isset($prize->link) ? '_blank' : ''}}"  href="{{isset($prize->link) ? $prize->link : route('allProductCombo', ['slug'=>$prize->slug])}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
                               @endforeach
                         </div>
                         <div class="loading-spin dark large centered"></div>

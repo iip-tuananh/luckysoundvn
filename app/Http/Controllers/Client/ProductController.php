@@ -10,11 +10,22 @@ use App\models\blog\Blog;
 use App\models\product\TypeProduct;
 use App\models\construction\Construction;
 use App\models\product\ProductBrands;
+use App\models\product\ProductCombo;
 use  App\models\product\TypeProductTwo;
 use Session;
 
 class ProductController extends Controller
 {
+    public function allProductCombo($slug)
+    {
+        $data['combo'] = ProductCombo::where(['slug' => $slug, 'status' =>1])->first(['id','name','slug','link']);
+        $data['combo_id'] = $data['combo']->id;
+        $data['brands'] = ProductBrands::where('status', 1)->get();
+        $data['list'] = Product::where(['status'=>1, 'combo_id'=>$data['combo_id']])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug')
+        ->paginate(20);
+        $data['title'] = $data['combo']->name;
+        return view('product.list',$data);
+    }
     public function allProduct()
     {
         $data['list'] = Product::where('status',1)->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug')

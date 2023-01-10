@@ -16,12 +16,14 @@
          <!-- Mobile Right Elements -->
          <div class="container c-header-mobile hidden-lg">
             <div class="pb-0">
-            <span>
-               <i class="fa-solid fa-phone"></i>
-            </span>
-            <span>
-               {{$setting->phone1}}
-            </span>
+               <a href="tel:{{$setting->phone1}}">
+                  <span>
+                     <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span>
+                     {{$setting->phone1}}
+                  </span>
+               </a>
             </div>
             <div class="pb-0">
                <div class="flex-col show-for-medium flex-right">
@@ -211,7 +213,6 @@
                      </li>
                   </ul>
             </div>
-            
             <!-- Mobile Search Elements -->
             <div class="flex-col show-for-medium flex-right">
                <div class="yith-ajaxsearchform-container ">
