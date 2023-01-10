@@ -1,4 +1,4 @@
-<div class="bottom-contact">
+{{-- <div class="bottom-contact">
     <ul>
         <li>
             <a id="goidien" href="tel:{{$setting->phone1}}" target="_blank">
@@ -29,4 +29,4 @@
             </a>
         </li>
     </ul>
-</div>
+</div> --}}
