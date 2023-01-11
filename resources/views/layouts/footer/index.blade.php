@@ -21,10 +21,7 @@
                   padding: 10px 15px;
                   color: #ffff;"><strong>LUCKY SOUND</strong></p>
                   <p style="text-align: justify;"><i class="icon-shopping-cart"></i>  {{ $setting->company }}</p>
-                  {{-- <span style="text-align: justify;">{{$setting->webname}}</span> --}}
                   <p><i class="icon-checkmark"></i>  Website: <a target="_blank" href="{{route('home')}}">{{route('home')}}</a></p>
-                  {{-- <p><i class="icon-facebook"></i>  Facebook: <a href="{{$setting->facebook}}" target="_blank">{{$setting->facebook}}</a></p>
-                  <p><i class="icon-youtube"></i>  YouTube: <a href="{{$setting->google}}" target="_blank">{{$setting->google}}</a></p> --}}
                   <p><i class="icon-map-pin-fill"></i>  <a href="https://www.google.com/maps/place/{{$setting->address1}}" target="_blank" rel="noopener noreferrer">{{$setting->address1}}</a></p>
                   <p>Hotline 1: <a href="tel:{{$setting->phone1}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone1}}</a></p>
                   @if (isset($setting->phone2))
@@ -43,7 +40,7 @@
          <div id="col-1493538928" class="col medium-7 small-12 large-7"  >
                <div class="col-inner"  >
                   <div class="row row-small"  id="row-2108084258">
-                  <div id="col-712618223" class="col medium-6 small-12 large-6"  >
+                  <div id="col-712618223" class=""  >
                      <div class="col-inner"  >
                            <p style="text-align: justify;
                            background-color: #105caa;
@@ -56,7 +53,7 @@
                            </ul>
                      </div>
                   </div>
-                  <div id="col-1081915389" class="col medium-6 small-12 large-6"  >
+                  <div id="col-1081915389" class=""  >
                      <div class="col-inner"  >
                            <p style="text-align: justify;
                            background-color: #105caa;
