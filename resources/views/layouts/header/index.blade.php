@@ -46,7 +46,7 @@
                               <i class="fa-solid fa-cart-shopping"></i>
                            </span>
                               <span class="c-box-amount">
-                                 <strong>{{count($cart)}}</strong>
+                                 <strong>{{count($cartcontent)}}</strong>
                               </span>
                            </span>
                            @else
@@ -69,7 +69,7 @@
                                  @if (count($cartcontent) > 0)
                                  <div class="widget_shopping_cart_content">
                                     <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-                                       @foreach ($cart as $item)
+                                       @foreach ($cartcontent as $item)
                                        @php
                                           $price = $item['price'] - $item['price'] * ($item['discount'] / 100);
                                        @endphp
