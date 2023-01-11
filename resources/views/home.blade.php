@@ -191,7 +191,7 @@
                   <div class="col-inner"  >
                   <div class="tabbed-content">
                      <ul class="nav nav-line nav-uppercase nav-size-large nav-center">
-                        <a href="{{$bannerCateHot->link}}">
+                        <a href="{{$bannerCateHot->link}}" style="width: 100%;">
                            <img src="{{$bannerCateHot->image}}" alt="" loading="lazy">
                         </a>
                      </ul>
