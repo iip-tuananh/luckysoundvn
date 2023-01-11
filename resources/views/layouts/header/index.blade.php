@@ -23,7 +23,17 @@
                   <span>
                      {{$setting->phone1}}
                   </span>
+               </a>&nbsp;&nbsp;
+               @if ($setting->phone2)
+               <a href="tel:{{$setting->phone2}}">
+                  <span>
+                     <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span>
+                     {{$setting->phone2}}
+                  </span>
                </a>
+               @endif
             </div>
             <div class="pb-0">
                <div class="flex-col show-for-medium flex-right">
