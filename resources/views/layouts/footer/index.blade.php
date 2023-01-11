@@ -98,6 +98,11 @@
       </div>
       </div>
       <style>
+         @media only screen and (max-width: 768px) {
+            #footer-of-footer {
+               display: none;
+            }
+         }
          .img-ct img{
             height: 40px !important;
             width: 40px !important;
