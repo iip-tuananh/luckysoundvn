@@ -69,9 +69,13 @@
                                  @if (count($cartcontent) > 0)
                                  <div class="widget_shopping_cart_content">
                                     <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                                       @php
+                                          $totalPrice = 0 ;
+                                       @endphp
                                        @foreach ($cartcontent as $item)
                                        @php
                                           $price = $item['price'] - $item['price'] * ($item['discount'] / 100);
+                                          $totalPrice += $price * $item['quantity'];
                                        @endphp
                                           <li class="woocommerce-mini-cart-item mini_cart_item">
                                              <a href="#" class="remove remove_from_cart_button removeCart" aria-label="Xóa sản phẩm này" data-url="{{route('removeCart', ['id'=>$item['id']])}}">&times;</a>											
