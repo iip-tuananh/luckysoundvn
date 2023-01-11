@@ -11,7 +11,7 @@
    </div>
    <section class="section footer-section" id="section_948757949">
       <div class="section-content">
-      <div class="row-large" >
+      <div class="row-large row" >
          <div id="col-149956225" class="col medium-5 small-12 large-5"  >
                <div class="col-inner"  >
                   <p style="text-align: justify;
