@@ -11,7 +11,7 @@
    </div>
    <section class="section footer-section" id="section_948757949">
       <div class="section-content">
-      <div class="row row-large" >
+      <div class="row" >
          <div id="col-149956225" class="col medium-5 small-12 large-5"  >
                <div class="col-inner"  >
                   <p style="text-align: justify;
@@ -35,8 +35,8 @@
                }
             </style>
          </div>
-         <div id="col-1493538928" class="col medium-7 small-12 large-7"  >
-            <div class="row row-small">
+         <div class="col medium-7 small-12 large-7"  >
+            <div class="row">
             <div class="col medium-6 small-12 large-6"  >
                <div class="col-inner"  >
                      <p style="text-align: justify;
