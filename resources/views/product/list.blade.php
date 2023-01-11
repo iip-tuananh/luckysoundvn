@@ -91,7 +91,9 @@ Danh sách {{$title}}
                @endforeach
             </div>
             <!-- row -->
-            {{$list->links()}}
+            <div id="pagenavnew">
+               {{$list->links()}}
+            </div>
          </div>
          <!-- shop container -->
       </div>

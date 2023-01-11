@@ -48,7 +48,9 @@
                </div>
             @endforeach
             </div>
-            {{$blogs->links()}}
+            <div id="pagenavnew">
+               {{$blogs->links()}}
+            </div>
       </div>
       @include('layouts.main.rightnav-page')
    </div>

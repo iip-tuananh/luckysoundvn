@@ -35,7 +35,7 @@
                <div class="image-tools is-small hide-for-small bottom left show-on-hover">
                </div>
                <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
-                  <a class="add-to-cart" data-url="{{route('addToCart', ['id'=>$product->id])}}" data-redirect="{{route('listCart')}}" href="javascript:void(0);">Mua ngay</a>			
+                  <a class="add-to-cart" data-url="{{route('addToCart')}}" data-id="{{$product->id}}" data-redirect="{{route('listCart')}}" href="javascript:void(0);">Mua ngay</a>			
                </div>
                </div>
                <div class="box-text box-text-products">

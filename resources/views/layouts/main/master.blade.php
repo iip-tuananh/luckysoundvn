@@ -220,12 +220,15 @@
       $(function() {
          $('.add-to-cart').on('click', function(e) {
             e.preventDefault();
+            let id = $(this).data('id');
+            let quantity = $(this).parents().find('input[name=quantity]').val();
             let urlCart = $(this).data('url');
             let urlRedirect = $(this).data('redirect');
             $.ajax({
-               type: 'get',
+               type: 'post',
                url: urlCart,
-               dataType : 'json',
+               headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+               data: {id: id, quantity: quantity}
                success: function(data) {
                   window.location.replace(urlRedirect);
                   $.notify("Thêm vào giỏ hàng thành công!", "success");

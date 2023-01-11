@@ -171,7 +171,7 @@ $imgs = json_decode($product->images);
                      <p>{!! languageName($product->description) !!}</p>
                      </div>
                      @endif
-                     <form class="cart" action="" method="post" enctype='multipart/form-data'>
+                     <form class="cart" enctype='multipart/form-data'>
                         <div class="sticky-add-to-cart-wrapper">
                            <div class="sticky-add-to-cart">
                               <div class="sticky-add-to-cart__product">
@@ -190,10 +190,10 @@ $imgs = json_decode($product->images);
                                  </div>
                               </div>
                               <div class="quantity buttons_added">
-                                 <input type="button" value="-" class="minus button is-form">
+                                 <input type="button" value="-" class="minus button is-form" onClick="var result = document.getElementById('quantityItem'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro &gt; 1 ) result.value--;return false;">
                                  <input
                                     type="number"
-                                    id="quantity_62a08a1011ba6"
+                                    id="quantityItem"
                                     class="input-text qty text"
                                     step="1"
                                     min="1"
@@ -204,9 +204,9 @@ $imgs = json_decode($product->images);
                                     size="4"
                                     placeholder=""
                                     inputmode="numeric" />
-                                 <input type="button" value="+" class="plus button is-form">	
+                                 <input type="button" value="+" class="plus button is-form" onClick="var result = document.getElementById('quantityItem'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;">	
                               </div>
-                              <a class="single_add_to_cart_button button alt add-to-cart" data-url="{{route('addToCart', ['id'=>$product->id])}}" data-redirect="{{route('listCart')}}">Thêm vào giỏ hàng</a>
+                              <a class="single_add_to_cart_button button alt add-to-cart" data-url="{{route('addToCart')}}" data-id="{{$product->id}}" data-redirect="{{route('listCart')}}">Thêm vào giỏ hàng</a>
                            </div>
                         </div>
                      </form>
