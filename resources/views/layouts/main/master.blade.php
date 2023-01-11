@@ -228,7 +228,7 @@
                type: 'post',
                url: urlCart,
                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-               data: {id: id, quantity: quantity}
+               data: {id: id, quantity: quantity},
                success: function(data) {
                   window.location.replace(urlRedirect);
                   $.notify("Thêm vào giỏ hàng thành công!", "success");
