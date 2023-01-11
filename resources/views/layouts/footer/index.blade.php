@@ -40,7 +40,7 @@
          <div id="col-1493538928" class="col medium-7 small-12 large-7"  >
                <div class="col-inner"  >
                   <div class="row row-small"  id="row-2108084258">
-                  <div id="col-712618223" class="col medium-6 small-12 large-6"  >
+                  <div id="col-712618223" class="medium-6 small-12 large-6"  >
                      <div class="col-inner"  >
                            <p style="text-align: justify;
                            background-color: #105caa;
@@ -53,7 +53,7 @@
                            </ul>
                      </div>
                   </div>
-                  <div id="col-1081915389" class="col medium-6 small-12 large-6"  >
+                  <div id="col-1081915389" class="medium-6 small-12 large-6"  >
                      <div class="col-inner"  >
                            <p style="text-align: justify;
                            background-color: #105caa;
@@ -109,11 +109,6 @@
          }
       </style>
       <style>
-         @media only screen and (max-width: 768px) {
-            #footer-of-footer{
-               display: none;
-            }
-         }
          #footer-of-footer img{
             width: 90px;
             height: 56px;
