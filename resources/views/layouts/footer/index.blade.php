@@ -9,9 +9,9 @@
          </div>
       @endforeach
    </div>
-   <section class="footer-section" id="section_948757949">
+   <section class="section footer-section" id="section_948757949">
       <div class="section-content">
-      <div class="row" >
+      <div class="row-large" >
          <div id="col-149956225" class="col medium-5 small-12 large-5"  >
                <div class="col-inner"  >
                   <p style="text-align: justify;
@@ -36,7 +36,7 @@
             </style>
          </div>
          <div class="col medium-7 small-12 large-7"  >
-            <div class="row">
+            <div class="row-small" style="margin-left: -15px;margin-right: -15px;padding: 0;">
             <div class="col medium-6 small-12 large-6"  >
                <div class="col-inner"  >
                      <p style="text-align: justify;
