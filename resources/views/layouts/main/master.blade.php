@@ -177,7 +177,7 @@
             font-size: 0px;
          }
          .list-social a {
-         padding: 10px 10px 18px 10px;
+         padding: 10px 10px 18px 18px;
          border-top-left-radius: 4px;
          border-top-right-radius: 4px;
          border-bottom-left-radius: 4px;
