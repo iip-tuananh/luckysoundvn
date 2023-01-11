@@ -445,7 +445,7 @@ export default {
      if(this.objData.name[0].content == '') this.errors.push('Tên không được để trống');
       if(this.objData.content[0].content == '') this.errors.push('Nội dung không được để trống');
       if(this.objData.description[0].content == '') this.errors.push('Mô tả không được để trống');
-      if(this.objData.images.length < 2) this.errors.push('Vui lòng chọn thêm ảnh. Cần ít nhất 2 ảnh');
+      // if(this.objData.images.length < 2) this.errors.push('Vui lòng chọn thêm ảnh. Cần ít nhất 2 ảnh');
       if(this.objData.category == 0) this.errors.push('Chọn danh mục sản phẩm');
       if (this.errors.length > 0) {
         this.errors.forEach((value, key) => {

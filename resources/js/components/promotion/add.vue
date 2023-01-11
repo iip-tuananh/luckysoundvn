@@ -104,9 +104,9 @@ export default {
     addPromotions(){
       this.errors = [];
       if(this.objData.name == '') this.errors.push('Tên không được để trống');
-      if(this.objData.description == '') this.errors.push('Mô tả không được để trống');
-      if(this.objData.images == '') this.errors.push('Vui lòng chọn ảnh');
-      if(this.objData.link == '') this.errors.push('Đường dẫn khônng để trống');
+      // if(this.objData.description == '') this.errors.push('Mô tả không được để trống');
+      // if(this.objData.images == '') this.errors.push('Vui lòng chọn ảnh');
+      // if(this.objData.link == '') this.errors.push('Đường dẫn khônng để trống');
       if (this.errors.length > 0) {
         this.errors.forEach((value, key) => {
           this.$error(value)
