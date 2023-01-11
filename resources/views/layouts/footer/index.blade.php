@@ -36,32 +36,30 @@
             </style>
          </div>
          <div id="col-1493538928" class="col medium-7 small-12 large-7"  >
+            <div class="row row-small">
+            <div class="col medium-6 small-12 large-6"  >
                <div class="col-inner"  >
-                  <div class="row row-small"  id="row-2108084258">
-                  <div id="col-712618223" class="col medium-6 small-12 large-6"  >
-                     <div class="col-inner"  >
-                           <p style="text-align: justify;
-                           background-color: #105caa;
-                           padding: 10px 15px;
-                           color: #ffff;"><strong>THÔNG TIN, CHÍNH SÁCH</strong></p>
-                           <ul>
-                              @foreach ($helpCus as $item)
-                              <li style="text-align: justify;"><a href="{{route('helpCus', ['slug'=>$item->slug])}}">{{$item->title}}</a></li>
-                              @endforeach
-                           </ul>
-                     </div>
-                  </div>
-                  <div id="col-1081915389" class="col medium-6 small-12 large-6"  >
-                     <div class="col-inner"  >
-                           <p style="text-align: justify;
-                           background-color: #105caa;
-                           padding: 10px 15px;
-                           color: #ffff;"><strong>Bản đồ</strong></p>
-                           {!! $setting->iframe_map !!}
-                     </div>
-                  </div>
-                  </div>
+                     <p style="text-align: justify;
+                     background-color: #105caa;
+                     padding: 10px 15px;
+                     color: #ffff;"><strong>THÔNG TIN, CHÍNH SÁCH</strong></p>
+                     <ul>
+                        @foreach ($helpCus as $item)
+                        <li style="text-align: justify;"><a href="{{route('helpCus', ['slug'=>$item->slug])}}">{{$item->title}}</a></li>
+                        @endforeach
+                     </ul>
                </div>
+            </div>
+            <div class="col medium-6 small-12 large-6"  >
+               <div class="col-inner"  >
+                     <p style="text-align: justify;
+                     background-color: #105caa;
+                     padding: 10px 15px;
+                     color: #ffff;"><strong>BẢN ĐỒ</strong></p>
+                     {!! $setting->iframe_map !!}
+               </div>
+            </div>
+            </div>
          </div>
       </div>
       <div class="row row-large" id="footer-of-footer">
