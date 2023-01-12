@@ -75,34 +75,30 @@
                      </div>
                   </div>
                   <div class="c-box-news col right medium-4 small-12 large-4 hidden-xs hidden-sm">
-                     @foreach ($blogCate as $key=>$cate)
-                        @if ($key == 1)
-                           <div class="c-box-title">
-                              <h3>
-                                 {{languageName($cate->name)}}
-                              </h3>
-                           </div>
-                           @foreach ($cate->listBlog as $blog)
-                              <div class="col-inner">
-                                 <div class="item-read">
-                                    <div class="avarta">
-                                          <a href="{{route('detailBlog', ['slug'=>$blog->slug])}}">
-                                             <img src="{{$blog->image}}" loading="lazy"/>
-                                          </a>
-                                    </div>
-                                    <div class="info">
-                                       <a href="{{route('detailBlog', ['slug'=>$blog->slug])}}">
-                                          {{languageName($blog->title)}} 
-                                       </a>
-                                    </div>
-                                 </div>  
+                     <div class="c-box-title">
+                        <h3>
+                           {{languageName($cateBlogHome->name)}}
+                        </h3>
+                     </div>
+                     @foreach ($cateBlogHome->listBlog as $blog)
+                        <div class="col-inner">
+                           <div class="item-read">
+                              <div class="avarta">
+                                    <a href="{{route('detailBlog', ['slug'=>$blog->slug])}}">
+                                       <img src="{{$blog->image}}" loading="lazy"/>
+                                    </a>
                               </div>
-                           @endforeach
-                           <div class="col-inner">
-                              <img src="{{$cate->avatar}}" alt="{{languageName($cate->name)}}" loading="lazy">
-                           </div>
-                        @endif
+                              <div class="info">
+                                 <a href="{{route('detailBlog', ['slug'=>$blog->slug])}}">
+                                    {{languageName($blog->title)}} 
+                                 </a>
+                              </div>
+                           </div>  
+                        </div>
                      @endforeach
+                     <div class="col-inner">
+                        <img src="{{$cateBlogHome->avatar}}" alt="{{languageName($cateBlogHome->name)}}" loading="lazy">
+                     </div>
                   </div>
                </div>
                <div class="row box-criteria large-columns-4 medium-columns-3 small-columns-2 row-small" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 10, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
@@ -295,7 +291,9 @@
                      <div class="col-inner"  >
                      <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1396187211">
                         <div class="img-inner dark" >
+                           <a href="{{$banner->name}}">
                               <img width="1020" height="167" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w" sizes="(max-width: 1020px) 100vw, 1020px" />						
+                           </a>
                         </div>
                      </div>
                      </div>

@@ -87,7 +87,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label>YouTube</label>
+                  <label>Shopee</label>
                   <vs-input
                     type="text"
                     size="default"
@@ -96,12 +96,21 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label>Code Google analytics</label>
+                  <label>Lazada</label>
                   <vs-input
                     type="text"
                     size="default"
                     class="w-100"
                     v-model="objData.GA"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Tiki</label>
+                  <vs-input
+                    type="text"
+                    size="default"
+                    class="w-100"
+                    v-model="objData.fbPixel"
                   />
                 </div>
                 <div class="form-group">

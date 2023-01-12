@@ -33,6 +33,11 @@ class HomeController extends Controller
                 $query->where(['status'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','promotion_id','origin','hang_muc'); 
             }
         ])->where('status',1)->orderBy('id','ASC')->get(['id','name','link']);
+        $data['cateBlogHome'] = BlogCategory::with([
+            'listBlog' => function ($query) {
+                $query->where(['status'=>1, 'home_status'=>1])->select();
+            }
+        ])->where('status',2)->first(['id','name','slug','avatar']);
         return view('home',$data);
     }
 }

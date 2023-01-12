@@ -37,10 +37,16 @@
       </div>
       <div class="form-group">
         <label for="exampleInputName1">Trạng thái</label>
-        <vs-switch v-model="objData.status">
+        <vs-select v-model="objData.status"
+                  >
+          <vs-select-item  value="2" text="Cạnh banner trang chủ" />
+          <vs-select-item  value="1" text="Hiện" />
+          <vs-select-item  value="0" text="Ẩn" />
+        </vs-select>
+        <!-- <vs-switch v-model="objData.status">
           <span slot="on">Hiện</span>
           <span slot="off">Ẩn</span>
-        </vs-switch>
+        </vs-switch> -->
       </div>
       <div class="form-group">
         <vs-button
@@ -73,7 +79,7 @@ export default {
         ],
         path: "",
         avatar: "",
-        status: ""
+        status: 0
       },
       img:'',
       lang:[]

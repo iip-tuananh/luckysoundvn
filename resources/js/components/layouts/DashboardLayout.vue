@@ -24,7 +24,8 @@
 
       </template>
     </side-bar>
-    <div class="main-panel">
+    <div class="main-panel dashboard-background">
+      
       <sidebar-share
         :color.sync="sidebarBackground"
         :fixed-navbar.sync="fixedNavbar"

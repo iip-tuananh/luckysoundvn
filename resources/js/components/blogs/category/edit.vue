@@ -50,6 +50,7 @@
                   <label for="exampleInputName1">Trạng thái</label>
                   <vs-select v-model="objData.status"
                   >
+                      <vs-select-item  value="2" text="Cạnh banner trang chủ" />
                       <vs-select-item  value="1" text="Hiện" />
                       <vs-select-item  value="0" text="Ẩn" />
                     </vs-select>

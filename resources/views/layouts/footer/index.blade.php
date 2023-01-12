@@ -80,15 +80,15 @@
                <div class="medium-6 large-6 small-12">
                   <p>KÊNH THƯƠNG MẠI ĐIỆN TỬ</p>
                   <div style="display:flex;"  class="img-ct">
-                     <a href="" >
-                        <img class=""src="{{url('frontend/images/ft_facebook_icon1.png')}}" alt="ft_facebook_icon1" loading="lazy">
+                     <a href="{{$setting->fbPixel}}" target="_blank">
+                        <img src="{{url('frontend/images/ft_facebook_icon1.png')}}" alt="ft_facebook_icon1" loading="lazy">
                      </a>
                      &nbsp;&nbsp;&nbsp;
-                     <a href="">
+                     <a href="{{$setting->GA}}" target="_blank">
                         <img src="{{url('frontend/images/ft_instagram_icon1.png')}}" alt="ft_instagram_icon1" loading="lazy">
                      </a>
                      &nbsp;&nbsp;&nbsp;
-                     <a href="">
+                     <a href="{{$setting->google}}" target="_blank">
                         <img src="{{url('frontend/images/ft_twitter_icon1.png')}}" alt="ft_twitter_icon1" loading="lazy">
                      </a>
                   </div>

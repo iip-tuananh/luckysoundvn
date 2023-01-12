@@ -1,6 +1,33 @@
 <template>
   <div>
-    <div class="row">
+    <div class="wrapper">
+      <div class="bubbles">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+      </div>
+	  </div>
+    <h1 class="welcome-admin typed-out">Chào mừng bạn đến với trang quản trị website!</h1>
+    <!-- <div class="row">
       <div class="col-md-12">
         <div class="card card-stats card-raised boxtop">
           <div class="card-body">
@@ -216,8 +243,8 @@
           </div>
         </card>
       </div>
-    </div>
-    <div class="row">
+    </div> -->
+    <!-- <div class="row">
       <div class="col-md-12">
         <card>
           <h4 slot="header" class="card-title">Best Selling Products</h4>
@@ -269,7 +296,7 @@
           </div>
         </card>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -421,4 +448,184 @@ export default {
 };
 </script>
 <style>
+    .welcome-admin {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .typed-out{
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      animation: typing 1s steps(10, end) forwards infinite;
+      font-size: 1.6rem;
+      width: 0;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+@keyframes animate{
+        0% {
+            transform: scale(0) translateY(0) rotate(
+        70deg);
+        }
+        
+        100% {
+            transform: scale(1.3) translateY(-100px) rotate(
+        70deg);
+        }}
+        .wrapper{
+            max-width: 1990px;
+            margin: 0 auto;
+            z-index:100;
+          
+        }
+        .bubbles {
+            width: 100%;
+            height: 100%;
+            
+            z-index:100;
+        }
+        .bubbles div:nth-child(1) {
+            top: 30%;
+            z-index: 10;
+            left: 40%;
+            animation: animate 7s linear infinite;
+        }
+        .bubbles div:nth-child(2) {
+            top: 50%;
+            z-index: 10;
+            left: 20%;
+            animation: animate 9s linear infinite;
+        }
+        .bubbles div:nth-child(3) {
+            top: 50%;
+            left: 60%;
+            z-index: 10;
+            animation: animate 5s linear infinite;
+        }
+        .bubbles div:nth-child(4) {
+            top: 60%;
+            left: 90%;
+            z-index: 10;
+            animation: animate 10s linear infinite;
+        }
+        .bubbles div:nth-child(5) {
+            top: 60%;
+            z-index: 10;
+            left: 10%;
+            animation: animate 7s linear infinite;
+        }
+        .bubbles div:nth-child(6) {
+            top: 30%;
+            z-index: 10;
+            left: 3%;
+            animation: animate 7s linear infinite;
+        }
+        bubbles div:nth-child(7) {
+            top: 70%;
+            left: 70%;
+            z-index: 10;
+            animation: animate 9s linear infinite;
+        }
+        bubbles div:nth-child(8) {
+            top: 50%;
+            z-index: 10;
+            left: 60%;
+            animation: animate 11s linear infinite;
+        }
+        .bubbles div:nth-child(9) {
+            top: 40%;
+            left: 70%;
+            z-index: 10;
+            animation: animate 5s linear infinite;
+        }
+        .bubbles div:nth-child(10) {
+            top: 50%;
+            z-index: 10;
+            left: 60%;
+            animation: animate 15s linear infinite;
+        }
+        .bubbles div:nth-child(11) {
+            top: 90%;
+            z-index: 10;
+            left: 70%;
+            animation: animate 6s linear infinite;
+        }
+        .bubbles div:nth-child(12) {
+            top: 80%;
+            z-index: 10;
+            left: 30%;
+            animation: animate 6s linear infinite;
+        }
+        .bubbles div:nth-child(13) {
+            top: 85%;
+            z-index: 10;
+            left: 80%;
+            animation: animate 6s linear infinite;
+        }
+        .bubbles div:nth-child(16) {
+            top: 90%;
+            z-index: 10;
+            left: 85%;
+            animation: animate 6s linear infinite;
+        }
+        .bubbles div:nth-child(16) {
+            top: 10%;
+            z-index: 10;
+            left: 90%;
+            animation: animate 6s linear infinite;
+          
+        }
+        div .dot {
+          height: 10px;
+          width: 10px;
+          border-radius: 50px;
+          background: rgba(255, 255, 255, 0.5);
+          position: absolute;
+          top: 20%;
+          right: 20%;
+          z-index:100;
+        }
+        .bubbles div {
+            height: 60px;
+            width: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50px;
+            background: transparent;
+            top: 10%;
+            left: 10%;
+            animation: animate 4s linear infinite;
+            position: absolute;
+            z-index:100;
+        }
+        .dashboard-background{
+          height: 100vh;
+          background: linear-gradient(
+            212deg, #EE7752, #E73C7E, #157da3, #18ac89, rgb(8, 156, 20));
+          animation: change 10s ease-in-out infinite;
+          background-size: 400% 400%;
+          overflow-y: hidden !important;
+          
+        }
+
+        @keyframes change
+        {
+        0%{
+        background-position: 0 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0 50%;
+        }
+        }
 </style>
