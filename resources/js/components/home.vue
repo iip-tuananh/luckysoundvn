@@ -462,7 +462,7 @@ export default {
       overflow: hidden;
       border-right: .15em solid orange;
       white-space: nowrap;
-      animation: typing 5s steps(10, end) forwards;
+      animation: typing 5s steps(56, end) forwards;
       font-size: 1.6rem;
       width: 0;
     }
@@ -611,8 +611,6 @@ export default {
             212deg, #EE7752, #E73C7E, #157da3, #18ac89, rgb(8, 156, 20));
           animation: change 10s ease-in-out infinite;
           background-size: 400% 400%;
-          overflow-y: hidden !important;
-          
         }
 
         @keyframes change
