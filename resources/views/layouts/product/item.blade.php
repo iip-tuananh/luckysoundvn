@@ -16,7 +16,7 @@
          @if ($origin[0]->image != null)
             <div class="badge-container absolute right top z-1">
                @foreach ($origin as $item)
-               <img src="{{$item->image}}" alt="tag">
+               <img src="{{$item->image}}" class="tag-sale" alt="tag">
                @endforeach
             </div>
          @endif
