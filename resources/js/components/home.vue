@@ -462,7 +462,7 @@ export default {
       overflow: hidden;
       border-right: .15em solid orange;
       white-space: nowrap;
-      animation: typing 1s steps(10, end) forwards infinite;
+      animation: typing 5s steps(10, end) forwards;
       font-size: 1.6rem;
       width: 0;
     }
