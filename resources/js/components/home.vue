@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dashboard-background">
     <div class="wrapper">
       <div class="bubbles">
         <div><span class="dot"></span></div>

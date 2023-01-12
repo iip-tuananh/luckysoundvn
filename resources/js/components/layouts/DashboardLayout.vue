@@ -24,7 +24,7 @@
 
       </template>
     </side-bar>
-    <div class="main-panel dashboard-background">
+    <div class="main-panel">
       
       <sidebar-share
         :color.sync="sidebarBackground"
