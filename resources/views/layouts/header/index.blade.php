@@ -16,12 +16,24 @@
          <!-- Mobile Right Elements -->
          <div class="container c-header-mobile hidden-lg">
             <div class="pb-0">
-            <span>
-               <i class="fa-solid fa-phone"></i>
-            </span>
-            <span>
-               {{$setting->phone1}}
-            </span>
+               <a href="tel:{{$setting->phone1}}">
+                  <span>
+                     <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span>
+                     {{$setting->phone1}}
+                  </span>
+               </a>&nbsp;&nbsp;
+               @if ($setting->phone2)
+               <a href="tel:{{$setting->phone2}}">
+                  <span>
+                     <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span>
+                     {{$setting->phone2}}
+                  </span>
+               </a>
+               @endif
             </div>
             <div class="pb-0">
                <div class="flex-col show-for-medium flex-right">
@@ -34,7 +46,7 @@
                               <i class="fa-solid fa-cart-shopping"></i>
                            </span>
                               <span class="c-box-amount">
-                                 <strong>{{count($cart)}}</strong>
+                                 <strong>{{count($cartcontent)}}</strong>
                               </span>
                            </span>
                            @else
@@ -57,9 +69,13 @@
                                  @if (count($cartcontent) > 0)
                                  <div class="widget_shopping_cart_content">
                                     <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-                                       @foreach ($cart as $item)
+                                       @php
+                                          $totalPrice = 0 ;
+                                       @endphp
+                                       @foreach ($cartcontent as $item)
                                        @php
                                           $price = $item['price'] - $item['price'] * ($item['discount'] / 100);
+                                          $totalPrice += $price * $item['quantity'];
                                        @endphp
                                           <li class="woocommerce-mini-cart-item mini_cart_item">
                                              <a href="#" class="remove remove_from_cart_button removeCart" aria-label="Xóa sản phẩm này" data-url="{{route('removeCart', ['id'=>$item['id']])}}">&times;</a>											
@@ -211,7 +227,6 @@
                      </li>
                   </ul>
             </div>
-            
             <!-- Mobile Search Elements -->
             <div class="flex-col show-for-medium flex-right">
                <div class="yith-ajaxsearchform-container ">

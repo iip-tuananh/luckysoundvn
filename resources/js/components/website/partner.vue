@@ -8,7 +8,7 @@
               <div class="row" v-for="(item, key) in objData" :key="key">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <image-upload type="avatar" v-model="item.image" :title="'doi-tac'"></image-upload>
+                    <image-upload type="avatar" v-model="item.image" :title="'tieu-chi'"></image-upload>
                   </div>
                 </div>
                 <div class="col-md-9">
@@ -70,7 +70,7 @@ export default {
           image: "",
           status:"",
           link:""
-        }
+        },
       ] 
     };
   },

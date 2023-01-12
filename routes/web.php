@@ -53,7 +53,7 @@ Route::group(['namespace'=>'Client','middleware' => ['checkLanguage']], function
     Route::get('nhan-bao-gia.html','PageController@baogia')->name('baogia');
 
     Route::get('gio-hang.html', 'CartController@listCart')->name('listCart');
-    Route::get('add-to-cart/{id}', 'CartController@addToCart')->name('addToCart');
+    Route::post('add-to-cart', 'CartController@addToCart')->name('addToCart');
     Route::post('update-cart', 'CartController@update')->name('updateCart');
     Route::get('remove-from-cart/{id}', 'CartController@remove')->name('removeCart');
     Route::get('thanh-toan.html','CartController@checkout')->name('checkout');
@@ -76,7 +76,7 @@ Route::group(['namespace'=>'Client','middleware' => ['checkLanguage']], function
         Route::get('chi-tiet/{slug}.html','BlogController@detailBlog')->name('detailBlog');
     });
 
-    Route::get('thuong-hieu/{slug}.html','ProductController@allProduct')->name('allProduct');
+    Route::get('combo-san-pham/{slug}.html','ProductController@allProductCombo')->name('allProductCombo');
     Route::get('tat-ca-san-pham.html','ProductController@allProduct')->name('allProduct');
     Route::get('chi-tiet/{cate}/{slug}.html','ProductController@detail_product')->name('detailProduct');
     Route::get('{danhmuc}.html','ProductController@allListCate')->name('allListProCate');

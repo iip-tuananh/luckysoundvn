@@ -9,17 +9,15 @@
 {{url(''.$banners[0]->image)}}
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{asset('frontend/css/tuan.css')}}">
-
 @endsection
 @section('js')
 @endsection
 @section('content')
-<script>
-   if (session()->has('success')){
+@if (session()->has("success"))
+   <script>
       $.notify("Đặt hàng thành công!", "success");
-   }
-</script>
+   </script>
+@endif
 <main id="main" class="">
    <div id="content" role="main" class="content-area">
       <section class="section" id="section_1578259892">
@@ -76,7 +74,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="c-box-news col right medium-4 small-12 large-4">
+                  <div class="c-box-news col right medium-4 small-12 large-4 hidden-xs hidden-sm">
                      @foreach ($blogCate as $key=>$cate)
                         @if ($key == 1)
                            <div class="c-box-title">
@@ -107,29 +105,26 @@
                      @endforeach
                   </div>
                </div>
-               <div class="row">
-                  <div class="medium-3 large-3 small-3">
-                     <div class="c-box-untiline">
-                        <div class="c-box-icon">
-                           <img src="https://png.pngtree.com/png-vector/20190331/ourlarge/pngtree-delivery-truck-icon--line-style-icon-vector-illustration-png-image_876651.jpg" alt="" srcset="">
-                        </div>
-                           <span>
-                              <h5>Mien phi van chuyen</h5>
-                           </span>
-                           <span>
-                              <p>Trong basn kinh 50 km</p>
-                           </span>
-                        </div>
-                     </div>
+               <div class="row box-criteria large-columns-4 medium-columns-3 small-columns-2 row-small" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 10, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+                  <div class="col">
+                     <img src="{{url('frontend/images/vanchuyen.png')}}" alt="" loading="lazy">
+                     <span><strong>Miễn phí vận chuyển</strong><br>bán kính 20km</span> 
                   </div>
-                  <div class="medium-3 large-3">
-                     
+                  <div class="col">
+                     <img src="{{url('frontend/images/thanhtoan.png')}}" alt="" loading="lazy">
+                     <span><strong>Thanh toán đa dạng</strong><br>tiền mặt thẻ tín dụng....</span>
                   </div>
-                  <div class="medium-3 large-3">
-                     
+                  <div class="col">
+                     <img src="{{url('frontend/images/doitra.png')}}" alt="" loading="lazy">
+                     <span><strong>Đổi trả hàng nếu</strong><br>lỗi sản xuất hoặc vận chuyển</span>
                   </div>
-                  <div class="medium-3 large-3">
-
+                  <div class="col">
+                     <img src="{{url('frontend/images/baohanh.png')}}" alt="" loading="lazy">
+                     <span><strong>Bảo hành chính hãng</strong><br>nguồn góc sản phẩm rõ ràng</span>
+                  </div>
+                  <div class="col">
+                     <img src="{{url('frontend/images/tuvan.png')}}" alt="" loading="lazy">
+                     <span><strong>Tư vấn miễn phí</strong><br>mọi lúc mọi nơi</span>
                   </div>
                </div>
             </div>
@@ -154,7 +149,7 @@
                   <div id="col-187624757" class="col small-12 large-12"  >
                      <div class="col-inner"  >
                      <div class="slider-wrapper relative" id="slider-41975906" >
-                        <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal"
+                        <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal large-columns-5 medium-columns-3 small-columns-2 row-small row"
                               data-flickity-options='{
                               "cellAlign": "center",
                               "imagesLoaded": true,
@@ -175,8 +170,8 @@
                               "parallax" : 0,
                               "friction": 0.6        }'
                               >
-                              @foreach ($prizes as $prize)
-                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 255px!important"><a class="ux-logo-link block image-" title="{{$prize->name}}"  href="{{$prize->link}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
+                              @foreach ($comboPro as $prize)
+                                 <div class="col"><a class="ux-logo-link block" title="{{$prize->name}}" target="{{isset($prize->link) ? '_blank' : ''}}"  href="{{isset($prize->link) ? $prize->link : route('allProductCombo', ['slug'=>$prize->slug])}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
                               @endforeach
                         </div>
                         <div class="loading-spin dark large centered"></div>
@@ -196,7 +191,7 @@
                   <div class="col-inner"  >
                   <div class="tabbed-content">
                      <ul class="nav nav-line nav-uppercase nav-size-large nav-center">
-                        <a href="{{$bannerCateHot->link}}">
+                        <a href="{{$bannerCateHot->link}}" style="width: 100%;">
                            <img src="{{$bannerCateHot->image}}" alt="" loading="lazy">
                         </a>
                      </ul>
@@ -230,9 +225,8 @@
          }
       </style>
       </section>
-      {{-- tuansua --}}
-      @foreach ($categoryhome as $category)
-      @if (count($category->product) > 0)
+      @foreach ($homeProductCategory as $category)
+      @if (count($category->products) > 0)
       <section class="section" id="section_1270000722">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
          </div>
@@ -243,9 +237,9 @@
                      <div class="row row-collapse danh-muc"  id="row-1590164106">
                         <div id="col-1872322101" class="col title-muc medium-5 small-12 large-5"  >
                               <div class="col-inner"  >
-                                 <a class="button white is-link expand"  >
+                                 <a class="button white is-link expand" href="{{$category->link}}">
                                     <i class="icon-star"></i>
-                                    <span>Top 10 {{ languageName($category->name) }} chất lượng nhất</span>
+                                    <span>{{ $category->name }}</span>
                                  </a>
                               </div>
                         </div>
@@ -265,26 +259,6 @@
                                  }
                               </style>
                         </div>
-                        {{-- <div id="col-1468115842" class="col danh-muc2 medium-2 small-12 large-2"  >
-                              <div class="col-inner"  >
-                                 <a href="{{ route('allListProCate' , ['danhmuc'=>$category->slug])}}" target="_self" class="button secondary is-link is-small"  >
-                                 <span>Xem tất cả</span>
-                                 </a>
-                              </div>
-                              <style>
-                                 #col-1468115842 > .col-inner {
-                                 padding: 0px;
-                                 text-align: center;
-                                 }
-                                 #col-1468115842 > .col-inner {
-                                    background-color: #105caa;
-                                 }
-                                 #col-1468115842 > .col-inner a{
-                                    color: #ffff;
-                                    padding: 3px 0;
-                                 }
-                              </style>
-                        </div> --}}
                      </div>
                      </div>
                   </div>
@@ -292,8 +266,8 @@
             <div class="row"  id="row-1515724829">
                   <div id="col-1515461008" class="col small-12 large-12"  >
                      <div class="col-inner"  >
-                        <div id="button-custom" class="row  equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
-                           @foreach ($category->product as $pro)
+                        <div id="button-custom" class="row equalize-box large-columns-5 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+                           @foreach ($category->products as $pro)
                               @include('layouts.product.item', ['product'=>$pro])
                            @endforeach
                         </div>
@@ -309,117 +283,6 @@
          #section_1270000722 {
          padding-top: 30px;
          padding-bottom: 30px;
-         }
-      </style>
-     
-      {{-- //tuansua --}}
-      {{-- <section class="section" id="section_1844193705">
-         <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
-         </div>
-         <div class="section-content relative">
-            <div class="row row-collapse align-center collap row-box-shadow-1-hover"  id="row-1661227582">
-                  <div id="col-79221586" class="col small-12 large-12"  >
-                     <div class="col-inner"  >
-                     <div class="row row-collapse danh-muc"  id="row-1866843838">
-                        <div id="col-139644686" class="col title-muc medium-4 small-12 large-4"  >
-                        </div>
-                        <div id="col-139644686" class="col title-muc medium-4 small-12 large-4"  >
-                              <div class="col-inner"  >
-                                 <a href="#" target="_self" class="button white is-link expand"  >
-                                 <span>Thương hiệu nổi bật</span>
-                                 </a>
-                              </div>
-                        </div>
-                        <div id="col-139644686" class="col title-muc medium-4 small-12 large-4"  >
-                        </div>
-                     </div>
-                     </div>
-                  </div>
-            </div>
-            <div class="row"  id="row-1833886763">
-                  <div id="col-1398563553" class="col small-12 large-12"  >
-                     <div class="col-inner"  >
-                     <div class="slider-wrapper relative" id="slider-1283013339" >
-                        <div class="slider slider-nav-simple slider-nav-large slider-nav-light slider-nav-outside slider-style-normal slider-show-nav"
-                              data-flickity-options='{
-                              "cellAlign": "center",
-                              "imagesLoaded": true,
-                              "lazyLoad": 1,
-                              "freeScroll": true,
-                              "wrapAround": true,
-                              "autoPlay": 6000,
-                              "pauseAutoPlayOnHover" : true,
-                              "prevNextButtons": true,
-                              "contain" : true,
-                              "adaptiveHeight" : true,
-                              "dragThreshold" : 10,
-                              "percentPosition": true,
-                              "pageDots": false,
-                              "rightToLeft": false,
-                              "draggable": true,
-                              "selectedAttraction": 0.1,
-                              "parallax" : 0,
-                              "friction": 0.6        }'
-                              >
-                              @foreach ($partner as $item)
-                                 <div class="ux-logo has-hover align-middle ux_logo inline-block" style="max-width: 100%!important; width: 230px!important">
-                                    <div class="ux-logo-link block image-grayscale" title=""  href="" style="padding: 15px;"><img src="{{$item->image}}" title="" alt="" class="ux-logo-image block" style="height:53px;" /></div>
-                                 </div>
-                              @endforeach
-                        </div>
-                        <div class="loading-spin dark large centered"></div>
-                     </div>
-                     </div>
-                  </div>
-            </div>
-         </div>
-         <style>
-            #section_1844193705 {
-            padding-top: 0px;
-            padding-bottom: 0px;
-            }
-         </style>
-      </section> --}}
-      <div class="row row-small row-tieu-chi owl-theme">
-        <div class="item-tc">
-         <div class="img-tc ">
-            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
-         </div>
-        </div>
-        <div class="item-tc">
-         <div class="img-tc ">
-            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
-         </div>
-        </div>
-        <div class="item-tc">
-         <div class="img-tc ">
-            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
-         </div>
-        </div>
-        <div class="item-tc">
-         <div class="img-tc ">
-            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
-         </div>
-        </div>
-        <div class="item-tc">
-         <div class="img-tc ">
-            <img src="https://vinhaudio77.vn/wp-content/uploads/2021/06/Artboard-11000-6.png" alt="" srcset="">
-         </div>
-        </div>
-      </div>
-      <style>
-         .row-tieu-chi{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-         }
-         .row-tieu-chi div{
-           
-         background-color: #d4cbc1;
-    margin: 10px;
-    border-radius: 10px;
          }
       </style>
       <section class="section" id="section_1559591121">
@@ -467,18 +330,6 @@
                                  </a>
                               </div>
                         </div>
-                        {{-- <div id="col-862704539" class="col danh-muc2 hide-for-medium medium-9 small-12 large-9"  >
-                              <div class="col-inner text-right"  >
-                                 <a href="{{route('allListBlog')}}" class="button secondary is-link is-small"  >
-                                 <span>Xem Thêm</span>
-                                 </a>
-                              </div>
-                              <style>
-                                 #col-862704539 > .col-inner {
-                                 padding: 0px 10px 0px 0px;
-                                 }
-                              </style>
-                        </div> --}}
                      </div>
                      </div>
                   </div>

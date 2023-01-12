@@ -39,7 +39,7 @@ $imgs = json_decode($product->images);
       <div id="product-173" class="post-ftoc product type-product post-173 status-publish first instock product_cat-camera-hanh-trinh has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
          <div class="product-container">
             <div class="product-main">
-               <div class="row content-row mb-0">
+               <div class="row content-row mb-0 box-shadow-ct box-pd">
                   <div class="product-gallery large-5 col">
                      <div class="product-images relative mb-half has-hover woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4">
                         @if (($product->discount)>0)
@@ -157,7 +157,7 @@ $imgs = json_decode($product->images);
                      </style>
                      @if (json_decode($product->preserve)[0]->detail != null)
                      <div class="woocommerce-product-details__short-description">
-                        <h4 class="pdrr-so-head"><span style="color: #d83131;"><strong>* ƯU ĐÃI ĐẶC BIỆT KÈM THEO *</strong></span></h4>
+                        <h4 class="pdrr-so-head"><span style="color: #d83131; font-family: 'Arial';"><strong>* ƯU ĐÃI ĐẶC BIỆT KÈM THEO *</strong></span></h4>
                         <div class="pdrr-so-info">
                            <ul class="pdrr-so-info-full">
                               @foreach (json_decode($product->preserve) as $item)
@@ -171,7 +171,7 @@ $imgs = json_decode($product->images);
                      <p>{!! languageName($product->description) !!}</p>
                      </div>
                      @endif
-                     <form class="cart" action="" method="post" enctype='multipart/form-data'>
+                     <form class="cart" enctype='multipart/form-data'>
                         <div class="sticky-add-to-cart-wrapper">
                            <div class="sticky-add-to-cart">
                               <div class="sticky-add-to-cart__product">
@@ -190,10 +190,10 @@ $imgs = json_decode($product->images);
                                  </div>
                               </div>
                               <div class="quantity buttons_added">
-                                 <input type="button" value="-" class="minus button is-form">
+                                 <input type="button" value="-" class="minus button is-form" onClick="var result = document.getElementById('quantityItem'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro &gt; 1 ) result.value--;return false;">
                                  <input
                                     type="number"
-                                    id="quantity_62a08a1011ba6"
+                                    id="quantityItem"
                                     class="input-text qty text"
                                     step="1"
                                     min="1"
@@ -204,9 +204,9 @@ $imgs = json_decode($product->images);
                                     size="4"
                                     placeholder=""
                                     inputmode="numeric" />
-                                 <input type="button" value="+" class="plus button is-form">	
+                                 <input type="button" value="+" class="plus button is-form" onClick="var result = document.getElementById('quantityItem'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;">	
                               </div>
-                              <a class="single_add_to_cart_button button alt add-to-cart" data-url="{{route('addToCart', ['id'=>$product->id])}}" data-redirect="{{route('listCart')}}">Thêm vào giỏ hàng</a>
+                              <a class="single_add_to_cart_button button alt add-to-cart" data-url="{{route('addToCart')}}" data-id="{{$product->id}}" data-redirect="{{route('listCart')}}">Thêm vào giỏ hàng</a>
                            </div>
                         </div>
                      </form>
@@ -387,8 +387,8 @@ $imgs = json_decode($product->images);
                   </div>
                </div>
             </div>
-            <div class="product-footer">
-               <div class="container">
+            <div class="product-footer ">
+               <div class="container box-shadow-ct box-pd mg-bt">
                   <div class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">
                      <ul class="tabs wc-tabs product-tabs small-nav-collapse nav nav-uppercase nav-line nav-left" role="tablist">
                         <li class="description_tab active" id="tab-title-description" role="tab" aria-controls="tab-description">
@@ -426,7 +426,7 @@ $imgs = json_decode($product->images);
                         </div>
                      </div>
                   </div>
-                  <div class="related related-products-wrapper product-section">
+                  <div class="related related-products-wrapper product-section ">
                      <h3 class="product-section-title container-width product-section-title-related pt-half pb-half uppercase" style="margin-left:0;">
                         Sản phẩm tương tự			
                      </h3>
