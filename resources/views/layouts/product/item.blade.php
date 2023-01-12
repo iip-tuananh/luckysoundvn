@@ -15,7 +15,7 @@
          @endif
          @if ($origin[0]->image != null)
             <div class="badge-container absolute right top z-1">
-               @foreach ($collection as $item)
+               @foreach ($origin as $item)
                <img src="{{$item->image}}" alt="tag">
                @endforeach
             </div>
