@@ -1,6 +1,7 @@
 
 @php
       $img = json_decode($product->images);
+      $origin = json_decode($product->origin);
 @endphp
 
 <div class="product-small col has-hover product type-product post-{{$product->id}} status-publish instock product_cat-camera-hanh-trinh has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
@@ -12,9 +13,11 @@
                </div>
             </div>
          @endif
-         @if ($product->discountStatus == 1)
+         @if ($origin[0]->image != null)
             <div class="badge-container absolute right top z-1">
-               <img src="{{url('frontend/images/sale.png')}}" alt="" style="width: 40px;">
+               @foreach ($collection as $item)
+               <img src="{{$item->image}}" alt="tag">
+               @endforeach
             </div>
          @endif
             <div class="product-small box ">
@@ -32,13 +35,13 @@
                <div class="image-tools is-small hide-for-small bottom left show-on-hover">
                </div>
                <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
-                  <a class="add-to-cart" data-url="{{route('addToCart', ['id'=>$product->id])}}" data-redirect="{{route('listCart')}}" href="javascript:void(0);">Mua ngay</a>			
+                  <a class="add-to-cart" data-url="{{route('addToCart')}}" data-id="{{$product->id}}" data-redirect="{{route('listCart')}}" href="javascript:void(0);">Mua ngay</a>			
                </div>
                </div>
                <div class="box-text box-text-products">
                <div class="title-tag-sale" style="min-height: 26px;">
-                  @if ($product->discount != 0 && $product->price > 0)
-                     <img src="{{url('frontend/images/giam-gia-soc.png')}}" alt="">
+                  @if ($product->hang_muc)
+                     <img src="{{$product->hang_muc}}" alt="tag">
                   @endif
                </div>
                <div class="title-wrapper">
