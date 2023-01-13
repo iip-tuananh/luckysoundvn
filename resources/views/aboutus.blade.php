@@ -26,7 +26,7 @@ Giới thiệu về {{$setting->company}}
                   </style>
                </div>
                <div class="container section-title-container" >
-                  <h3 class="section-title section-title-center"><b></b><span class="section-title-main" >Giới thiệu về {{$setting->company}}</span><b></b></h3>
+                  <h3 class="section-title section-title-center"><b></b><span class="section-title-main" >{{$pageContent->title}}</span><b></b></h3>
                </div>
                {!!$pageContent->content!!}
             </div>

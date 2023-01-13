@@ -23,7 +23,7 @@
             </div>
             </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-12080 has-icon-left"><a href="{{ route('home') }}" aria-current="page">Trang chủ</a></li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 has-icon-left"><a href="{{ route('aboutUs') }}">Giới thiệu</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12081 has-icon-left"><a href="{{ route('aboutUs') }}">{{$aboutUsMenu->title}}</a></li>
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
                <a href="#">Danh mục sản phẩm</a>
                <ul class="sub-menu nav-sidebar-ul children">

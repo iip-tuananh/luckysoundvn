@@ -75,6 +75,7 @@ class AppServiceProvider extends ServiceProvider
             ->orderBy('id','asc')
             ->get(['id','name','slug','avatar']);
             $helpCus = PageContent::where(['status'=>1, 'language'=>'vi','type'=>'ho-tro-khanh-hang'])->get(['id','title','slug', 'type']);
+            $aboutUsMenu = PageContent::where(['status'=>1, 'language'=>'vi','type'=>'ve-chung-toi'])->first(['id','title','slug', 'type']);
             $partner = Partner::where(['status'=>1])->get(['id','image','name','link']);
             $view->with([
                 'promotio' => $promotio,
@@ -90,7 +91,8 @@ class AppServiceProvider extends ServiceProvider
                 'servicehome'=>$servicehome,
                 'bannerHeaderTop'=>$bannerHeaderTop,
                 'helpCus'=>$helpCus,
-                'partner'=>$partner
+                'partner'=>$partner,
+                'aboutUsMenu'=>$aboutUsMenu
                 ]);    
         });  
     }
