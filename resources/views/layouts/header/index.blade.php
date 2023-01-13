@@ -197,7 +197,7 @@
                            </span>
                         </a>
                         @else
-                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small" style="padding: 10px 20px;">
+                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small" style="padding: 11px 20px;">
                            <span class="header-cart-itemIcon">
                               <i class="fa-solid fa-cart-shopping"></i>
                            </span>
