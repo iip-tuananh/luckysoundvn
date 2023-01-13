@@ -77,9 +77,11 @@
                   <div class="c-box-news col right medium-4 small-12 large-4 hidden-xs hidden-sm">
                      @if (isset($cateBlogHome))
                         <div class="c-box-title">
-                           <h3>
-                              {{languageName($cateBlogHome->name)}}
-                           </h3>
+                           <a href="{{ route('listCateBlog', ['slug'=>$cateBlogHome->slug]) }}">
+                              <h3>
+                                 {{languageName($cateBlogHome->name)}}
+                              </h3>
+                           </a>
                         </div>
                         @foreach ($cateBlogHome->listBlog as $blog)
                            <div class="col-inner">
