@@ -139,15 +139,31 @@
                      <li class="c-box-price " style="text-align: center; padding: 0 35px;">
                         <a href="tel:{{$setting->phone1}}">
                            <span class="c-item-text">
-                              <span class="c-item">
-                                 <i class="fa-solid fa-newspaper"></i>
-                              </span>
                               <span>
-                                 <p>Báo giá</p>
+                                 Hotline: 
+                                 <i>{{$setting->phone1}}</i>
                               </span> 
                            </span>
                         </a>
                      </li>
+                     <style>
+                        .c-box-price:hover {
+                           background-color: white;
+                        }
+                        .header .c-box-price:hover a{
+                           color: #000;
+                        }
+                        .header .c-box-price:hover a i{
+                           color: red;
+                        }
+                        .header .c-box-price a i{
+                           color: #F69320;
+                        }
+                        .header .c-box-price a {
+                           font-size: 14px;
+                           text-transform: capitalize
+                        }
+                     </style>
                   </ul>
             </div>
             <!-- Right Elements -->
@@ -166,7 +182,7 @@
                               $totalPrice += $pricePro;
                            }
                         @endphp
-                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small" style="padding: 10px 20px;">
+                        <a href="{{ route('listCart') }}" title="Giỏ hàng" class="header-cart-link is-small" style="padding: 11px 20px;">
                            <span class="header-cart-itemIcon">
                               <i class="fa-solid fa-cart-shopping"></i>
                            </span>
