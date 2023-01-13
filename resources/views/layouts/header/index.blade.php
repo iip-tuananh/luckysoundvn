@@ -249,35 +249,14 @@
                   <form role="search" method="post" id="yith-ajaxsearchform" action="{{ route('search_result') }}">
                      @csrf
                      <div class="yith-ajaxsearchform-container">
-                        <div class="yith-ajaxsearchform-select">
-                           <input type="hidden" id="_wpnonce" name="_wpnonce" value="bdb6715b53"><input type="hidden" name="_wp_http_referer" value="/">
-                           <input type="hidden" name="post_type" class="yit_wcas_post_type" id="yit_wcas_post_type" value="product">
-                        </div>
                         <div class="search-navigation">
                            <label class="screen-reader-text" for="yith-s">Search for:</label>
-                           <input type="search" value="" name="s" id="yith-s" class="yith-s" placeholder="Bạn tìm gì..." data-append-to=".search-navigation" data-loader-icon="">
+                           <input type="search" value="" name="keyword" id="yith-s" class="yith-s" placeholder="Bạn tìm gì...">
                         <div class="autocomplete-suggestions" style="position: absolute; display: none; z-index: 9999;"></div></div>
                               <input style="background-image: url({{asset('frontend/images/icon-search.png')}})" type="submit" id="yith-searchsubmit" value="Search">
                         </div>
                   </form>
                </div>
-               {{-- <div class="searchform-wrapper ux-search-box relative is-normal">
-                     <form role="search" method="post" class="searchform" action="{{ route('search_result') }}">
-                        @csrf
-                        <div class="flex-row relative">
-                        <div class="flex-col flex-grow">
-                           <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label>
-                           <input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="keyword" />
-                           <input type="hidden" name="post_type" value="product" />
-                        </div>
-                        <div class="flex-col">
-                           <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
-                           <i class="icon-search" ></i>			</button>
-                        </div>
-                        </div>
-                        <div class="live-search-results text-left z-top"></div>
-                     </form>
-               </div> --}}
             </div>
             <!-- Mobile Left Elements -->
             <div class="flex-col show-for-medium flex-right">
