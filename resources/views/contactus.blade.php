@@ -43,7 +43,7 @@ Liên hệ với chúng tôi
 			<div class="col-inner"  >
 				<h3>LIÊN HỆ</h3>
 				<p><strong><span style="font-size: 95%;">Văn phòng giao dịch:</span></strong></p>
-				<p><span style="font-size: 95%;">Địa chỉ: {{$setting->address2}}<br />Điện thoại:  <a href="tel:0367968938"><strong>{{$setting->phone2}}</strong></a><br />Email: <a href="mailto:{{$setting->email}}">{{$setting->email}}</a></span></p>
+				<p><span style="font-size: 95%;">Địa chỉ: {{$setting->address2}}<br />Điện thoại kinh doanh:  <a href="tel:{{$setting->fax}}"><strong>{{$setting->fax}}</strong></a><br />Điện thoại kỹ thuật:  <a href="tel:{{$setting->phone2}}"><strong>{{$setting->phone2}}</strong></a><br />Email: <a href="mailto:{{$setting->email}}">{{$setting->email}}</a></span></p>
 				<p><span style="font-size: 95%;"> </span></p>
 			</div>
 		</div>

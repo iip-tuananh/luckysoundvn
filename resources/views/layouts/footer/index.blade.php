@@ -23,12 +23,13 @@
                      <p><i class="icon-checkmark"></i>  Website: <a target="_blank" href="{{route('home')}}">{{route('home')}}</a></p>
                      <p><i class="icon-map-pin-fill"></i>  <a href="https://www.google.com/maps/place/{{$setting->address1}}" target="_blank" rel="noopener noreferrer">{{$setting->address1}}</a></p>
                      <p>Hotline: <a href="tel:{{$setting->phone1}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone1}}</a></p>
-                     @if (isset($setting->phone2))
-                     <p>Số kĩ thuật: <a href="tel:{{$setting->phone2}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone2}}</a></p>
-                     @endif
                      @if (isset($setting->fax))
                      <p>Số kinh doanh: <a href="tel:{{$setting->fax}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->fax}}</a></p>
                      @endif
+                     @if (isset($setting->phone2))
+                     <p>Số kỹ thuật: <a href="tel:{{$setting->phone2}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone2}}</a></p>
+                     @endif
+                     
                   </div>
                </div>
             <style>
