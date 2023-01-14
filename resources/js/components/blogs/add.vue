@@ -90,7 +90,7 @@
               <image-upload
                 v-model="objData.image"
                 type="avatar"
-                :title="objData.title[0].content"
+                :title="'bai-viet'"
               ></image-upload>
             </div>
           </div>

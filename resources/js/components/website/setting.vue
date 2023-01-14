@@ -42,7 +42,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label>Số điện thoại 1</label>
+                  <label>Số hotline</label>
                   <vs-input
                     type="text"
                     size="default"
@@ -51,7 +51,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label>Số điện thoại 2</label>
+                  <label>Số điện thoại kĩ thuật</label>
                   <vs-input
                     type="text"
                     size="default"
@@ -60,7 +60,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label>Số điện thoại 3</label>
+                  <label>Số điện thoại kinh doanh</label>
                   <vs-input
                     type="text"
                     size="default"

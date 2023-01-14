@@ -16,18 +16,20 @@
                <div class="col-inner"  >
                   <p style="text-align: justify;
                   background-color: #105caa;
-                  padding: 10px 15px;
+                  padding: 10px 15px; border-radius: 8px;
                   color: #ffff;"><strong>LUCKY SOUND</strong></p>
-                  <p style="text-align: justify;"><i class="icon-shopping-cart"></i>  {{ $setting->company }}</p>
-                  <p><i class="icon-checkmark"></i>  Website: <a target="_blank" href="{{route('home')}}">{{route('home')}}</a></p>
-                  <p><i class="icon-map-pin-fill"></i>  <a href="https://www.google.com/maps/place/{{$setting->address1}}" target="_blank" rel="noopener noreferrer">{{$setting->address1}}</a></p>
-                  <p>Hotline 1: <a href="tel:{{$setting->phone1}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone1}}</a></p>
-                  @if (isset($setting->phone2))
-                  <p>Hotline 2: <a href="tel:{{$setting->phone2}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone2}}</a></p>
-                  @endif
-                  @if (isset($setting->phone3))
-                  <p>Kỹ thuật: <a href="tel:{{$setting->phone3}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone3}}</a></p>
-                  @endif
+                  <div style="background-color: #ffff; padding: 10px 15px;border-radius: 8px;" >
+                     <p style="text-align: justify;"><i class="icon-shopping-cart"></i>  {{ $setting->company }}</p>
+                     <p><i class="icon-checkmark"></i>  Website: <a target="_blank" href="{{route('home')}}">{{route('home')}}</a></p>
+                     <p><i class="icon-map-pin-fill"></i>  <a href="https://www.google.com/maps/place/{{$setting->address1}}" target="_blank" rel="noopener noreferrer">{{$setting->address1}}</a></p>
+                     <p>Hotline: <a href="tel:{{$setting->phone1}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone1}}</a></p>
+                     @if (isset($setting->phone2))
+                     <p>Số kĩ thuật: <a href="tel:{{$setting->phone2}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->phone2}}</a></p>
+                     @endif
+                     @if (isset($setting->fax))
+                     <p>Số kinh doanh: <a href="tel:{{$setting->fax}}" target="_blank" rel="noopener noreferrer" style="color: #e83a3a">{{$setting->fax}}</a></p>
+                     @endif
+                  </div>
                </div>
             <style>
                #col-149956225 i {
@@ -41,9 +43,9 @@
                <div class="col-inner"  >
                      <p style="text-align: justify;
                      background-color: #105caa;
-                     padding: 10px 15px;
+                     padding: 10px 15px;border-radius: 8px;
                      color: #ffff;"><strong>THÔNG TIN, CHÍNH SÁCH</strong></p>
-                     <ul>
+                     <ul style="background-color: #ffff; padding: 10px 15px; border-radius: 8px;">
                         @foreach ($helpCus as $item)
                         <li style="text-align: justify;"><a href="{{route('helpCus', ['slug'=>$item->slug])}}">{{$item->title}}</a></li>
                         @endforeach
@@ -54,7 +56,7 @@
                <div class="col-inner"  >
                      <p style="text-align: justify;
                      background-color: #105caa;
-                     padding: 10px 15px;
+                     padding: 10px 15px;border-radius: 8px;
                      color: #ffff;"><strong>BẢN ĐỒ</strong></p>
                      {!! $setting->iframe_map !!}
                </div>

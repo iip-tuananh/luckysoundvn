@@ -158,6 +158,7 @@
                         }
                         .header .c-box-price a i{
                            color: #F69320;
+                           font-weight: 900;
                         }
                         .header .c-box-price a {
                            font-size: 14px;
@@ -350,7 +351,7 @@
                         @if (count($cate->typeCate) > 0)
                         <ul class="sub-menu nav-dropdown nav-dropdown-simple dropdown-uppercase">
                            @foreach ($cate->typeCate as $type)
-                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-ideal.png') }}{{ asset('frontend/images/icon-contactus.png') }}" alt="" />{{languageName($type->name)}}</a></li>
+                              <li id="menu-item-12086" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('listTypeBlog', ['slug'=>$type->slug]) }}"><img class="ux-menu-icon" width="20" height="20" src="{{ asset('frontend/images/icon-contactus.png') }}" alt="" />{{languageName($type->name)}}</a></li>
                            @endforeach
                         </ul>
                         @endif

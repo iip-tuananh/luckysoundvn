@@ -64,7 +64,7 @@
               </div>
               <div class="form-group">
                 <label>Ảnh đại diện</label>
-                <image-upload v-model="objData.image" type="avatar" :title="objData.title[0].content"></image-upload>
+                <image-upload v-model="objData.image" type="avatar" :title="'bai-viet'"></image-upload>
               </div>
             </div>
           </div>

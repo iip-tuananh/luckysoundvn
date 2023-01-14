@@ -59,7 +59,7 @@
                                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_560025793">
                                        <div class="img-inner dark" >
                                           <a href="{{$banner->link}}">
-                                             <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" />						
+                                             <img width="1020" height="430" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w, {{$banner->image}} 1536w" sizes="(max-width: 1020px) 100vw, 1020px" style="border-radius: 10px;"/>						
                                           </a>
                                        </div>
                                        <style>
@@ -107,24 +107,34 @@
                </div>
                <div class="row box-criteria large-columns-4 medium-columns-3 small-columns-2 row-small" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 10, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
                   <div class="col">
-                     <img src="{{url('frontend/images/vanchuyen.png')}}" alt="" loading="lazy">
-                     <span><strong>Miễn phí vận chuyển</strong><br>bán kính 20km</span> 
+                     <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius:8px;" >
+                        <img src="{{url('frontend/images/vanchuyen.png')}}" alt="" loading="lazy">
+                        <span><strong>Miễn phí vận chuyển</strong><br>bán kính 20km</span> 
+                     </div>
                   </div>
                   <div class="col">
-                     <img src="{{url('frontend/images/thanhtoan.png')}}" alt="" loading="lazy">
-                     <span><strong>Thanh toán đa dạng</strong><br>tiền mặt thẻ tín dụng....</span>
+                     <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius:8px;" >
+                        <img src="{{url('frontend/images/thanhtoan.png')}}" alt="" loading="lazy">
+                        <span><strong>Thanh toán đa dạng</strong><br>tiền mặt thẻ tín dụng....</span>
+                     </div>
                   </div>
                   <div class="col">
-                     <img src="{{url('frontend/images/doitra.png')}}" alt="" loading="lazy">
-                     <span><strong>Đổi trả hàng nếu</strong><br>lỗi sản xuất hoặc vận chuyển</span>
+                     <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius:8px;" >
+                        <img src="{{url('frontend/images/doitra.png')}}" alt="" loading="lazy">
+                        <span><strong>Đổi trả hàng nếu</strong><br>lỗi sản xuất hoặc vận chuyển</span>
+                     </div>
                   </div>
                   <div class="col">
-                     <img src="{{url('frontend/images/baohanh.png')}}" alt="" loading="lazy">
-                     <span><strong>Bảo hành chính hãng</strong><br>nguồn góc sản phẩm rõ ràng</span>
+                     <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius:8px;" >
+                        <img src="{{url('frontend/images/baohanh.png')}}" alt="" loading="lazy">
+                        <span><strong>Bảo hành chính hãng</strong><br>nguồn góc sản phẩm rõ ràng</span>
+                     </div>
                   </div>
                   <div class="col">
-                     <img src="{{url('frontend/images/tuvan.png')}}" alt="" loading="lazy">
-                     <span><strong>Tư vấn miễn phí</strong><br>mọi lúc mọi nơi</span>
+                     <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius:8px;" >
+                        <img src="{{url('frontend/images/tuvan.png')}}" alt="" loading="lazy">
+                        <span><strong>Tư vấn miễn phí</strong><br>mọi lúc mọi nơi</span>
+                     </div>
                   </div>
                </div>
             </div>
