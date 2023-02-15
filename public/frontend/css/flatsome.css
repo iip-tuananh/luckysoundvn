@@ -10141,7 +10141,7 @@ ul.menu>li.has-child,
 }
 
 .dark .breadcrumbs {
-    color: #fff
+    color: #222;
 }
 
 .breadcrumbs a {
@@ -10159,7 +10159,7 @@ ul.menu>li.has-child,
 }
 
 .dark .breadcrumbs a {
-    color: #fff
+    color: #222;
 }
 
 .checkout-breadcrumbs {
@@ -10646,7 +10646,11 @@ html {
 }
 
 .featured-title .page-title-inner {
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px #888;
+    border-radius: 10px;
 }
 
 .featured-title .page-title-bg {

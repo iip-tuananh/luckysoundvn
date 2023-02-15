@@ -3,7 +3,7 @@
 {{languageName($product->name)}}
 @endsection
 @section('description')
-{{languageName($product->description)}}
+{!! languageName($product->description) !!}
 @endsection
 @section('image')
 @php
@@ -157,7 +157,7 @@ $imgs = json_decode($product->images);
                      </style>
                      @if (json_decode($product->preserve)[0]->detail != null)
                      <div class="woocommerce-product-details__short-description">
-                        <h4 class="pdrr-so-head"><span style="color: #d83131; font-family: 'Arial';"><strong>* ƯU ĐÃI ĐẶC BIỆT KÈM THEO *</strong></span></h4>
+                        <h4 class="pdrr-so-head"><span style="color: #d83131; font-family: 'Arial';">* ƯU ĐÃI ĐẶC BIỆT KÈM THEO *</span></h4>
                         <div class="pdrr-so-info">
                            <ul class="pdrr-so-info-full">
                               @foreach (json_decode($product->preserve) as $item)
