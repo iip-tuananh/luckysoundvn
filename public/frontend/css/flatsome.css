@@ -8555,10 +8555,13 @@ img.inline {
 .row-box-shadow-1-hover .col-inner:hover,
 .box-shadow-1,
 .box-shadow-1-hover:hover {
-    margin: 10px 0;
+    
     background: white !important;
     box-shadow: 0 0 5px #888;
     border-radius: 10px;
+}
+.row-box-shadow-1 .col-inner {
+    margin: 10px 0;
 }
 
 .box-shadow,
