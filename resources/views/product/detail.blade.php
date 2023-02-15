@@ -3,7 +3,7 @@
 {{languageName($product->name)}}
 @endsection
 @section('description')
-{!! languageName($product->description) !!}
+{{ strip_tags(languageName($product->description)) }}
 @endsection
 @section('image')
 @php
