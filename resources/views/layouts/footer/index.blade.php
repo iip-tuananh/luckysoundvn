@@ -4,7 +4,7 @@
       @foreach ($partner as $item)
          <div class="col">
             <a href="{{$item->link}}" class="img-tc ">
-               <img src="{{$item->image}}" alt="{{$item->name}}" loading="lazy">
+               <img src="{{$item->image}}" alt="{{$item->name}}" loading="lazy" style="border-radius: 12px;">
             </a>
          </div>
       @endforeach

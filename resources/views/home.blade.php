@@ -181,7 +181,7 @@
                               "friction": 0.6        }'
                               >
                               @foreach ($comboPro as $prize)
-                                 <div class="col"><a class="ux-logo-link block" title="{{$prize->name}}" target="{{isset($prize->link) ? '_blank' : ''}}"  href="{{isset($prize->link) ? $prize->link : route('allProductCombo', ['slug'=>$prize->slug])}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;" /></a></div>
+                                 <div class="col"><a class="ux-logo-link block" title="{{$prize->name}}" target="{{isset($prize->link) ? '_blank' : ''}}"  href="{{isset($prize->link) ? $prize->link : route('allProductCombo', ['slug'=>$prize->slug])}}" style="padding: 10px;"><img src="{{$prize->image}}" title="{{$prize->name}}" alt="{{$prize->name}}" class="ux-logo-image block" style="height:150px; width: 100%;border-radius: 12px;" /></a></div>
                               @endforeach
                         </div>
                         <div class="loading-spin dark large centered"></div>
@@ -306,7 +306,7 @@
                      <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1396187211">
                         <div class="img-inner dark" >
                            <a href="{{$banner->name}}">
-                              <img width="1020" height="167" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w" sizes="(max-width: 1020px) 100vw, 1020px" />						
+                              <img width="1020" height="167" src="{{$banner->image}}" class="attachment-large size-large" alt="" loading="lazy" srcset="{{$banner->image}} 1024w, {{$banner->image}} 600w, {{$banner->image}} 768w" sizes="(max-width: 1020px) 100vw, 1020px" style="border-radius: 12px;"/>						
                            </a>
                         </div>
                      </div>

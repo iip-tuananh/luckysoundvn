@@ -2786,7 +2786,7 @@ li.hide-title>a {
 
 @media(max-width:549px) {
     .box-text {
-        font-size: 85%
+        font-size: 85%;
     }
 }
 
@@ -2794,11 +2794,13 @@ li.hide-title>a {
     position: relative;
     height: auto;
     margin: 0 auto;
-    overflow: hidden
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .box-image[style*=-radius] {
-    -webkit-mask-image: -webkit-radial-gradient(white, black)
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .box-image-inner {
@@ -3273,7 +3275,7 @@ input[type=submit],
 .white.is-underline,
 .white.is-link,
 .white.is-outline {
-    color: #fff !important;
+    color: #105caa !important;
     background-color: transparent !important
 }
 
@@ -8513,7 +8515,8 @@ img.inline {
 
 .has-shadow.box:not(.box-overlay):not(.box-shade),
 .has-shadow .box:not(.box-overlay):not(.box-shade) {
-    background-color: #fff
+    background-color: #fff;
+    border-radius: 12px;
 }
 
 .dark .has-shadow.box:not(.box-overlay):not(.box-shade),
@@ -8552,8 +8555,10 @@ img.inline {
 .row-box-shadow-1-hover .col-inner:hover,
 .box-shadow-1,
 .box-shadow-1-hover:hover {
-    -webkit-box-shadow: 0 1px 3px -2px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-    box-shadow: 0 1px 3px -2px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
+    margin: 10px 0;
+    background: white !important;
+    box-shadow: 0 0 5px #888;
+    border-radius: 10px;
 }
 
 .box-shadow,
