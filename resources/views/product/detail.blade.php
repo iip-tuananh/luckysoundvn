@@ -41,7 +41,7 @@ $imgs = json_decode($product->images);
             <div class="product-main">
                <div class="row content-row mb-0 box-shadow-ct box-pd">
                   <div class="product-gallery large-5 col">
-                     <div class="product-images relative mb-half has-hover woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4">
+                     <div class="product-images relative mb-half has-hover woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="box-shadow: 0 0 5px #888; border-radius: 20px;">
                         @if (($product->discount)>0)
                            <div class="badge-container is-larger absolute left top z-1">
                               <div class="callout badge badge-circle">

@@ -221,6 +221,7 @@
                <style>
                   #row-1436329602 > .col > .col-inner {
                      border: 2px solid red;
+                     border-radius: 20px;
                   }
                   #row-1436329602 .nav-line img {
                      width: 100%;
