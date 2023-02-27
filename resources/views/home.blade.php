@@ -226,6 +226,10 @@
                   #row-1436329602 .nav-line img {
                      width: 100%;
                   }
+
+                  #row-1436329602 {
+                     margin-bottom: 30px;
+                  }
                </style>
          </div>
       </div>
@@ -289,13 +293,6 @@
       </section>
       @endif
       @endforeach
-      {{-- end --}}
-      <style>
-         #section_1270000722 {
-         padding-top: 30px;
-         padding-bottom: 30px;
-         }
-      </style>
       <section class="section" id="section_1559591121">
          <div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
          </div>
