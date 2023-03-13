@@ -270,6 +270,46 @@
                   </ul>
             </div>
          </div>
+         <div class="menu-show">
+            <div class="row">
+               @foreach ($categoryhome as $cate)
+                  <div class="col-xs-3 col-md-3" style="padding: 3px">
+                     <div class="tuan-fex" onclick="window.location.href='{{route('allListProCate',['danhmuc'=>$cate->slug])}}'">
+                        {{languageName($cate->name)}}
+                     </div>
+                  </div>
+               @endforeach
+            </div>
+         </div>
+         <style>
+            @media only screen and (min-width:768px){
+               
+               .menu-show{
+                  background-color: orangered;
+                  padding: 5px;
+                  display: none !important;
+   
+               }
+            }
+            .menu-show{
+               background-color: orangered;
+               padding: 5px;
+
+            }
+            .tuan-fex{
+               display: flex;
+    padding: 10px;
+    width: 95px;
+    background-color: #e5e3e3;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    /* word-break: break-word; */
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+            }
+         </style>
          <div class="container">
             <div class="top-divider full-width"></div>
          </div>
