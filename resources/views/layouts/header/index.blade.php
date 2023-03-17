@@ -332,7 +332,7 @@ $qtys += $details['quantity'] ;
                         <i class="icon-menu"></i> DANH MỤC SẢN PHẨM                
                      </div>
                      <style>
-                        .menuto{
+                        /* .menuto{
                         display: none !important;
                         }
                         .disnone{
@@ -340,9 +340,9 @@ $qtys += $details['quantity'] ;
                         }
                         .disshow{
                         display: block !important;
-                        }
+                        } */
                      </style>
-                     <ul id="mega_menu" class="menunhocon menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
+                     {{-- <ul id="mega_menu" class="menunhocon menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
                         @foreach ($categoryhome as $category)
                         @if (count($category->typeCate)>0)
                         <li id="menu-item-11703" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11703">
@@ -376,7 +376,7 @@ $qtys += $details['quantity'] ;
                         @endif
                         @endforeach
                         <div class="more-tuan">Xem thêm</div>
-                     </ul>
+                     </ul> --}}
                      <ul id="mega_menu" class="menuto menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
                         @foreach ($categoryhomenhieu as $category)
                         @if (count($category->typeCate)>0)
