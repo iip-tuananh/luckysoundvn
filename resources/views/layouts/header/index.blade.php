@@ -10,8 +10,20 @@
    <header id="header" class="header has-sticky sticky-jump">
       <div class="header-wrapper">
          <div id="top-bar" class="header-top hide-for-sticky nav-dark">
-         <img src="{{$bannerHeaderTop->image}}" alt="banner top" loading="lazy">
+         <img src="{{$bannerHeaderTop->image}}" alt="banner top" loading="lazy" class="top-desktop">
+         <img src="{{asset('frontend/images/banner-top.jpg')}}" alt="" srcset="" loading="lazy" class="top-mobile" style="display: none">
          </div>
+         <style>
+            @media only screen and (max-width:768px){
+               .top-desktop{
+                  display: none !important;
+               }
+               .top-mobile{
+                  display: block !important;
+               }
+            }
+         
+         </style>
          <div id="masthead" class="header-main hide-for-sticky">
          <!-- Mobile Right Elements -->
          <div class="container c-header-mobile hidden-lg">
@@ -283,7 +295,6 @@
          </div>
          <style>
             @media only screen and (min-width:768px){
-               
                .menu-show{
                   background-color: orangered;
                   padding: 5px;
