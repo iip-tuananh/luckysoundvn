@@ -333,13 +333,13 @@ $qtys += $details['quantity'] ;
                      </div>
                      <style>
                         .menuto{
-                        opacity: 0 !important;
+                        display: none !important;
                         }
                         .disnone{
                         display: none !important;
                         }
                         .disshow{
-                        opacity: 1 !important;
+                        display: block !important;
                         }
                      </style>
                      <ul id="mega_menu" class="menunhocon menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
