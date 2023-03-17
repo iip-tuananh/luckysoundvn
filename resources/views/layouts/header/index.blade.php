@@ -335,6 +335,7 @@
                   <div id="mega-menu-title">
                      <i class="icon-menu"></i> DANH MỤC SẢN PHẨM                
                   </div>
+                  <div class="hehe">
                   <ul id="mega_menu" class="menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
                      @foreach ($categoryhome as $category)
                      @if (count($category->typeCate)>0)
@@ -369,6 +370,7 @@
                      @endforeach
                     
                   </ul>
+                  </div>
                   <div class="more-tuan">Xem thêm</div>
                   </div>
                </ul>
