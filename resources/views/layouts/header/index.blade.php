@@ -329,6 +329,7 @@
          <div class="flex-row container">
             <div class="flex-col hide-for-medium flex-left">
                <ul class="nav header-nav header-bottom-nav nav-left  nav-divided nav-uppercase">
+                  <div class="more-tuan">Xem thêm</div>
                   <div id="mega-menu-wrap"
                   class="ot-vm-hover">
                   <div id="mega-menu-title">
@@ -368,7 +369,7 @@
                      @endforeach
                     
                   </ul>
-                  <div class="more-tuan">Xem thêm</div>
+              
                   </div>
                </ul>
             </div>
