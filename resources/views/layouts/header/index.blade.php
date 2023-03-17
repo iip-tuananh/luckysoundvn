@@ -337,9 +337,23 @@
                   </div>
       <style>
       .menuto{
-         display: none;
+         display: none !important;
+      }
+      .disnone{
+         opacity: 0 !important;
+      }
+      .disshow{
+display: block;
       }
       </style>
+      <script>
+         $('.more-tuan').click(function (e) { 
+            e.preventDefault();
+            $('.menunhocon').addClass('disnone');
+            $('.menuto')remove('disshow');
+            $('.menuto').addClass('disshow');
+         });
+      </script>
                   <ul id="mega_menu" class="menunhocon menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
                      @foreach ($categoryhome as $category)
                      @if (count($category->typeCate)>0)
