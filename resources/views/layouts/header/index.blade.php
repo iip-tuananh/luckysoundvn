@@ -426,7 +426,6 @@ display: block;
                   e.preventDefault();
                   console.log(123);
                   $('.menunhocon').addClass('disnone');
-                  $('.menuto').remove('disshow');
                   $('.menuto').addClass('disshow');
                });
             </script>
