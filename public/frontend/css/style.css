@@ -285,13 +285,12 @@ ul#mega_menu{
     height: 412px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    overflow: hidden;
 }
 ul#mega_menu_new {
     height: auto !important;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    overflow: hidden;
+ 
 }
 #mega_menu_new {
     position: absolute;
