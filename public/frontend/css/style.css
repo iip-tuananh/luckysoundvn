@@ -282,6 +282,22 @@
     overflow: auto;
 }
 ul#mega_menu {
-    height: 449px;
+    height: 412px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     overflow: hidden;
+}
+.more-tuan {
+    position: absolute;
+    top: 455px;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #a30a16;
+    color: white;
+    cursor: pointer;
+    z-index: 5000;
 }
