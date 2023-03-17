@@ -427,8 +427,8 @@ $qtys += $details['quantity'] ;
                $('.thu-menu').click(function (e) { 
                   e.preventDefault();
                   console.log(123);
-                  $('#mega_menu_new').remove('showmenuto');
-                  $('#mega_menu').remove('anmenu');
+                  $('#mega_menu_new').removeClass('showmenuto');
+                  $('#mega_menu').removeClass('anmenu');
                });
             </script>
             <div class="flex-col hide-for-medium flex-center">

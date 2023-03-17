@@ -337,3 +337,16 @@ ul#mega_menu_new {
     z-index: 5000;
     
 }
+.thu-menu{
+    position: absolute;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #a30a16;
+    color: white;
+    cursor: pointer;
+    z-index: 5000;
+}
