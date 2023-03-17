@@ -370,6 +370,40 @@
                      @endforeach
                     
                   </ul>
+                  <ul id="mega_menu" class="menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
+                     @foreach ($categoryhomenhieu as $category)
+                     @if (count($category->typeCate)>0)
+                        <li id="menu-item-11703" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11703">
+                           <a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}" class="sf-with-ul">
+                              <img width="20" height="20" src="{{$category->avatar}}" class="menu-image menu-image-title-after lazyloaded" alt="" decoding="async" data-ll-status="loaded">
+                              {{ languageName($category->name) }}
+                           </a>
+                           <ul class="sub-menu">
+                              @foreach ($category->typeCate as $type)
+                              @if (isset($type->typeTwoCate))
+                                 <li id="menu-item-11704" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11704">
+                                    <a href="{{ route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug]) }}">{{ languageName($type->name) }}</a>
+                                    <ul class="sub-menu">
+                                       @foreach ($type->typeTwoCate as $typeTwo)
+                                          <li id="menu-item-11705" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11705"><a href="{{ route('allListTypeTwo', ['danhmuc'=>$typeTwo->cate_slug, 'loaidanhmuc'=>$typeTwo->type_slug, 'thuonghieu'=>$typeTwo->slug]) }}">{{ languageName($typeTwo->name) }}</a></li>
+                                       @endforeach
+                                    </ul>
+                                 </li>
+                              @else
+                                 <li id="menu-item-11702" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11702"><a href="{{ route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug]) }}">{{ languageName($type->name) }}</a></li>
+                              @endif
+                              @endforeach
+                           </ul>
+                        </li>
+                     @else
+                        <li id="menu-item-11906" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11906"><a href="{{ route('allListProCate', ['danhmuc'=>$category->slug]) }}">
+                           <img width="20" height="20" src="{{$category->avatar}}" class="menu-image menu-image-title-after lazyloaded" alt="" decoding="async" data-ll-status="loaded">
+                           {{ languageName($category->name) }}
+                        </a></li>
+                     @endif
+                     @endforeach
+                    
+                  </ul>
           
                   <div class="more-tuan">Xem thêm</div>
                   </div>
