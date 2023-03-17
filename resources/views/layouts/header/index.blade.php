@@ -334,7 +334,8 @@
                   <div id="mega-menu-title">
                      <i class="icon-menu"></i> DANH MỤC SẢN PHẨM                
                   </div>
-                  <ul id="mega_menu" class="menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
+                  <div class="menu-cuon-tuan">
+                  <ul id="mega_menu" class=" sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
                      @foreach ($categoryhome as $category)
                      @if (count($category->typeCate)>0)
                         <li id="menu-item-11703" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11703">
@@ -367,6 +368,7 @@
                      @endif
                      @endforeach
                   </ul>
+               </div>
                   </div>
                </ul>
             </div>
