@@ -338,7 +338,7 @@ ul#mega_menu_new {
     
 }
 .thu-menu{
-    position: absolute;
+      position: absolute;
     height: 36px;
     line-height: 36px;
     width: 100%;
@@ -349,35 +349,4 @@ ul#mega_menu_new {
     color: white;
     cursor: pointer;
     z-index: 5000;
-}
-#mega-menu .sub-menu {
-    background: #fff
-}
-
-#header.header.has-sticky .header-wrapper.stuck #mega_menu_new {
-    margin-top: 0
-}
-
-#header.header.has-sticky .header-wrapper.stuck #mega_menu_new:not(.active) {
-    display: none
-}
-
-.ot-vm-hover:hover #mega_menu_new {
-    display: block
-}
-
-#header.header #mega_menu_new.active {
-    display: block
-}
-
-.home.ot-menu-show-home #mega_menu_new {
-    display: block
-}
-
-.ot-vm-hover:hover #mega_menu_new {
-    display: block
-}
-
-#header.header.has-sticky .header-wrapper.stuck #mega-menu-wrap:hover #mega_menu_new:not(.active) {
-    display: block
 }
