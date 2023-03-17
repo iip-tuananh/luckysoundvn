@@ -277,3 +277,7 @@
 .menu-cuon-tuan{
     height: 500px;
 }
+.scroll-right{
+    height: 300px;
+    overflow: auto;
+}

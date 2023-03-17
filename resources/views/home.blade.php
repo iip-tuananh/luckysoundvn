@@ -74,7 +74,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="c-box-news col right medium-4 small-12 large-4 hidden-xs hidden-sm">
+                  <div class="c-box-news col right medium-4 small-12 large-4 hidden-xs hidden-sm scroll-right">
                      @if (isset($cateBlogHome))
                         <div class="c-box-title">
                            <a href="{{ route('listCateBlog', ['slug'=>$cateBlogHome->slug]) }}">
