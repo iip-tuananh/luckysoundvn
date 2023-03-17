@@ -404,7 +404,7 @@ $qtys += $details['quantity'] ;
                         </li>
                         @endif
                         @endforeach
-                        <div class="more-tuan">Xem thêm</div>
+                        <div class="thu-menu">Thu gọn</div>
                      </ul>
                   </div>
                </ul>
@@ -423,6 +423,12 @@ $qtys += $details['quantity'] ;
                   console.log(123);
                   $('#mega_menu_new').addClass('showmenuto');
                   $('#mega_menu').addClass('anmenu');
+               });
+               $('.thu-menu').click(function (e) { 
+                  e.preventDefault();
+                  console.log(123);
+                  $('#mega_menu_new').remove('showmenuto');
+                  $('#mega_menu').remove('anmenu');
                });
             </script>
             <div class="flex-col hide-for-medium flex-center">
