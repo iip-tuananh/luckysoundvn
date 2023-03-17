@@ -282,7 +282,7 @@
                   </ul>
             </div>
          </div>
-         <div class="menu-show">
+         {{-- <div class="menu-show">
             <div class="row">
                @foreach ($categoryhome as $cate)
                   <div class="col-xs-3 col-md-3" style="padding: 3px">
@@ -292,7 +292,7 @@
                   </div>
                @endforeach
             </div>
-         </div>
+         </div> --}}
          <style>
             @media only screen and (min-width:768px){
                .menu-show{
