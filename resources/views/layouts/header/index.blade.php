@@ -402,10 +402,10 @@
                         </a></li>
                      @endif
                      @endforeach
-                    
+                     <div class="more-tuan">Xem thêm</div>
                   </ul>
           
-                  <div class="more-tuan">Xem thêm</div>
+                
                   </div>
                </ul>
             </div>
