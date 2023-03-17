@@ -29,37 +29,6 @@
 #mega_menu>li>a {
     font-size: .9em
 }
-#mega_menu {
-    position: absolute;
-    top: 100%;
-    margin-top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0;
-    background: #f1f3f4;
-    border: 1px solid #105caa;
-    border-top: none;
-    display: none;
-    padding-bottom: 23px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-#mega_menu a {
-    font-size: .9em
-}
-
-#mega_menu a:hover {
-    background-color: #f5f5f5
-}
-
-#mega_menu>li {
-    background: #fff
-}
-
-#mega_menu>li>a {
-    font-size: .9em
-}
 
 .sf-menu {
     margin: 0;
@@ -278,27 +247,27 @@
     background: #fff
 }
 
-#header.header.has-sticky .header-wrapper.stuck #mega_menu_new {
+#header.header.has-sticky .header-wrapper.stuck #mega_menu {
     margin-top: 0
 }
 
-#header.header.has-sticky .header-wrapper.stuck #mega_menu_new:not(.active) {
+#header.header.has-sticky .header-wrapper.stuck #mega_menu:not(.active) {
     display: none
 }
 
-.ot-vm-hover:hover #mega_menu_new {
+.ot-vm-hover:hover #mega_menu {
     display: block
 }
 
-#header.header #mega_menu_new.active {
+#header.header #mega_menu.active {
     display: block
 }
 
-.home.ot-menu-show-home #mega_menu_new {
+.home.ot-menu-show-home #mega_menu {
     display: block
 }
 
-.ot-vm-hover:hover #mega_menu_new {
+.ot-vm-hover:hover #mega_menu {
     display: block
 }
 
@@ -312,20 +281,52 @@
     height: 358px;
     overflow: auto;
 }
-ul#mega_menu {
+ul#mega_menu{
     height: 412px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-   
+    overflow: hidden;
 }
 ul#mega_menu_new {
-    height: 412px;
+    height: auto !important;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-   
+    overflow: hidden;
+}
+#mega_menu_new {
+    position: absolute;
+    top: 100%;
+    margin-top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background: #f1f3f4;
+    border: 1px solid #105caa;
+    border-top: none;
+    display: none;
+    padding-bottom: 23px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#mega_menu_new a {
+    font-size: .9em
+}
+
+#mega_menu_new a:hover {
+    background-color: #f5f5f5
+}
+
+#mega_menu_new>li {
+    background: #fff
+}
+
+#mega_menu_new>li>a {
+    font-size: .9em
 }
 .more-tuan {
     position: absolute;
+    top: 455px;
     height: 36px;
     line-height: 36px;
     width: 100%;
