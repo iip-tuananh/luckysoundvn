@@ -281,3 +281,7 @@
     height: 358px;
     overflow: auto;
 }
+ul#mega_menu {
+    height: 449px;
+    overflow: hidden;
+}
