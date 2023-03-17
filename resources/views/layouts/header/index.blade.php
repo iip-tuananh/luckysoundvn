@@ -349,6 +349,7 @@ display: block;
       <script>
          $('.more-tuan').click(function (e) { 
             e.preventDefault();
+            console.log(123);
             $('.menunhocon').addClass('disnone');
             $('.menuto')remove('disshow');
             $('.menuto').addClass('disshow');
