@@ -414,7 +414,7 @@ $qtys += $details['quantity'] ;
                   display: block !important;
                }
                .anmenu{
-                  direction: none !important;
+                  display: none !important;
                }
             </style>
             <script>
@@ -422,7 +422,7 @@ $qtys += $details['quantity'] ;
                   e.preventDefault();
                   console.log(123);
                   $('#mega_menu_new').addClass('showmenuto');
-                  $('.menunhocon').addClass('anmenu');
+                  $('#mega_menu').addClass('anmenu');
                });
             </script>
             <div class="flex-col hide-for-medium flex-center">
