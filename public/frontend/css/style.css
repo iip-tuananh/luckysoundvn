@@ -29,6 +29,37 @@
 #mega_menu>li>a {
     font-size: .9em
 }
+#mega_menu {
+    position: absolute;
+    top: 100%;
+    margin-top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background: #f1f3f4;
+    border: 1px solid #105caa;
+    border-top: none;
+    display: none;
+    padding-bottom: 23px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#mega_menu a {
+    font-size: .9em
+}
+
+#mega_menu a:hover {
+    background-color: #f5f5f5
+}
+
+#mega_menu>li {
+    background: #fff
+}
+
+#mega_menu>li>a {
+    font-size: .9em
+}
 
 .sf-menu {
     margin: 0;
@@ -247,27 +278,27 @@
     background: #fff
 }
 
-#header.header.has-sticky .header-wrapper.stuck #mega_menu {
+#header.header.has-sticky .header-wrapper.stuck #mega_menu_new {
     margin-top: 0
 }
 
-#header.header.has-sticky .header-wrapper.stuck #mega_menu:not(.active) {
+#header.header.has-sticky .header-wrapper.stuck #mega_menu_new:not(.active) {
     display: none
 }
 
-.ot-vm-hover:hover #mega_menu {
+.ot-vm-hover:hover #mega_menu_new {
     display: block
 }
 
-#header.header #mega_menu.active {
+#header.header #mega_menu_new.active {
     display: block
 }
 
-.home.ot-menu-show-home #mega_menu {
+.home.ot-menu-show-home #mega_menu_new {
     display: block
 }
 
-.ot-vm-hover:hover #mega_menu {
+.ot-vm-hover:hover #mega_menu_new {
     display: block
 }
 
@@ -282,6 +313,12 @@
     overflow: auto;
 }
 ul#mega_menu {
+    height: 412px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+   
+}
+ul#mega_menu_new {
     height: 412px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;

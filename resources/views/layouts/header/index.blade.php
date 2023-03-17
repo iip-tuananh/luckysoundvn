@@ -332,17 +332,11 @@ $qtys += $details['quantity'] ;
                         <i class="icon-menu"></i> DANH MỤC SẢN PHẨM                
                      </div>
                      <style>
-                        /* .menuto{
-                        display: none !important;
-                        }
-                        .disnone{
-                        display: none !important;
-                        }
-                        .disshow{
-                        display: block !important;
-                        } */
+                      #mega_menu_new{
+                        display: none;
+                      }
                      </style>
-                     {{-- <ul id="mega_menu" class="menunhocon menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
+                     <ul id="mega_menu" class="menunhocon menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
                         @foreach ($categoryhome as $category)
                         @if (count($category->typeCate)>0)
                         <li id="menu-item-11703" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11703">
@@ -376,8 +370,8 @@ $qtys += $details['quantity'] ;
                         @endif
                         @endforeach
                         <div class="more-tuan">Xem thêm</div>
-                     </ul> --}}
-                     <ul id="mega_menu" class="menuto menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
+                     </ul>
+                     <ul id="mega_menu_new" class=" menu-cuon-tuan sf-menu sf-vertical {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" >
                         @foreach ($categoryhomenhieu as $category)
                         @if (count($category->typeCate)>0)
                         <li id="menu-item-11703" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11703">
@@ -415,12 +409,20 @@ $qtys += $details['quantity'] ;
                   </div>
                </ul>
             </div>
+            <style>
+               .showmenuto{
+                  display: block !important;
+               }
+               .anmenu{
+                  direction: none !important;
+               }
+            </style>
             <script>
                $('.more-tuan').click(function (e) { 
                   e.preventDefault();
                   console.log(123);
-                  $('.menunhocon').addClass('disnone');
-                  $('.menuto').addClass('disshow');
+                  $('#mega_menu_new').addClass('showmenuto');
+                  $('.menunhocon').addClass('anmenu');
                });
             </script>
             <div class="flex-col hide-for-medium flex-center">
