@@ -283,7 +283,7 @@ $qtys += $details['quantity'] ;
          </div>
          <div class="menu-show">
             <div class="row">
-               @foreach ($categoryhome as $cate)
+               @foreach ($categoryhomenhieu as $cate)
                <div class="col-xs-3 col-md-3" style="padding: 3px">
                   <div class="tuan-fex" onclick="window.location.href='{{route('allListProCate',['danhmuc'=>$cate->slug])}}'">
                      {{languageName($cate->name)}}

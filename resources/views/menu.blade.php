@@ -18,8 +18,6 @@
     <div class="overlay"></div>
     <div class="specialties-detail">
        <div class="section-title">
-          <h2 style="color: #fcfd00!important;">Thực đơn hôm nay</h2>
-          <h3 class="white">Món ngon luôn sẵn sàng</h3>
        </div>
     </div>
  </div>
@@ -29,8 +27,8 @@
           <div class="col-sm-12 col-md-3">
              <div class="menu-list-left">
                 <div class="menu-list-title">
-                   <h4>Lynh Bún Đậu</h4>
-                   <h2>menu</h2>
+                  
+                
                 </div>
                 <ul>
                    <li class="active ed tatca" onclick="getProByCate(0)"><a href="#menulist" class="scroll">Tất cả</a></li>

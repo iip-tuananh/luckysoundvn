@@ -27,7 +27,7 @@
             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-12085 has-icon-left">
                <a href="#">Danh mục sản phẩm</a>
                <ul class="sub-menu nav-sidebar-ul children">
-                  @foreach ($categoryhome as $cate)
+                  @foreach ($categoryhomenhieu as $cate)
                   <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12086 has-icon-left"><a href="{{ route('allListProCate', ['danhmuc'=>$cate->slug]) }}">{{languageName($cate->name)}}</a></li>
                   @endforeach
                </ul>
